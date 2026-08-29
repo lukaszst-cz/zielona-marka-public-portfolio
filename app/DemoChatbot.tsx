@@ -75,7 +75,7 @@ export default function DemoChatbot() {
           </form>
           <button className="chat-back" type="button" onClick={() => setIndustry("")}>← Zmień branżę</button>
         </div>}
-        {sent && <div className="bot-message chat-success"><b>Gotowe — zgłoszenie zostało zapisane.</b><p>Odpowiem najpóźniej w następnym dniu roboczym.</p><button type="button" onClick={reset}>Rozpocznij ponownie</button></div>}
+        {sent && <div className="bot-message chat-success"><b>Gotowe, zgłoszenie zostało zapisane.</b><p>Odpowiem najpóźniej w następnym dniu roboczym.</p><button type="button" onClick={reset}>Rozpocznij ponownie</button></div>}
         <div className="chat-demo-links"><Link href="/strony-dla-warsztatow">Demo dla warsztatu</Link><Link href="/strony-dla-firm-uslugowych">Demo dla wykonawcy</Link><Link href="/strony-dla-beauty">Demo beauty</Link></div>
       </div>
       <footer>To demonstracja scenariusza. Wdrożenie AI wymaga zatwierdzonej bazy wiedzy i kontaktu z człowiekiem.</footer>

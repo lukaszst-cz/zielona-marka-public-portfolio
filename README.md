@@ -1,8 +1,8 @@
-# Zielona Marka — public portfolio
+# Zielona Marka, public portfolio
 
 **Problem:** firma usługowa potrzebuje strony, która nie jest jedynie wizytówką, ale prowadzi klienta do kontaktu, wyceny lub kolejnego kroku.
 
-**Rozwiązanie:** publiczna wersja portfolio Zielonej Marki — strony usługowe, podstrony branżowe i demonstracje ścieżek zapytania dla małych firm.
+**Rozwiązanie:** publiczna wersja portfolio Zielonej Marki, strony usługowe, podstrony branżowe i demonstracje ścieżek zapytania dla małych firm.
 
 [Otwórz stronę Zielona Marka](https://zielona-marka.pl/)
 

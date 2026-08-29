@@ -17,7 +17,7 @@ export default function ContactForm({ audit = false }: { audit?: boolean }) {
     if (response.ok) { setSent(true); form.reset(); }
     else setError("Nie udało się wysłać wiadomości. Napisz bezpośrednio na kontakt@zielona-marka.pl.");
   }
-  if (sent) return <div className="form-success"><b>Dziękuję — wiadomość została wysłana.</b><p>Wrócę z propozycją kolejnego kroku i wstępną wyceną.</p></div>;
+  if (sent) return <div className="form-success"><b>Dziękuję, wiadomość została wysłana.</b><p>Wrócę z propozycją kolejnego kroku i wstępną wyceną.</p></div>;
   return <form className="contact-form" onSubmit={submit}>
     <label>Imię<input required name="name" placeholder="Jak masz na imię?" autoComplete="name" /></label>
     <label>E-mail<input required type="email" name="email" placeholder="twoj@email.pl" autoComplete="email" /></label>
