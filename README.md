@@ -1,13 +1,24 @@
 # Zielona Marka — public portfolio
 
-Publiczna wersja portfolio Zielonej Marki: strony usługowe, podstrony branżowe, demonstracje ścieżek zapytania oraz komponenty interfejsu dla małych firm.
+**Problem:** firma usługowa potrzebuje strony, która nie jest jedynie wizytówką, ale prowadzi klienta do kontaktu, wyceny lub kolejnego kroku.
 
-## Co pokazuje projekt
+**Rozwiązanie:** publiczna wersja portfolio Zielonej Marki — strony usługowe, podstrony branżowe i demonstracje ścieżek zapytania dla małych firm.
+
+[Otwórz stronę Zielona Marka](https://zielona-marka.pl/)
+
+## Co pokazuje
 
 - strony dla usług lokalnych, beauty, warsztatów i transportu;
 - formularze kontaktowe oraz ścieżki wyceny;
 - demonstracje małego CRM, automatyzacji i chatbotów;
 - responsywny interfejs i podstawy SEO.
+
+## Wartość biznesowa
+
+- czytelniejsza oferta i prostszy kontakt dla klienta;
+- lepsze wykorzystanie wejść z Google i social mediów;
+- baza do późniejszego CRM, przypomnień i automatyzacji;
+- strona gotowa do rozwoju wraz z firmą.
 
 ## Zakres publicznej wersji
 
@@ -28,9 +39,5 @@ npm run dev
 npm run build
 npm run test
 ```
-
-## Kontakt
-
-Zielona Marka — [zielona-marka.pl](https://zielona-marka.pl/)
 
 Kod udostępniono jako materiał portfolio. Wykorzystanie elementów marki, tekstów i projektów wizualnych wymaga zgody właściciela.
