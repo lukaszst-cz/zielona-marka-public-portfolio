@@ -49,6 +49,25 @@ export function SiteFooter() {
       </div>
       <small>© {new Date().getFullYear()} Zielona Marka</small>
     </div>
+    <div className="shell creator-projects" aria-label="Darmowe aplikacje i wsparcie autora">
+      <div className="creator-projects-copy">
+        <span>DARMOWE APLIKACJE</span>
+        <strong>Praktyczne narzędzia, które rozwiązują konkretne problemy.</strong>
+        <p>Zobacz kod, wersje demonstracyjne i rozwój projektów na GitHubie.</p>
+      </div>
+      <nav className="creator-project-links" aria-label="Aplikacje na GitHubie">
+        <a href="https://github.com/lukaszst-cz/aktywnik-plus" target="_blank" rel="noopener noreferrer"><strong>Aktywnik+ ↗</strong><small>Prosty dziennik ruchu dziecka z akceptacją rodzica i raportami.</small></a>
+        <a href="https://github.com/lukaszst-cz/docpilot" target="_blank" rel="noopener noreferrer"><strong>DocPilot ↗</strong><small>Porządkuje dokumenty, wyciąga terminy i ułatwia szybkie odnalezienie ważnych plików.</small></a>
+        <a href="https://github.com/lukaszst-cz/document-checker" target="_blank" rel="noopener noreferrer"><strong>Document Checker ↗</strong><small>Wyłapuje braki i rozbieżności w dokumentach przed ich wysłaniem.</small></a>
+        <a href="https://github.com/lukaszst-cz/lead-offer-copilot" target="_blank" rel="noopener noreferrer"><strong>Lead &amp; Offer Copilot ↗</strong><small>Porządkuje zapytanie klienta i pomaga szybciej przygotować odpowiedź oraz następny krok.</small></a>
+      </nav>
+      <div className="creator-support-box">
+        <span>☕ DOBROWOLNE WSPARCIE</span>
+        <strong>Podoba Ci się któraś z aplikacji?</strong>
+        <p>Aplikacje pozostają darmowe. Jeśli chcesz wesprzeć ich dalszy rozwój, możesz postawić Naleśnikowi++ kawę.</p>
+        <a className="creator-coffee-button" href="https://buymeacoffee.com/nalesnik_plus_plus" target="_blank" rel="noopener noreferrer">Postaw Naleśnikowi++ kawę ☕</a>
+      </div>
+    </div>
   </footer>;
 }
 

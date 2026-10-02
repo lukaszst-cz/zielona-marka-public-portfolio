@@ -22,6 +22,9 @@ test("strona główna renderuje ofertę i drogę do kontaktu", async () => {
   assert.match(html, /30% na start/i);
   assert.match(html, /2 490 zł/i);
   assert.match(html, /kontakt@zielona-marka\.pl/i);
+  assert.match(html, /Aktywnik\+/i);
+  assert.match(html, /DocPilot/i);
+  assert.match(html, /buymeacoffee\.com\/nalesnik_plus_plus/i);
 });
 
 test("nowe zakładki są renderowane", async () => {
