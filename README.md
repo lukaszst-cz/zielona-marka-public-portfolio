@@ -41,3 +41,13 @@ npm run test
 ```
 
 Kod udostępniono jako materiał portfolio. Wykorzystanie elementów marki, tekstów i projektów wizualnych wymaga zgody właściciela.
+
+---
+
+## ☕ Wsparcie / Support
+
+Jeśli ten projekt Ci się podoba lub jest dla Ciebie przydatny, możesz dobrowolnie wesprzeć jego dalszy rozwój.  
+If you like this project or find it useful, you can support its further development.
+
+**[☕ Postaw Naleśnikowi++ kawę / Buy Me a Coffee](https://buymeacoffee.com/nalesnik_plus_plus)**
+
