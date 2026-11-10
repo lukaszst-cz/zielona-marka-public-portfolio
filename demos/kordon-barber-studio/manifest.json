@@ -1,0 +1,93 @@
+{
+  "project": "KORDON Barber Studio",
+  "type": "strona poglądowa / demo",
+  "brand": "Zielona Marka",
+  "approved": "2026-11-10",
+  "productionUrl": "https://kordon-barber-studio-zielona-marka.vercel.app/",
+  "productionDeployment": "dpl_FhKuR1LyGFyNQnprig51jQa31HHL",
+  "html": "index.html",
+  "htmlGitBlobSha": "2779db222b80249b50a0fb7e2ddbc53e953dbc13",
+  "assets": [
+    {
+      "path": "assets/amanita.webp",
+      "gitBlobSha": "a365d4ed86175bedb4b444b8aaa386cc3a46d33a"
+    },
+    {
+      "path": "assets/avatar-michal.webp",
+      "gitBlobSha": "6b031791d088881784794ba0585d2d4c98861a8d"
+    },
+    {
+      "path": "assets/avatar-pawel.webp",
+      "gitBlobSha": "fb860332d5c33b2e96030df97cbd719dca690a3d"
+    },
+    {
+      "path": "assets/avatar-tomasz.webp",
+      "gitBlobSha": "ef401e9703b5a7c4a53bf2a50cbcb78658de94cc"
+    },
+    {
+      "path": "assets/balm.webp",
+      "gitBlobSha": "a9fce9a02b5e59fddf6f2ac76751a2db2b8cdfe2"
+    },
+    {
+      "path": "assets/beard.webp",
+      "gitBlobSha": "23182b534716cc0627d912b8be778a3803c6f114"
+    },
+    {
+      "path": "assets/croc.webp",
+      "gitBlobSha": "7186b0f24cc9077d67613d0c0cf450116a4d400e"
+    },
+    {
+      "path": "assets/foam.webp",
+      "gitBlobSha": "a26e1b6478e530a7d4cac9645ab974ed4587b1ac"
+    },
+    {
+      "path": "assets/hair.webp",
+      "gitBlobSha": "cac66f06d27262273a56858e05ceb729ff43f2ed"
+    },
+    {
+      "path": "assets/hero-original.webp",
+      "gitBlobSha": "fb2d25669bf6da69ec9e338bccb04056f66a1820"
+    },
+    {
+      "path": "assets/hero.webp",
+      "gitBlobSha": "28c35b683f1a2c8ae6211f83b54ba57486e38b9b"
+    },
+    {
+      "path": "assets/interior.webp",
+      "gitBlobSha": "368b7289fbf656e9ab205e29b1ec2cb117087962"
+    },
+    {
+      "path": "assets/logo-gentleman.png",
+      "gitBlobSha": "8fbb9550f6b7d9b514239130e919b8a282c94b9e"
+    },
+    {
+      "path": "assets/matte.webp",
+      "gitBlobSha": "49e98018e9c6ddd7c52e5b07fa0c9b5d422423b7"
+    },
+    {
+      "path": "assets/oil.jpg",
+      "gitBlobSha": "9436e79044fa0fe2ca4e80655683edff5a127829"
+    },
+    {
+      "path": "assets/plague.jpg",
+      "gitBlobSha": "b54a9c67fe19fa2fafd3388d3186cd83e0b71cb1"
+    },
+    {
+      "path": "assets/powder.jpg",
+      "gitBlobSha": "d2d983541f9596d1add85c37b39f4ef9762aa477"
+    },
+    {
+      "path": "assets/shave.webp",
+      "gitBlobSha": "f380cd75a1ae66dc573042e4a642a06dc6be0007"
+    },
+    {
+      "path": "assets/ucbalm.webp",
+      "gitBlobSha": "7ed19973d7d789292f226c4717f017eb133f50b9"
+    },
+    {
+      "path": "assets/wash.png",
+      "gitBlobSha": "3fa966d5631174a117cf2aba25558c14449472cd"
+    }
+  ],
+  "notes": "Lokalna wersja posiada względne ścieżki assets. Poprzednio strona Vercel odwoływała się do plików w starszym wdrożeniu. Do archiwum dodano rzeczywiste kopie wszystkich 20 zasobów."
+}
