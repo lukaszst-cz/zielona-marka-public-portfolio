@@ -49,6 +49,10 @@ export function SiteFooter() {
       </div>
       <small>© {new Date().getFullYear()} Zielona Marka</small>
     </div>
+    <div className="shell footer-billing-details" id="fakturowanie" aria-label="Informacje o rozliczeniach i dane do faktury">
+      <section><h2>Obecne rozliczenia i dane do faktury: Bizky Freelance</h2><p><strong>Bizky sp. z o.o.</strong><br />Al. Księcia Józefa Poniatowskiego 1, klatka K4, poziom 1<br />03-901 Warszawa, Polska<br />NIP: 7010150265 · KRS: 0000312229<br /><a href="https://bizky.ai/" target="_blank" rel="noopener noreferrer">bizky.ai</a></p></section>
+      <section lang="en"><h2>UK clients: alternative invoicing through Juuli</h2><p>For UK-based clients, invoicing and payment may also be arranged through Juuli by individual agreement. Invoicing entity:<br /><strong>JUULI OÜ</strong><br />Veskiposti 2, Avala, Electra Building, 9th Floor<br />10138 Tallinn, Estonia<br />Registry code: 16579396 · VAT: EE102608520<br /><a href="https://www.juuli.com/" target="_blank" rel="noopener noreferrer">www.juuli.com</a></p><p>The invoicing provider and payment instructions will be confirmed before the invoice is issued.</p></section>
+    </div>
     <div className="shell creator-projects" aria-label="Darmowe aplikacje i wsparcie autora">
       <div className="creator-projects-copy">
         <span>DARMOWE APLIKACJE</span>
