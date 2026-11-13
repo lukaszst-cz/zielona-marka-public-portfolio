@@ -1,0 +1,26 @@
+name: Eksport zaakceptowanego Solident
+on:
+  push:
+    paths:
+      - '.github/workflows/export-solident-final.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build-archive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Prepare final Solident files
+        run: |
+          mkdir -p artifact
+          cp projekty/solident/zaakceptowana-2026-11-13/index.html artifact/index.html
+          cp projekty/solident/zaakceptowana-2026-11-13/README.md artifact/README.md
+          printf 'User-agent: *\nDisallow: /\n' > artifact/robots.txt
+      - name: Archive
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: SOLIDENT-ZAAKCEPTOWANY-2026-11-13
+          path: artifact/
+          if-no-files-found: error
