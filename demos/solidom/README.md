@@ -1,27 +1,25 @@
-# SOLIDOM | demonstracja strony budowlanej
+# SOLIDOM | finalna wersja dynamiczna
 
-Wersja opublikowana **14 listopada 2026 r.**, zakwalifikowana do portfolio **Zielonej Marki**.
+**Status:** wersja zaakceptowana 14 listopada 2026 r. i opublikowana pod adresem [solidom.vercel.app](https://solidom.vercel.app/).
 
-- [Działająca strona SOLIDOM](https://solidom.vercel.app/)
 - [Karta w portfolio Zielonej Marki](https://zielona-marka.pl/portfolio/solidom)
-- [Dokumentacja i kompletne archiwum projektu na Dysku Google](https://drive.google.com/drive/folders/1dgsa9MAx-I0d5mk6-1rtQ-u153QvVkDT)
+- [Pełne archiwum, wraz ze zdjęciami](https://drive.google.com/drive/folders/1dgsa9MAx-I0d5mk6-1rtQ-u153QvVkDT)
+- [Szczegółowy opis wykonania](CASE-STUDY.md)
 
-## Zakres
+## Zawartość
 
-Responsywna witryna HTML/CSS/JS z ofertą usług budowlanych, galerią przykładowych prac, czterema etapami współpracy ze zdjęciami, animowanymi licznikami od zera, karuzelą przykładowych opinii, FAQ i interaktywnymi formularzami. Dodano podstawowe PWA (manifest i service worker).
+Zapisano źródła HTML, CSS i JavaScript pobrane z działającego adresu oraz konfigurację PWA. Wersja obejmuje sześć głównych obszarów: wizualizację usług, galerię zdjęć, etapy współpracy, opinie, FAQ i kontakt. Wyróżnikiem jest zestaw animacji uruchamianych podczas przewijania oraz pięć liczników.
 
-**Status:** autorski projekt pokazowy. SOLIDOM jest fikcyjną marką. Liczba inwestycji, opinie, zdjęcia oraz realizacje mają charakter poglądowy i nie potwierdzają działalności realnej firmy. Formularz wyceny nie wysyła danych na serwer, a panel Zielonej Marki przygotowuje e-mail do samodzielnego wysłania. Brak backendu zamówień.
+Zdjęcia i ikony znajdują się w ZIP na Dysku Google. Skrypt `download-assets.mjs` może pobrać je również z aktywnego serwisu. Aby uruchomić lokalnie: `node download-assets.mjs`, następnie `python3 -m http.server 8000`.
 
-## Pliki i uruchomienie lokalne
+## Zakres techniczny
 
-Pliki kodu HTML/CSS/JS oraz PWA zostały skopiowane z aktywnej publikacji z 14.11.2026. Dla mniejszej objętości repozytorium obrazy zapisano w pełnej paczce na Dysku Google. Można je również odtworzyć ze strony demonstracyjnej:
+Statyczne HTML/CSS/JS, responsywne układy grid i flex, animacje CSS, requestAnimationFrame, IntersectionObserver, filtrowanie galerii, okna dialogowe oraz karuzela przykładowych wypowiedzi. Manifest i service worker umożliwiają podstawowe działanie PWA. Zgodnie z `prefers-reduced-motion` animacje są ograniczane u odbiorców, którzy tego potrzebują.
 
-```bash
-cd demos/solidom
-node download-assets.mjs
-python3 -m http.server 8000
-```
+Formularz wyceny sprawdza walidację bez zapisu i bez wysyłki danych. Panel Zielonej Marki przygotowuje e-mail do samodzielnego wysłania.
 
-Po pobraniu obrazów otwórz `http://localhost:8000`. Skrypt pobiera zasoby z opublikowanej demonstracji. Gdy źródłowy adres przestanie działać, użyj pełnego archiwum ZIP z Dysku Google.
+Marka SOLIDOM jest fikcyjna, a statystyki, zdjęcia i wypowiedzi są poglądowe. Nie ma integracji z realną firmą budowlaną ani systemem zamówień.
 
-Autor: **Zielona Marka**. Portfolio i dokumentacja dotyczą demonstracji, nie realizacji wykonanej dla zewnętrznego klienta.
+## Ochrona historii
+
+Ten katalog pokazuje ostatnią, zaakceptowaną wersję. Poprzednia pozostaje w historii commitów Git. Na Dysku Google starsze ZIP-y zostały pozostawione jako archiwum.
