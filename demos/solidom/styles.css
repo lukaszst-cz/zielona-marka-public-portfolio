@@ -301,3 +301,28 @@ body { font-size:14px; }
 .review-card .review-top{min-height:27px}
 @media(max-width:700px){.reviews-meta small{flex-basis:auto;font-size:10px}}
 @media(prefers-reduced-motion:reduce){.counter-number.counter-done{animation:none!important}}
+/* SOLIDOM. Wariant do akceptacji: subtelny ruch i wyeksponowane realizacje. */
+.solidom-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:9999;pointer-events:none}
+.solidom-progress>span{display:block;height:100%;width:100%;transform:scaleX(0);transform-origin:left;background:linear-gradient(90deg,#f97805,#ffd29b)}
+.hero-photo{transform:translate3d(0,var(--hero-shift,0px),0) scale(1.055);will-change:transform}
+.hero-dynamic-accent{position:absolute;left:0;top:23%;height:32%;width:3px;background:linear-gradient(#f97805,#ffd29b);box-shadow:0 0 24px #f9780566;pointer-events:none}
+.solidom-motion .hero-eyebrow{animation:sd-enter .8s .07s both}
+.solidom-motion .hero h1{animation:sd-enter .9s .16s both}
+.solidom-motion .hero-desc{animation:sd-enter .9s .27s both}
+.solidom-motion .hero-actions{animation:sd-enter .9s .36s both}
+.solidom-motion .hero-benefits{animation:sd-enter .9s .48s both}
+@keyframes sd-enter{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.solidom-motion .sd-reveal{opacity:0;translate:0 24px;transition:opacity .7s ease,translate .7s cubic-bezier(.2,.78,.22,1);transition-delay:var(--sd-delay,0ms)}
+.solidom-motion .sd-reveal.sd-show{opacity:1;translate:0 0}
+.services-grid .service-card img{transition:transform .55s ease}
+.services-grid .service-card:hover img{transform:scale(1.045)}
+.steps-upgraded .step.sd-step-active{border-color:#f97805a8;box-shadow:0 17px 33px #f9780526}
+.steps-upgraded .step-line{transition:width .5s ease}
+.steps-upgraded .step.sd-step-active .step-line{width:calc(100% + 40px)}
+.steps-upgraded .step-photo img{transition:transform .55s ease}
+.steps-upgraded .step:is(:hover,.sd-step-active) .step-photo img{transform:scale(1.045)}
+.projects-grid .project-card.sd-gallery-in:not([hidden]){animation:sd-gallery .45s both;animation-delay:calc(var(--sd-index,0) * 55ms)}
+@keyframes sd-gallery{from{opacity:.2;translate:0 15px;scale:.985}to{opacity:1;translate:0 0;scale:1}}
+.review-card{transition:box-shadow .3s ease,transform .3s ease}
+.review-card:hover{transform:translateY(-4px);box-shadow:0 16px 35px #0002}
+@media(prefers-reduced-motion:reduce){.solidom-progress{display:none}.hero-photo{transform:none!important}.solidom-motion .sd-reveal{opacity:1!important;translate:0 0!important;transition:none!important}.solidom-motion .hero :is(.hero-eyebrow,h1,.hero-desc,.hero-actions,.hero-benefits){animation:none!important}.sd-gallery-in{animation:none!important}}
