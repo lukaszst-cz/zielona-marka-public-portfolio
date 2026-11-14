@@ -1,0 +1,40 @@
+{
+  "project": "SOLIDOM",
+  "brand": "Zielona Marka",
+  "type": "projekt demonstracyjny",
+  "snapshot_date": "2026-11-14",
+  "live_url": "https://solidom.vercel.app",
+  "portfolio_url": "https://zielona-marka.pl/portfolio/solidom",
+  "drive_folder": "https://drive.google.com/drive/folders/1dgsa9MAx-I0d5mk6-1rtQ-u153QvVkDT",
+  "deployment_id": "dpl_Ars9D3fvDMhTum5ezTAPRGDrokZc",
+  "source_files": [
+    "index.html",
+    "styles.css",
+    "script.js",
+    "dziekujemy.html",
+    "manifest.webmanifest",
+    "robots.txt",
+    "service-worker.js"
+  ],
+  "assets_to_download": [
+    "assets/contact.webp",
+    "assets/facade.webp",
+    "assets/favicon.svg",
+    "assets/hero.webp",
+    "assets/house-build.webp",
+    "assets/installations.webp",
+    "assets/interior-design.webp",
+    "assets/interior-finish.webp",
+    "assets/og-preview.jpg",
+    "assets/project-bath.webp",
+    "assets/project-build.webp",
+    "assets/project-house.webp",
+    "assets/project-living.webp",
+    "assets/project-management.webp",
+    "assets/renovation.webp",
+    "assets/team-lead.webp",
+    "assets/team.webp",
+    "icons/icon-192.png",
+    "icons/icon-512.png"
+  ]
+}
