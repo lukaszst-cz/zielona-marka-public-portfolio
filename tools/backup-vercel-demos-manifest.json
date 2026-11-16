@@ -121,7 +121,217 @@
           "path": "vercel.json",
           "sha1": "2adfc13f04d4f4c87708ee4da07156b4c14d97ab"
         }
-      ]
+      ],
+      "upstream": {
+        "site": "https://eltravia-premium-6l4f5oneo-lukaszstaniewicz-6630.vercel.app",
+        "deployment": "dpl_79VK1xnRbKZSDSaH3Q4RUickz3qE",
+        "files": [
+          {
+            "path": "app.js",
+            "sha1": "7d7517b65f895c9aa100ce0403ae34f226534e0b"
+          },
+          {
+            "path": "assets/aparatura.webp",
+            "sha1": "42077eea3326def70db8844acc85a6818265ba2d"
+          },
+          {
+            "path": "assets/rozdzielnice.webp",
+            "sha1": "42077eea3326def70db8844acc85a6818265ba2d"
+          },
+          {
+            "path": "assets/gazetka/cover.webp",
+            "sha1": "f92d75b731fe806acd02b04665dc2365d284f9db"
+          },
+          {
+            "path": "assets/gazetka/electrician.webp",
+            "sha1": "9a51332908f145fdc0acad0492ab4bec3a31447c"
+          },
+          {
+            "path": "assets/gazetka/lamp.webp",
+            "sha1": "14ab0c6e893118ecc42bb3fa560791e53f3e8f5b"
+          },
+          {
+            "path": "assets/gazetka/meter.webp",
+            "sha1": "b8b93c922de3f69ac6772186719b7d1690f3ce9e"
+          },
+          {
+            "path": "assets/gazetka/network.webp",
+            "sha1": "0d73a690eb4ea8ce6a5871d61bdf50353a21ab67"
+          },
+          {
+            "path": "assets/gazetka/p1-01.webp",
+            "sha1": "7572026c4c6fccd468f052170de7b501b50ae0b3"
+          },
+          {
+            "path": "assets/gazetka/p1-02.webp",
+            "sha1": "f5070c87d67ba81e58d61624bc3cd93fe2a75d73"
+          },
+          {
+            "path": "assets/gazetka/p1-03.webp",
+            "sha1": "59fda9a9a8982e48b2f1ce379e3a69941442296c"
+          },
+          {
+            "path": "assets/gazetka/p1-04.webp",
+            "sha1": "caf920a6d44a425ba8c83352d94dac1847b0be85"
+          },
+          {
+            "path": "assets/gazetka/p1-05.webp",
+            "sha1": "458a8f8e45f7639ec02a59607fa18ff987d3a2eb"
+          },
+          {
+            "path": "assets/gazetka/p1-06.webp",
+            "sha1": "3f3c59c067f38c7a7befc8f9a061416d696ed587"
+          },
+          {
+            "path": "assets/gazetka/p1-07.webp",
+            "sha1": "b6e7ac7694264ac8fac966d1aa76cb8635130a12"
+          },
+          {
+            "path": "assets/gazetka/p1-08.webp",
+            "sha1": "dd2fbbc671e1487def9041aa0f243c35f6e6d150"
+          },
+          {
+            "path": "assets/gazetka/p1-09.webp",
+            "sha1": "5840ddfee22a33bcad335def6693e94cc0f4bcc3"
+          },
+          {
+            "path": "assets/gazetka/p1-10.webp",
+            "sha1": "7fa2fea804f81e8bb4c53a5be7d83eead50d51e3"
+          },
+          {
+            "path": "assets/gazetka/p1-11.webp",
+            "sha1": "475744e63cee477016f8728cebda384a07957e0a"
+          },
+          {
+            "path": "assets/gazetka/p1-12.webp",
+            "sha1": "c32836d173daaadabceedbbc780c51c4721fed0c"
+          },
+          {
+            "path": "assets/gazetka/p2-01.webp",
+            "sha1": "d462a1d384168db8857feb36a761ebe42fa55817"
+          },
+          {
+            "path": "assets/gazetka/p2-02.webp",
+            "sha1": "0150173f9190e0735888120ff950643bea9752bc"
+          },
+          {
+            "path": "assets/gazetka/p2-03.webp",
+            "sha1": "5b50e053dc94de782856c4e402360710f615d1ff"
+          },
+          {
+            "path": "assets/gazetka/p2-04.webp",
+            "sha1": "801ff0f217f2b318f18cbea7befdf273a08a4c90"
+          },
+          {
+            "path": "assets/gazetka/p2-05.webp",
+            "sha1": "db2836fd336dc0dc9d1564b3cfe255b3d25c7698"
+          },
+          {
+            "path": "assets/gazetka/p2-06.webp",
+            "sha1": "ad8210aae3f4f2beff7bbf594afc7731858b2373"
+          },
+          {
+            "path": "assets/gazetka/p2-07.webp",
+            "sha1": "b629666b2a7265f3d672f98c020ee2b5813cec5c"
+          },
+          {
+            "path": "assets/gazetka/p2-08.webp",
+            "sha1": "1375fa2ad09ee9fd7b5776b2ab11c5217a3c5202"
+          },
+          {
+            "path": "assets/gazetka/p2-09.webp",
+            "sha1": "91ac21197747cf05c6a09693d667008b3aa2727d"
+          },
+          {
+            "path": "assets/gazetka/p2-10.webp",
+            "sha1": "d7eaaf1103135e56207a50beb65093da8bf54f1d"
+          },
+          {
+            "path": "assets/gazetka/p2-11.webp",
+            "sha1": "b5f3a7c09b4c3a3c44ca9d2c29f8c83647eab666"
+          },
+          {
+            "path": "assets/gazetka/p2-12.webp",
+            "sha1": "491dd79393888eaca7021fdac7c696e0a1c69886"
+          },
+          {
+            "path": "assets/gazetka/socket.webp",
+            "sha1": "3227154efe8105bc26cff9619bf094767d117c00"
+          },
+          {
+            "path": "assets/hero.webp",
+            "sha1": "d16284d94c639dbb0f26d41547a1be9564e08cd8"
+          },
+          {
+            "path": "assets/kable.webp",
+            "sha1": "d16284d94c639dbb0f26d41547a1be9564e08cd8"
+          },
+          {
+            "path": "assets/osprzet.webp",
+            "sha1": "d16284d94c639dbb0f26d41547a1be9564e08cd8"
+          },
+          {
+            "path": "assets/teletechnika.webp",
+            "sha1": "d16284d94c639dbb0f26d41547a1be9564e08cd8"
+          },
+          {
+            "path": "assets/pomiary.webp",
+            "sha1": "b711fa9e4e385e13139d3bf39f67553f58808368"
+          },
+          {
+            "path": "assets/zm-foto/elektryka.webp",
+            "sha1": "e94f6393ff5f2414ee0710c050b6fa886506add2"
+          },
+          {
+            "path": "assets/zm-foto/oswietlenie.webp",
+            "sha1": "f1770cc5a9bfe7bc78e82837353e4a1bf70221e1"
+          },
+          {
+            "path": "brand-identity.css",
+            "sha1": "f9fdf9ecaf6196d903e0bf4a24e659de6d3d6c12"
+          },
+          {
+            "path": "magazine-base.css",
+            "sha1": "257a2bf64c0ba34633cc36c2e9b7781ba861e7fb"
+          },
+          {
+            "path": "magazine.css",
+            "sha1": "c158a7f81497b4a480314ce92537200863cee8ec"
+          },
+          {
+            "path": "magazine.js",
+            "sha1": "3d27297eed3b4ebb1f381858f986501403d800c6"
+          },
+          {
+            "path": "marketplace.css",
+            "sha1": "6c4b99d6b642147859018babd83b954c4ae9119f"
+          },
+          {
+            "path": "marketplace.js",
+            "sha1": "56e3fed7092b1e86fe478ef6201d9085378ece1a"
+          },
+          {
+            "path": "nexio-czytelna-typografia.css",
+            "sha1": "eb3c78b0aeaebbfe138fc76983aef06de8b33cc6"
+          },
+          {
+            "path": "nexio-refinement.css",
+            "sha1": "83d75bbc606cf4660b309a510a0f247af57123c1"
+          },
+          {
+            "path": "premium.css",
+            "sha1": "06b11bbced2128b3df5da758fa15509c59d46bcc"
+          },
+          {
+            "path": "products.js",
+            "sha1": "a541ae230c480fc50e507e9bdd6eefbbcc26c687"
+          },
+          {
+            "path": "zielona-marka.js",
+            "sha1": "ec5654b2dbacf5457d57e78a3a0855ddc2f2a944"
+          }
+        ]
+      }
     },
     {
       "slug": "korvio-elektro",

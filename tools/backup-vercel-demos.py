@@ -53,8 +53,19 @@ def archive_static(p):
         data=base64.b64decode(f["data"])
         if hashlib.sha1(data).hexdigest()!=f["sha1"]: raise ValueError("SHA1 config: "+f["path"])
         save(dest,f["path"],data)
+    upstream=p.get("upstream")
+    if upstream:
+        for f in upstream["files"]:
+            name=str(valid(f["path"]))
+            url=upstream["site"].rstrip("/")+"/"+urllib.parse.quote(name,safe="/")
+            data=fetch(url)
+            if hashlib.sha1(data).hexdigest()!=f["sha1"]: raise ValueError("SHA1 upstream: "+name)
+            if not (dest/name).exists(): save(dest,name,data)
+    if p.get("unavailable_source_files"):
+        replacement={"version":2,"headers":[{"source":"/(.*)","headers":[{"key":"X-Robots-Tag","value":"noindex, nofollow, noarchive"}]},{"source":"/manifest.webmanifest","headers":[{"key":"Content-Type","value":"application/manifest+json"}]},{"source":"/service-worker.js","headers":[{"key":"Content-Type","value":"application/javascript"}]}]}
+        save(dest,"vercel.json",(json.dumps(replacement,ensure_ascii=False,indent=2)+"\n").encode("utf-8"))
     if not (dest/"index.html").is_file(): raise ValueError("Brak index.html")
-    note=(("UWAGA: oryginalny plik vercel.json nie jest publiczny. Wymaga osobnego odzyskania.\n")
+    note=(("UWAGA: zastępcza konfiguracja vercel.json pozwala na samodzielny hosting; oryginalny plik z przekierowaniami Vercel pozostaje nieodzyskany.\n")
           if p.get("unavailable_source_files") else "")
     (dest/"README.md").write_text(
         "# "+p["slug"]+"\n\nNieoficjalna demonstracja Zielonej Marki. "+
@@ -63,7 +74,7 @@ def archive_static(p):
         "\n\nPliki strony wraz z grafikami sprawdzono SHA1 względem Vercel. "+
         "Manifest: ../../tools/backup-vercel-demos-manifest.json.\n\n"+note+
         "\nFunkcje sprzedażowe, formularze lub katalog mogą być demonstracyjne.\n",encoding="utf-8")
-    print("OK",p["slug"],len(p["files"]),"plikow z potwierdzonym SHA1")
+    print("OK",p["slug"],len(p["files"])+(len(p.get("upstream",{}).get("files",[]))),"plikow z potwierdzonym SHA1")
 def archive_beata(p):
     raw=fetch(p["archive_url"])
     digest=hashlib.sha256(raw).hexdigest()
