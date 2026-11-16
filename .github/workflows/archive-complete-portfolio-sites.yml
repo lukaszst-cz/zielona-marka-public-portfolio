@@ -1,0 +1,128 @@
+name: Archive complete unpacked demo websites
+on:
+  push:
+    paths:
+      - .github/workflows/archive-complete-portfolio-sites.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify and persist standalone site folders
+        run: |
+          import concurrent.futures
+          import hashlib
+          import json
+          import pathlib
+          import time
+          import urllib.request
+          import base64
+          import subprocess
+          import sys
+          
+          manifest = json.loads(pathlib.Path("tools/portfolio-source-manifest-2026-11-16.json").read_text(encoding="utf-8"))
+          statuses = []
+          RETRIES = 3
+          
+          def fetch_verified(entry):
+              project, (rel, expected) = entry
+              errors = []
+              for domain in project["domains"]:
+                  url = "https://" + domain + "/" + rel.lstrip("/")
+                  for attempt in range(RETRIES):
+                      try:
+                          req = urllib.request.Request(url, headers={"User-Agent": "ZielonaMarkaVerifiedArchive/1.0", "Accept": "*/*"})
+                          with urllib.request.urlopen(req, timeout=24) as resp:
+                              data = resp.read()
+                          got = hashlib.sha1(data).hexdigest()
+                          if got != expected:
+                              errors.append(f"{domain}/{rel}: SHA1 mismatch {got} != {expected}")
+                              break
+                          return rel, data, None
+                      except Exception as exc:
+                          errors.append(f"{url}: {str(exc)[:180]}")
+                          if attempt + 1 < RETRIES:
+                              time.sleep(0.5 * (attempt+1))
+              return rel, None, "; ".join(errors[-3:])
+          
+          for project in manifest["projects"]:
+              name = project["name"]
+              target = pathlib.Path(project["destination"])
+              files = list(project["files"].items())
+              print(f"\nArchiving {name}: {len(files)} public files, {len(project['embedded'])} embedded configs", flush=True)
+              downloaded = {}
+              missing = []
+              with concurrent.futures.ThreadPoolExecutor(max_workers=12) as executor:
+                  futures = [executor.submit(fetch_verified, (project, item)) for item in files]
+                  for f in concurrent.futures.as_completed(futures):
+                      rel, payload, problem = f.result()
+                      if problem:
+                          missing.append({"path": rel, "error": problem[:500]})
+                      else:
+                          downloaded[rel] = payload
+              if missing:
+                  statuses.append({
+                      "project": name, "status": "INCOMPLETE", "expected": project["expectedCount"],
+                      "verified": len(downloaded), "missing": missing,
+                      "target": project["destination"], "deployment": project["deployment"]
+                  })
+                  print(f"FAILED {name}: {len(missing)} inaccessible or checksum-mismatched files, skipped entire project", flush=True)
+                  for f in missing[:10]:
+                      print("  ", f["path"], f["error"][:160], flush=True)
+                  continue
+              target.mkdir(parents=True, exist_ok=True)
+              for rel, payload in downloaded.items():
+                  dest = target / rel
+                  dest.parent.mkdir(parents=True, exist_ok=True)
+                  dest.write_bytes(payload)
+              for rel, encoded in project["embedded"].items():
+                  dest = target / rel
+                  dest.parent.mkdir(parents=True, exist_ok=True)
+                  dest.write_bytes(base64.b64decode(encoded))
+              assert len(downloaded)+len(project["embedded"])==project["expectedCount"]
+              readme = [
+                f"# {name} | rozpakowana kopia z Vercel",
+                "",
+                "Status: komplet plikow zrodlowych wedlug manifestu wdrozenia Vercel.",
+                "",
+                "Pliki HTML, CSS, JavaScript i zasoby znajduja sie w tym katalogu.",
+                "Historycznych ZIP i wczesniejszych wersji nie nadpisywano.",
+                "",
+                f"Wdrozenie zrodlowe: {project['deployment']}",
+                f"Zweryfikowane pliki publiczne SHA1: {len(downloaded)}",
+                f"Konfiguracja zrodlowa zapisana osobno: {len(project['embedded'])} plikow",
+                "Weryfikacja kodu nie oznacza potwierdzenia dzialania uslug zewnetrznych lub backendu.",
+                "",
+                "To archiwum demonstracyjne Zielonej Marki. Przed wykorzystaniem produkcyjnym",
+                "wymagane jest sprawdzenie formularzy, integracji i licencji zewnetrznych materialow.",
+                ""
+              ]
+              (target/"README.md").write_text("\n".join(readme), encoding="utf-8")
+              statuses.append({
+                "project": name, "status": "VERIFIED", "expected": project["expectedCount"],
+                "verified": len(downloaded)+len(project["embedded"]), "missing": [],
+                "target": project["destination"], "deployment": project["deployment"]
+              })
+              print(f"VERIFIED {name}: all {project['expectedCount']} source files", flush=True)
+          
+          report = pathlib.Path("tools/portfolio-source-verification-2026-11-16.json")
+          report.parent.mkdir(exist_ok=True)
+          report.write_text(json.dumps({"date": manifest["date"], "projects": statuses},ensure_ascii=False,indent=2)+"\n", encoding="utf-8")
+          subprocess.run(["git","config","user.name","Zielona Marka Archive"],check=True)
+          subprocess.run(["git","config","user.email","41898282+github-actions[bot]@users.noreply.github.com"],check=True)
+          subprocess.run(["git","add","demos","projekty",str(report)],check=True)
+          staged = subprocess.run(["git","diff","--cached","--quiet"],check=False)
+          if staged.returncode != 0:
+              subprocess.run(["git","commit","-m","Archive unpacked verified sources for remaining Vercel demo projects"],check=True)
+              push = subprocess.run(["git","push"],check=False)
+              if push.returncode:
+                  subprocess.run(["git","pull","--rebase"],check=True)
+                  subprocess.run(["git","push"],check=True)
+          print("\nRESULTS:",json.dumps([{k:v for k,v in p.items() if k!="missing"} for p in statuses],ensure_ascii=False),flush=True)
+          if any(p["status"]!="VERIFIED" for p in statuses):
+              print("Some sites could not be fully archived. Report committed for follow-up.",file=sys.stderr)
+              sys.exit(1)
