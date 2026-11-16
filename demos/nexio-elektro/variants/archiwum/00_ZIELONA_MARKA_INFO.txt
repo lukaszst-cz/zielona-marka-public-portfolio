@@ -1,0 +1,6 @@
+NEXIO_ELEKTRO, WERSJA POKAZOWA 29.10.2026
+Wystawienie na Netlify: rozpakuj ZIP i wgraj folder. index.html w katalogu głównym.
+Strona nie jest oficjalną witryną opisywanej firmy. Logo, kolory i grafiki źródłowe strony zachowano bez zmiany kolorystyki.
+Twórca: Łukasz Staniewicz, Zielona Marka, +48 450 458 466, kontakt@zielona-marka.pl
+Rozliczenia projektu, nie fikcyjnej firmy: Bizky Freelance, Al. Ks. J. Poniatowskiego 1, klatka K4, poziom 1, 03-901 Warszawa, NIP 7010150265.
+Poprzednie wersje zachowano osobno.

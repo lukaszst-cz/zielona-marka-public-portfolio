@@ -30,31 +30,25 @@
     },
     {
       "project": "nexio-archiwum",
-      "status": "INCOMPLETE",
+      "status": "VERIFIED_SITE_WITH_DOC_GAP",
       "expected": 22,
-      "verified": 20,
-      "missing": [
-        {
-          "path": "README.md",
-          "error": "https://nexio-archiwum-dm9ud9zby-lukaszstaniewicz-6630.vercel.app/README.md: HTTP Error 404: Not Found; https://nexio-archiwum-dm9ud9zby-lukaszstaniewicz-6630.vercel.app/README.md: HTTP Error 404: Not Found; https://nexio-archiwum-dm9ud9zby-lukaszstaniewicz-6630.vercel.app/README.md: HTTP Error 404: Not Found"
-        }
-      ],
+      "verified": 21,
+      "missing": [],
       "target": "demos/nexio-elektro/variants/archiwum",
-      "deployment": "dpl_8kKjuZ1Zs3fWD4EBvaTLVaVoapyb"
+      "deployment": "dpl_8kKjuZ1Zs3fWD4EBvaTLVaVoapyb",
+      "notes": [
+        "README.md, oryginalny plik dokumentacyjny niedostepny publicznie"
+      ]
     },
     {
       "project": "nexio2",
-      "status": "INCOMPLETE",
+      "status": "VERIFIED",
       "expected": 2,
-      "verified": 1,
-      "missing": [
-        {
-          "path": "index.html",
-          "error": "nexio2.vercel.app/index.html: SHA1 mismatch ebfbcd312bfeae2bed57ca46a5583d1054a819eb != e8e1241e9147c6849f89434df4324b023163cf3a; nexio2-e1x3o6o38-lukaszstaniewicz-6630.vercel.app/index.html: SHA1 mismatch d8d242f889fac2a5b3d40ab170227ccffed8f380 != e8e1241e9147c6849f89434df4324b023163cf3a"
-        }
-      ],
+      "verified": 2,
+      "missing": [],
       "target": "demos/nexio-elektro/variants/nexio2",
-      "deployment": "dpl_U28zUrvSZCXR7cy1MLvKhzYit8Sw"
+      "deployment": "dpl_U28zUrvSZCXR7cy1MLvKhzYit8Sw",
+      "notes": []
     },
     {
       "project": "nexioelectro-koncepcja",

@@ -1,0 +1,26 @@
+{
+  "id": "/",
+  "name": "NEXIO ELEKTRO | Demo hurtowni elektrotechnicznej",
+  "short_name": "NEXIO ELEKTRO",
+  "description": "Demonstracyjna strona hurtowni elektrotechnicznej przygotowana przez Zieloną Markę.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#071725",
+  "theme_color": "#0577eb",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
