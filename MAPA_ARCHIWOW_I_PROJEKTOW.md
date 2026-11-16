@@ -13,7 +13,7 @@ Stan kontrolny: 16 listopada 2026. Katalog przedstawia **realizacje demonstracyj
 
 | Projekt | Bieżąca kopia plików | Stan |
 | --- | --- | --- |
-| MATERIVO, Eko + Pro | [demos/materivo](demos/materivo) | Jeden projekt z przełącznikiem, skopiowane wszystkie pliki z dwóch wdrożeń |
+| MATERIVO, Eko + Pro | [demos/materivo](demos/materivo) | Jeden projekt z przełącznikiem Eko/Pro, komplet plików potrzebnych do obu widoków |
 | BEATA BEAUTY ATELIER | [projekty/beata-beauty-atelier/site/dist](projekty/beata-beauty-atelier/site/dist) | Pełny pakiet publikacyjny z obrazami i filmami |
 | SOLIDOM | [projekty/solidom/site](projekty/solidom/site) | Komplet plików statycznych |
 | NAVORO HURT | [projekty/navoro-hurt](projekty/navoro-hurt) | HTML, assets, PDF i konfiguracja |
@@ -21,7 +21,7 @@ Stan kontrolny: 16 listopada 2026. Katalog przedstawia **realizacje demonstracyj
 | PHU MARECKI | [projekty/phu-marecki/site](projekty/phu-marecki/site) | Zweryfikowane 63 z 63 plików; historyczne podglądy obok |
 | NEXIO ELEKTRO | [demos/nexio-elektro/site](demos/nexio-elektro/site) | Zweryfikowane 57 z 57 plików; starsze wersje w variants/ |
 | AUREA SMILE | [demos/aurea-smile/site](demos/aurea-smile/site) | Zweryfikowany HTML z Vercel |
-| KORDON BARBER STUDIO | [demos/kordon-barber-studio/site](demos/kordon-barber-studio/site) | Zweryfikowany HTML; oryginalny katalog assets/ w katalogu demos/kordon-barber-studio |
+| KORDON BARBER STUDIO | [demos/kordon-barber-studio/site](demos/kordon-barber-studio/site) | Zweryfikowany HTML i 20 oryginalnych grafik skopiowanych do site/assets |
 | KORVIO ELEKTRO | [demos/korvio-elektro](demos/korvio-elektro) | Wcześniej zarchiwizowana pełna struktura |
 | ELTRAVIA PRO | [demos/eltravia-pro](demos/eltravia-pro) | Wcześniej zarchiwizowana pełna struktura |
 | BLACK HARBOR | [projekty/black-harbor](projekty/black-harbor) | Samodzielny HTML v7, zdjęcia osadzone wewnątrz pliku |
