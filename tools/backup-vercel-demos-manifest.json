@@ -353,10 +353,12 @@
           "sha1": "e65b2e00ee42793b9bf80364e922f2fd80cb864f"
         }
       ],
-      "unavailable_source_files": [
+      "unavailable_source_files": [],
+      "inline_files": [
         {
           "path": "vercel.json",
-          "sha1": "44fce8480180fafecf0cf371872ed2b793b84070"
+          "sha1": "44fce8480180fafecf0cf371872ed2b793b84070",
+          "data": "ewogICJmcmFtZXdvcmsiOiBudWxsLAogICJoZWFkZXJzIjogWwogICAgeyJzb3VyY2UiOiAiLyguKikiLCAiaGVhZGVycyI6IFt7ImtleSI6ICJYLVJvYm90cy1UYWciLCAidmFsdWUiOiAibm9pbmRleCwgbm9mb2xsb3csIG5vYXJjaGl2ZSJ9XX0sCiAgICB7InNvdXJjZSI6ICIvbWFuaWZlc3Qud2VibWFuaWZlc3QiLCAiaGVhZGVycyI6IFt7ImtleSI6ICJDb250ZW50LVR5cGUiLCAidmFsdWUiOiAiYXBwbGljYXRpb24vbWFuaWZlc3QranNvbiJ9LCB7ImtleSI6IkNhY2hlLUNvbnRyb2wiLCJ2YWx1ZSI6InB1YmxpYywgbWF4LWFnZT0zMDAifV19LAogICAgeyJzb3VyY2UiOiAiL3NlcnZpY2Utd29ya2VyLmpzIiwgImhlYWRlcnMiOiBbeyJrZXkiOiAiQ29udGVudC1UeXBlIiwgInZhbHVlIjogImFwcGxpY2F0aW9uL2phdmFzY3JpcHQifSwgeyJrZXkiOiAiQ2FjaGUtQ29udHJvbCIsICJ2YWx1ZSI6ICJuby1jYWNoZSJ9XX0KICBdCn0K"
         }
       ]
     }

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Zapisuje zasoby trzech demonstracji, kontrolując SHA1/SHA256."""
-import hashlib, io, json, pathlib, re, shutil, stat, time, urllib.request, urllib.parse, zipfile
+import base64, hashlib, io, json, pathlib, re, shutil, stat, time, urllib.request, urllib.parse, zipfile
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 MAN=json.loads((ROOT/"tools/backup-vercel-demos-manifest.json").read_text())
 DEST=ROOT/"demos"
@@ -49,9 +49,13 @@ def archive_static(p):
         if hashlib.sha1(data).hexdigest()!=f["sha1"]:
             raise ValueError("SHA1 niezgodne: "+p["slug"]+"/"+name)
         save(dest,name,data)
+    for f in p.get("inline_files", []):
+        data=base64.b64decode(f["data"])
+        if hashlib.sha1(data).hexdigest()!=f["sha1"]: raise ValueError("SHA1 config: "+f["path"])
+        save(dest,f["path"],data)
     if not (dest/"index.html").is_file(): raise ValueError("Brak index.html")
-    note=("UWAGA: pierwotny plik vercel.json nie jest serwowany publicznie. "+
-          "Jego SHA1 jest w manifeście; sam plik wymaga osobnego odzyskania.\n")
+    note=(("UWAGA: oryginalny plik vercel.json nie jest publiczny. Wymaga osobnego odzyskania.\n")
+          if p.get("unavailable_source_files") else "")
     (dest/"README.md").write_text(
         "# "+p["slug"]+"\n\nNieoficjalna demonstracja Zielonej Marki. "+
         "Brak potwierdzonej relacji z rzeczywistą firmą.\n\n"+
