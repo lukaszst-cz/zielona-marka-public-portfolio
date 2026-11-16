@@ -4,7 +4,7 @@
   "projects": [
     {
       "slug": "eltravia-pro",
-      "site": "https://eltravia-pro.vercel.app",
+      "site": "https://eltravia-pla4if0fz-lukaszstaniewicz-6630.vercel.app",
       "deployment": "dpl_65r8JzfnP16zDMU81mZeADiWricf",
       "files": [
         {
@@ -125,7 +125,7 @@
     },
     {
       "slug": "korvio-elektro",
-      "site": "https://korvio-elektro.vercel.app",
+      "site": "https://eltravia-elektro-t79s6bnp7-lukaszstaniewicz-6630.vercel.app",
       "deployment": "dpl_63g4scXENjxnLqTuRxr6DvAHpqbb",
       "files": [
         {
