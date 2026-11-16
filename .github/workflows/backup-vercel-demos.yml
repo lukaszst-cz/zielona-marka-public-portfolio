@@ -1,0 +1,38 @@
+name: Archiwizacja trzech stron Vercel do portfolio
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/backup-vercel-demos.py'
+      - 'tools/backup-vercel-demos-manifest.json'
+      - '.github/workflows/backup-vercel-demos.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: backup-vercel-demos
+  cancel-in-progress: false
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Pobierz repozytorium
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Pobierz i zweryfikuj zrodla Vercel
+        run: python3 tools/backup-vercel-demos.py
+      - name: Zapisz kompletne pliki w repozytorium
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add demos/beata-beauty-atelier demos/eltravia-pro demos/korvio-elektro
+          if git diff --cached --quiet; then
+            echo "Bez zmian, wszystkie pliki sa juz zachowane."
+          else
+            git commit -m "Archiwizuj BEATA, ELTRAVIA i KORVIO ze sprawdzonych zrodel"
+            git push origin HEAD:main
+          fi
