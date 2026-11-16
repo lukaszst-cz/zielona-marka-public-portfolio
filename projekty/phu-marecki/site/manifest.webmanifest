@@ -1,0 +1,27 @@
+{
+  "id": "/app.html",
+  "name": "PHU Marecki | Aplikacja demonstracyjna",
+  "short_name": "PHU Marecki",
+  "description": "Demonstracyjny katalog, gazetka i lista materiałów PHU Marecki. Koncepcja Zielona Marka.",
+  "lang": "pl",
+  "start_url": "/app.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#001A3B",
+  "theme_color": "#001A3B",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "prefer_related_applications": false
+}

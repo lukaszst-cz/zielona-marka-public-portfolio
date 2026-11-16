@@ -1,0 +1,114 @@
+{
+  "date": "2026-11-16",
+  "projects": [
+    {
+      "project": "budrivo",
+      "status": "VERIFIED",
+      "expected": 31,
+      "verified": 31,
+      "missing": [],
+      "target": "projekty/budrivo/site",
+      "deployment": "dpl_BEdM4GTC7Haq1GPMAkdvzxhHsxwT"
+    },
+    {
+      "project": "phu-marecki",
+      "status": "VERIFIED",
+      "expected": 63,
+      "verified": 63,
+      "missing": [],
+      "target": "projekty/phu-marecki/site",
+      "deployment": "dpl_4U2T26ML7fKpDNrrBrk5niUzrpy1"
+    },
+    {
+      "project": "nexio-elektro",
+      "status": "VERIFIED",
+      "expected": 57,
+      "verified": 57,
+      "missing": [],
+      "target": "demos/nexio-elektro/site",
+      "deployment": "dpl_8FWmBVYdRHwG1VsVxqRfmLTcwX5A"
+    },
+    {
+      "project": "nexio-archiwum",
+      "status": "INCOMPLETE",
+      "expected": 22,
+      "verified": 20,
+      "missing": [
+        {
+          "path": "README.md",
+          "error": "https://nexio-archiwum-dm9ud9zby-lukaszstaniewicz-6630.vercel.app/README.md: HTTP Error 404: Not Found; https://nexio-archiwum-dm9ud9zby-lukaszstaniewicz-6630.vercel.app/README.md: HTTP Error 404: Not Found; https://nexio-archiwum-dm9ud9zby-lukaszstaniewicz-6630.vercel.app/README.md: HTTP Error 404: Not Found"
+        }
+      ],
+      "target": "demos/nexio-elektro/variants/archiwum",
+      "deployment": "dpl_8kKjuZ1Zs3fWD4EBvaTLVaVoapyb"
+    },
+    {
+      "project": "nexio2",
+      "status": "INCOMPLETE",
+      "expected": 2,
+      "verified": 1,
+      "missing": [
+        {
+          "path": "index.html",
+          "error": "nexio2.vercel.app/index.html: SHA1 mismatch ebfbcd312bfeae2bed57ca46a5583d1054a819eb != e8e1241e9147c6849f89434df4324b023163cf3a; nexio2-e1x3o6o38-lukaszstaniewicz-6630.vercel.app/index.html: SHA1 mismatch d8d242f889fac2a5b3d40ab170227ccffed8f380 != e8e1241e9147c6849f89434df4324b023163cf3a"
+        }
+      ],
+      "target": "demos/nexio-elektro/variants/nexio2",
+      "deployment": "dpl_U28zUrvSZCXR7cy1MLvKhzYit8Sw"
+    },
+    {
+      "project": "nexioelectro-koncepcja",
+      "status": "VERIFIED",
+      "expected": 3,
+      "verified": 3,
+      "missing": [],
+      "target": "demos/nexio-elektro/variants/koncepcja",
+      "deployment": "dpl_3jQvjzTJWtxFku7EEw5g4N9J1AA4"
+    },
+    {
+      "project": "phu-marecki-podglad",
+      "status": "VERIFIED",
+      "expected": 1,
+      "verified": 1,
+      "missing": [],
+      "target": "projekty/phu-marecki/variants/podglad",
+      "deployment": "dpl_CeTeoKsM4toWULNFRyAM6ApfeEHA"
+    },
+    {
+      "project": "portfolio-v9-podglad",
+      "status": "VERIFIED",
+      "expected": 1,
+      "verified": 1,
+      "missing": [],
+      "target": "projekty/portfolio-v9-1/variants/vercel-v9-podglad",
+      "deployment": "dpl_6GT4Bj3hJPVQX8rXjs4HE2EZw5tY"
+    },
+    {
+      "project": "solident",
+      "status": "VERIFIED",
+      "expected": 2,
+      "verified": 2,
+      "missing": [],
+      "target": "projekty/solident/zaakceptowana-2026-11-13/site",
+      "deployment": "dpl_BBKgug5YvtLUxHLM7t3TvYJMrsP3"
+    },
+    {
+      "project": "kordon-barber-studio",
+      "status": "VERIFIED",
+      "expected": 1,
+      "verified": 1,
+      "missing": [],
+      "target": "demos/kordon-barber-studio/site",
+      "deployment": "dpl_6V4eArkPk7e7dzFSCjsrg7PXytEX"
+    },
+    {
+      "project": "aurea-smile",
+      "status": "VERIFIED",
+      "expected": 1,
+      "verified": 1,
+      "missing": [],
+      "target": "demos/aurea-smile/site",
+      "deployment": "dpl_62beLK2bQxJgd5QJnN4L21dcdG15"
+    }
+  ]
+}

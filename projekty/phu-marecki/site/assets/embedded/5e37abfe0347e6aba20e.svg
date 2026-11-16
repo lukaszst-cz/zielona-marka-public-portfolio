@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810 188" role="img" aria-labelledby="title desc">
+<title id="title">PHU Marecki Centrum Budowlane</title><desc id="desc">Nowoczesny znak budowlany z geometrycznym czerwonym dachem i mocnymi literami PHU.</desc>
+<path d="M19 45 L106 7 L176 37 L176 52 L106 27 L19 65 Z" fill="#D71630"/>
+<path d="M116 30 L170 8 L237 41 L237 57 L170 29 L116 51 Z" fill="#D71630"/>
+<path d="M200 35 L238 54 L263 46 L263 61 L238 72 L200 52 Z" fill="#001A3B"/>
+<g transform="translate(12 0) skewX(-5)">
+  <text x="0" y="139" font-family="Arial Black,Arial,DejaVu Sans,sans-serif" font-weight="1000" font-size="95" letter-spacing="-7" fill="#001A3B">PHU</text>
+</g>
+<path d="M59 97 L81 81 L81 95 L59 111 Z" fill="#D71630"/>
+<rect x="259" y="79" width="5" height="63" rx="2" fill="#D71630"/>
+<text x="280" y="138" font-family="Arial Black,Arial,DejaVu Sans,sans-serif" font-weight="950" font-size="83" letter-spacing="-4.2" fill="#001A3B">MARECKI</text>
+<path d="M282 148 H796" stroke="#D71630" stroke-width="5" stroke-linecap="round"/>
+<text x="284" y="181" font-family="Arial,DejaVu Sans,sans-serif" font-size="26" font-weight="800" letter-spacing="10.6" fill="#001A3B">CENTRUM BUDOWLANE</text>
+</svg>

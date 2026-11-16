@@ -1,0 +1,10 @@
+/* PHU Marecki: subtelne przejścia w istniejącej aplikacji PWA. */
+#appMain.phu-app-enter > * {animation:phu-app-arrive .34s cubic-bezier(.2,.78,.2,1) both;}
+@keyframes phu-app-arrive {from{opacity:.65;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+#appMain .m-product, #appMain .category-tile, #appMain .m-chip, #appMain button, .app-header a {transition:box-shadow .22s, transform .22s, background-color .2s,color .2s,border-color .2s;}
+#appMain .m-product:hover, #appMain .category-tile:hover {transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,26,59,.13);}
+#appMain button:active,.app-header a:active {transform:scale(.97)}
+#appMain button:focus-visible,.app-header a:focus-visible {outline:2px solid #df1735;outline-offset:3px;}
+#appMain .m-product button.selected {box-shadow:0 0 0 1px rgba(0,26,59,.1) inset;}
+@media(max-width:760px){#appMain .m-product:hover,#appMain .category-tile:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){#appMain.phu-app-enter > * {animation:none!important}#appMain .m-product,#appMain .category-tile,#appMain button,.app-header a{transition:none!important}}
