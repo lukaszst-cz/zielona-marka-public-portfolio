@@ -1,0 +1,20 @@
+{
+  "id": "/",
+  "name": "ELTRAVIA ELEKTRO | Katalog produktów",
+  "short_name": "ELTRAVIA",
+  "description": "Katalog i narzędzia B2B ELTRAVIA PRO. Ujednolicona identyfikacja marki.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#061629",
+  "theme_color": "#061629",
+  "icons": [
+    {
+      "src": "/assets/brand/eltravia-pro-emblem.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

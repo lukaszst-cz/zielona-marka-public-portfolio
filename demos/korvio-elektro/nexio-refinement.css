@@ -1,0 +1,101 @@
+/* NEXIO ELEKTRO | Wersja 2 do oceny, 8 listopada 2026.
+   Warstwa wizualna. Mechanizmy katalogu i oryginalny pasek Zielona Marka pozostają bez zmian. */
+:root{--nx-ink:#071a2d;--nx-blue:#0878e7;--nx-sun:#ffc928}
+:focus-visible{outline:3px solid #ffc928!important;outline-offset:4px}
+button,a{-webkit-tap-highlight-color:transparent}
+/* Strona główna: czytelna hierarchia i mocniejsze kadry fotograficzne. */
+.hero-layout{gap:16px}
+.hero-main{border-radius:20px;box-shadow:0 22px 42px rgba(3,29,57,.12)}
+.hero-tint{background:linear-gradient(90deg,rgba(2,16,34,.96) 0%,rgba(4,26,49,.86) 32%,rgba(4,32,58,.30) 76%),linear-gradient(0deg,rgba(3,17,31,.54),transparent 58%)}
+.hero-main .hero-image{object-position:66% 43%;filter:saturate(1.08)}
+.hero-text h1{max-width:670px;font-size:clamp(36px,3.7vw,55px);line-height:1.07;letter-spacing:-.045em}
+.hero-text p{font-size:14px;line-height:1.7;max-width:440px}
+.hero-buttons .btn{border-radius:9px;min-height:44px}
+.mini-promo{border-radius:16px;box-shadow:0 12px 25px rgba(3,29,57,.10)}
+.mini-promo img{filter:saturate(1.14);transition:transform .7s ease,filter .4s ease}
+.mini-promo:hover img,.mini-promo:focus-visible img{transform:scale(1.08);filter:saturate(1.25)}
+.trust-strip{box-shadow:0 8px 28px rgba(12,42,75,.035);border-radius:12px}
+.category-card{border-radius:14px;box-shadow:0 4px 14px rgba(4,29,54,.045)}
+.category-visual{height:153px}
+.category-visual img{filter:saturate(1.06)}
+.category-caption{min-height:89px;padding:14px 14px 16px}
+.category-caption b{font-size:12.5px}
+.wide-banner{background:linear-gradient(117deg,#04172b,#0c3963 68%,#05243f);border-radius:19px;box-shadow:0 20px 38px rgba(5,33,57,.15)}
+.wide-banner-visual img{height:100%;top:0;object-position:center}
+.wide-banner-visual img+img{top:10%;height:90%}
+.product-card{border-radius:14px;box-shadow:0 4px 20px rgba(8,35,62,.045)}
+.product-photo{height:222px;background:#0b2138}
+.product-photo>img{filter:saturate(1.08)}
+.product-name{font-size:15px;line-height:1.3;min-height:39px}
+.product-info{padding:17px 16px}
+.product-quote button{min-height:38px;border-radius:8px}
+.product-card:hover .product-photo>img,.product-card:focus-within .product-photo>img{transform:scale(1.06)}
+/* Gazetka: więcej miejsca na fotografie i produkty, mniej na duży slogan. */
+.magazine-page{background:#061a2d}
+.magazine-main{background:radial-gradient(ellipse at 48% 5%,#103f6b 0%,#082441 35%,#051528 75%);padding:25px 0 95px}
+.magazine-intro{align-items:center;gap:18px;margin-bottom:8px}
+.magazine-intro .section-kicker{font-size:10px;letter-spacing:.19em;color:#85c8f6}
+.magazine-intro h1{font-size:clamp(29px,3vw,44px);line-height:1.09;letter-spacing:-.035em;max-width:880px}
+.magazine-intro-meta{font-size:11px;margin-top:8px}
+.magazine-intro-meta b{font-size:23px}
+.m-chapter-nav{padding:11px 0 16px;gap:8px}
+.m-chapter-nav button{font-size:11px;border-radius:8px;padding:11px 15px;transition:background-color .2s,color .2s,transform .2s}
+.m-chapter-nav button:not(.active):hover{transform:translateY(-2px);background:#1c496f;color:#fff;border-color:#5a92b9}
+.magazine-layout{gap:13px;width:min(1520px,calc(100% - 26px))}
+.mag-book{width:min(1270px,calc(100% - 106px));height:790px;box-shadow:0 28px 70px rgba(0,7,19,.5),0 0 0 1px rgba(255,255,255,.13);border-radius:7px}
+.mag-side-nav{border-radius:50%;box-shadow:0 4px 22px rgba(0,0,0,.12);transition:transform .18s,background .18s}
+.mag-side-nav:hover:not(:disabled){transform:scale(1.07);background:#1e6595}
+.mag-controls{margin-top:8px}
+.m-page-footer{height:27px;min-height:27px;padding:0 16px;font-size:8px}
+.m-director-grid{gap:11px}
+.m-director-item img{filter:saturate(1.1)}
+.m-director-item:hover img{transform:scale(1.06)}
+/* Każdy rozdział jest układem fotograficznym, nie tabelą małych, białych produktów. */
+.m-chapter .m-chapter-photo,.m-chapter-2 .m-chapter-photo,.m-chapter-3 .m-chapter-photo,.m-chapter-4 .m-chapter-photo,.m-chapter-5 .m-chapter-photo,.m-chapter-6 .m-chapter-photo{height:33%;min-height:0}
+.m-chapter .m-chapter-products,.m-chapter-2 .m-chapter-products,.m-chapter-3 .m-chapter-products,.m-chapter-4 .m-chapter-products,.m-chapter-5 .m-chapter-products,.m-chapter-6 .m-chapter-products{height:67%;background:#09233c;padding:11px 14px 14px}
+.m-chapter-copy{bottom:21px;left:26px}
+.m-chapter-copy h2{font-size:clamp(32px,3.15vw,48px);line-height:.94;margin:8px 0 7px}
+.m-chapter-copy p{font-size:10.5px}
+.m-section-label{color:#bcd9ed;letter-spacing:.12em}
+.m-grid{gap:9px;height:calc(100% - 21px);grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr))}
+.m-product{display:block;position:relative;height:100%;min-width:0;border-radius:9px;border:1px solid rgba(255,255,255,.23);background:#09253d;overflow:hidden;box-shadow:0 7px 20px rgba(0,0,0,.14)}
+.m-product::after{content:"";position:absolute;z-index:1;inset:0;background:linear-gradient(180deg,transparent 8%,rgba(4,22,39,.08) 35%,rgba(2,15,28,.94) 100%);pointer-events:none}
+.m-product:hover{box-shadow:0 13px 24px rgba(1,12,25,.36);border-color:#ffc928}
+.m-product-picture{position:absolute;inset:0;width:100%;height:100%;background:#193e5a}
+.m-product-picture img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+.m-product:hover img,.m-product:focus-within img{transform:scale(1.065)}
+.m-product-info{position:absolute;bottom:0;left:0;right:0;z-index:2;pointer-events:none;padding:12px 13px 12px;color:#fff;background:transparent;display:flex;flex-direction:column;gap:0;max-width:100%}
+.m-product-info small{color:#ffe49b;font-size:8px;letter-spacing:1.1px}
+.m-product-info h3{color:#fff;font:850 clamp(15px,1.35vw,19px)/1.06 var(--display);margin:5px 0 5px;text-shadow:0 2px 14px rgba(0,0,0,.2);overflow-wrap:anywhere}
+.m-product-info p{color:#d9e6f1;font-size:9px;line-height:1.35;margin:0}
+.m-product-foot{margin-top:8px;align-items:center}
+.m-product-foot>span{color:#c4d4e0;font-size:8px}
+.m-add{pointer-events:auto;border-radius:6px;min-height:29px;padding:5px 10px;background:#ffd12e;color:#08233e;font-size:15px;font-weight:900}
+.m-add:hover,.m-add:focus-visible{background:#ffe47b;transform:translateY(-1px)}
+.m-add b{font-size:10px}
+.m-zoom{z-index:3;top:9px;right:10px;padding:4px 8px;border-radius:6px;background:rgba(4,18,34,.76);font-size:13px}
+.m-editorial-photos img{object-fit:cover}
+/* Dostępne sterowanie i czytelny układ także przy zmniejszonym ekranie. */
+@media(max-width:1250px){.mag-book{height:750px}.m-chapter-copy h2{font-size:40px}.m-product-info h3{font-size:16px}.product-photo{height:195px}}
+@media(max-width:900px){.mag-book{width:calc(100% - 75px);height:700px}.magazine-intro h1{font-size:37px}.m-product-info h3{font-size:15px}.m-product-info p{font-size:8px}.m-product-info{padding:9px}.m-add b{display:none}}
+@media(max-width:780px){.magazine-intro h1{font-size:34px}.magazine-layout{width:100%}.mag-book{width:min(520px,calc(100% - 78px));height:680px}.m-chapter .m-chapter-photo,.m-chapter-2 .m-chapter-photo,.m-chapter-3 .m-chapter-photo,.m-chapter-4 .m-chapter-photo,.m-chapter-5 .m-chapter-photo,.m-chapter-6 .m-chapter-photo{height:32%}.m-chapter .m-chapter-products,.m-chapter-2 .m-chapter-products,.m-chapter-3 .m-chapter-products,.m-chapter-4 .m-chapter-products,.m-chapter-5 .m-chapter-products,.m-chapter-6 .m-chapter-products{height:68%}}
+@media(max-width:540px){
+ .hero-layout{gap:10px}.hero-main{height:390px;border-radius:14px}.hero-text h1{font-size:35px}.hero-text p{font-size:11.8px}.hero-aside{grid-template-rows:170px}.mini-promo{border-radius:10px}
+ .category-visual{height:135px}.category-caption{padding:11px 11px 13px;min-height:70px}.category-caption b{font-size:11px}
+ .wide-banner{border-radius:12px}.product-photo{height:160px}.product-name{font-size:12px}.product-info{padding:12px 10px}
+ .magazine-main{padding-top:21px}.magazine-intro{display:block;margin-bottom:7px}.magazine-intro h1{font-size:clamp(27px,8vw,34px)}
+ .m-chapter-nav{padding:8px 0 14px}.m-chapter-nav button{font-size:10px;padding:9px 12px}
+ .mag-book{height:auto;min-height:650px;overflow:visible;width:calc(100% - 62px);border-radius:7px}
+ .m-page[data-visible="true"]{height:auto;min-height:650px;overflow:hidden}
+ .m-chapter .m-page-content{display:block}
+ .m-chapter .m-chapter-photo,.m-chapter-2 .m-chapter-photo,.m-chapter-3 .m-chapter-photo,.m-chapter-4 .m-chapter-photo,.m-chapter-5 .m-chapter-photo,.m-chapter-6 .m-chapter-photo{height:250px;min-height:250px}
+ .m-chapter .m-chapter-products,.m-chapter-2 .m-chapter-products,.m-chapter-3 .m-chapter-products,.m-chapter-4 .m-chapter-products,.m-chapter-5 .m-chapter-products,.m-chapter-6 .m-chapter-products{height:auto;padding:11px 10px 17px}
+ .m-chapter-copy{left:14px;bottom:15px}.m-chapter-copy h2,.m-chapter-2 .m-chapter-copy h2{font-size:35px}.m-chapter-copy p{font-size:9px}
+ .m-grid{display:grid;grid-template-columns:1fr;grid-template-rows:none;gap:10px;height:auto}
+ .m-product{display:block;position:relative;height:192px;min-height:192px;border-radius:8px;grid-template-columns:none}
+ .m-product-picture{inset:0;height:100%;width:100%}
+ .m-product-info{padding:13px 12px}.m-product-info small{font-size:8px}.m-product-info h3{font-size:19px;margin:5px 0 4px}.m-product-info p{font-size:9px}.m-product-foot{margin-top:8px}.m-product-foot>span{display:inline;font-size:8px}.m-add{min-height:30px;padding:5px 10px}.m-add b{display:inline;font-size:10px}
+ .m-section-label{font-size:8px;padding-bottom:8px}.mag-side-nav{width:26px;height:33px;flex-basis:26px}
+ .m-cover .m-page-content{min-height:620px}.cover-main h2{font-size:clamp(45px,13vw,60px)}
+}
+@media(prefers-reduced-motion:reduce){.m-product-picture img,.hero-image,.mini-promo img,.category-visual img,.product-photo>img{transition:none!important}.m-page[data-visible="true"]{animation:none!important}}

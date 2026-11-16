@@ -1,0 +1,81 @@
+
+/* ELTRAVIA PRO: consolidated high-contrast design */
+:root{--zm-white:#f5fbff;--zm-muted:#c0d5e5;--zm-lime:#d7fc79;--zm-blue:#52bfff}
+html:focus-within{scroll-behavior:smooth}
+body.pro-catalog{background:#061622!important}
+.pro-catalog main{background:linear-gradient(180deg,#071c2e 0%,#081f33 41%,#071b2d 75%,#061522 100%)!important}
+.pro-catalog #kategorie,.pro-catalog #produkty,.pro-catalog #uslugi{position:relative;background:transparent!important;color:var(--zm-white)!important}
+.pro-catalog #kategorie:before,.pro-catalog #produkty:before,.pro-catalog #uslugi:before{content:"";position:absolute;inset:0;border-top:1px solid rgba(136,206,249,.2);pointer-events:none}
+.pro-catalog #kategorie .section-head,.pro-catalog #produkty .section-head,.pro-catalog #uslugi .section-head{position:relative;isolation:isolate;overflow:hidden;padding:26px 28px!important;margin-bottom:27px!important;border-radius:18px;background:linear-gradient(110deg,#0a2a45 1%,#0a2a45ec 72%,#104067)!important;border:1px solid rgba(144,213,247,.27)!important;box-shadow:0 20px 48px rgba(0,8,18,.19)!important}
+.pro-catalog #kategorie .section-head:after,.pro-catalog #produkty .section-head:after,.pro-catalog #uslugi .section-head:after{content:"";position:absolute;z-index:-1;right:-100px;top:-100px;width:340px;height:340px;border:1px solid rgba(215,252,121,.22);box-shadow:0 0 85px rgba(54,163,225,.13);border-radius:50%;animation:elproOrbit 11s ease-in-out infinite alternate}
+.pro-catalog #kategorie .section-head h2,.pro-catalog #produkty .section-head h2,.pro-catalog #uslugi .section-head h2,.pro-catalog #narzedzia .closing-content h2,.pro-catalog #kategorie h2,.pro-catalog #produkty h2,.pro-catalog #uslugi h2{color:#f6fbff!important;font-family:'DM Sans','Manrope',system-ui,sans-serif!important;font-size:clamp(31px,3vw,49px)!important;line-height:1.12!important;font-weight:800!important;letter-spacing:-.055em!important;text-shadow:0 2px 24px rgba(0,0,0,.17)!important}
+.pro-catalog #kategorie .section-head h2 .title-highlight,.pro-catalog #produkty .section-head h2 .title-highlight,.pro-catalog #uslugi .section-head h2 .title-highlight,.pro-catalog #narzedzia .closing-content h2 em{color:#d7fc79!important}
+.pro-catalog #kategorie .section-head p,.pro-catalog #produkty .section-head p,.pro-catalog #uslugi .section-head p{color:#cfe1ef!important;font-size:14px!important;line-height:1.7!important}
+.pro-catalog #kategorie .section-head .section-label,.pro-catalog #produkty .section-head .section-label,.pro-catalog #uslugi .section-head .section-label{color:#d7fc79!important;font-weight:850!important}
+.pro-catalog #kategorie .text-btn{background:#d7fc79!important;color:#071522!important;padding:12px 19px!important;border:0!important;border-radius:30px!important;font-size:12px!important;font-weight:800!important;box-shadow:0 13px 32px rgba(150,249,78,.13)!important}
+.pro-catalog #kategorie .text-btn span{color:#071522!important}
+.pro-catalog #kategorie .category-grid{gap:15px!important}
+.pro-catalog #kategorie .category-card{position:relative!important;background:#112e48!important;border:1px solid rgba(166,218,247,.35)!important;border-radius:18px!important;overflow:hidden!important;box-shadow:0 13px 36px rgba(0,8,18,.35)!important;transition:transform .42s cubic-bezier(.18,.75,.28,1),border-color .28s,box-shadow .3s!important}
+.pro-catalog #kategorie .category-card:hover,.pro-catalog #kategorie .category-card:focus-visible{transform:translateY(-8px)!important;border-color:#d7fc79!important;box-shadow:0 27px 65px rgba(0,6,13,.55),0 0 24px rgba(100,202,252,.13)!important}
+.pro-catalog #kategorie .category-visual{background:#153951!important;overflow:hidden!important;height:150px!important}
+.pro-catalog #kategorie .category-visual img{filter:saturate(.92) contrast(1.08) brightness(.82)!important;transition:transform .7s,filter .35s!important}
+.pro-catalog #kategorie .category-card:hover img{transform:scale(1.09)!important;filter:saturate(1.05) contrast(1.07) brightness(1)!important}
+.pro-catalog #kategorie .category-number{font:800 30px/1 'DM Sans',sans-serif!important;letter-spacing:-.06em!important;color:#f7fcff!important;text-shadow:0 2px 16px #000!important;opacity:1!important}
+.pro-catalog #kategorie .category-caption{min-height:110px!important;background:linear-gradient(165deg,#0b2a43,#0a2238)!important;color:#fff!important;padding:17px 13px 16px!important}
+.pro-catalog #kategorie .category-caption b,.pro-catalog #kategorie .category-caption strong{display:block!important;color:#f7fcff!important;font-size:13px!important;line-height:1.3!important;font-weight:850!important;text-shadow:none!important}
+.pro-catalog #kategorie .category-caption small{display:block!important;color:#bed5e5!important;font-size:11px!important;line-height:1.45!important;margin-top:7px!important}
+.pro-catalog #kategorie .category-caption .cat-arrow{color:#d7fc79!important;transition:transform .25s!important;display:inline-block!important}
+.pro-catalog #kategorie .category-card:hover .cat-arrow{transform:translate(4px,-3px)!important}
+.pro-catalog #produkty .market-layout{color:#edf7ff!important}
+.pro-catalog #produkty .market-toolbar{background:#0b2c45!important;border:1px solid rgba(143,208,239,.39)!important;border-radius:15px!important}
+.pro-catalog #produkty .market-toolbar .toolbar-left,.pro-catalog #produkty .market-toolbar .toolbar-right,.pro-catalog #produkty #result-count{color:#e9f7ff!important}
+.pro-catalog #produkty #filters{background:#0a2b45!important;border:1px solid rgba(142,204,239,.38)!important;color:#edf6fe!important}
+.pro-catalog #produkty #filters label,.pro-catalog #produkty #filters p,.pro-catalog #produkty #filters h3{color:#e9f5ff!important}
+.pro-catalog #produkty .product-card{background:#fff!important}
+.pro-catalog #produkty .product-card .product-info,.pro-catalog #produkty .product-card .product-info *, .pro-catalog #produkty .product-card .product-name{color:#0a2234!important}
+.pro-catalog #produkty .product-card .product-description,.pro-catalog #produkty .product-card .product-sku,.pro-catalog #produkty .product-card .product-category{color:#4c6172!important}
+.pro-catalog #produkty .product-card .product-quote button{background:#d7fc79!important;color:#061522!important}
+.pro-catalog #uslugi .service-grid{gap:16px!important}
+.pro-catalog #uslugi .service-tile{background:#10324e!important;border:1px solid rgba(144,213,247,.33)!important;color:#fff!important;overflow:hidden!important;border-radius:17px!important;box-shadow:0 18px 42px rgba(0,7,15,.23)!important;transition:transform .3s,border-color .3s,box-shadow .3s!important}
+.pro-catalog #uslugi .service-tile:hover{transform:translateY(-7px)!important;border-color:#d7fc79!important;box-shadow:0 22px 50px rgba(0,7,15,.46)!important}
+.pro-catalog #uslugi .service-body{background:#10324e!important;padding:21px!important}
+.pro-catalog #uslugi .service-body h3,.pro-catalog #uslugi .service-body b{color:#fff!important;font-weight:800!important;font-size:18px!important;line-height:1.3!important}
+.pro-catalog #uslugi .service-body p,.pro-catalog #uslugi .service-body small{color:#c7dfed!important;line-height:1.65!important}
+.pro-catalog #uslugi .service-index{color:#d7fc79!important;font-weight:900!important}
+.pro-catalog #narzedzia .closing-section,.pro-catalog #narzedzia{background:linear-gradient(125deg,#0b3150,#061624)!important;color:#fff!important}
+.pro-catalog #narzedzia .closing-content{background:linear-gradient(105deg,#08273e,#071c2c)!important}
+.pro-catalog #narzedzia .closing-content p,.pro-catalog #narzedzia .closing-content span{color:#c8dfec!important}
+.pro-catalog #narzedzia .closing-content .section-label{color:#d7fc79!important}
+.pro-catalog .nx-credits h3,.pro-catalog .nx-credits p{color:#f1f8ff!important}
+.pro-catalog .site-footer{background:#030e19!important}
+.pro-catalog .site-footer h3{color:#f7fcff!important}
+.pro-catalog .site-footer a,.pro-catalog .site-footer p{color:#bbd2e4!important}
+/* Main landing contrast and movement */
+.pro-offer__head{padding:12px 18px!important}
+.pro-offer__head h2,.pro-b2b h2,.pro-smart h2,.pro-why h2,.pro-cta h2{color:#f5fbff!important;text-shadow:0 3px 22px rgba(0,0,0,.25)!important}
+.pro-offer__head h2 em,.pro-b2b h2 em,.pro-smart h2 em,.pro-why h2 em,.pro-cta h2 em{color:#d7fc79!important}
+.pro-offer__head p,.pro-b2b p,.pro-smart p,.pro-why p,.pro-cta p{color:#c7dceb!important}
+.pro-why__grid article{transition:transform .35s,border-color .3s,box-shadow .35s!important;border-color:rgba(151,211,247,.34)!important}
+.pro-why__grid article:hover{transform:translateY(-7px)!important;border-color:#d7fc79!important;box-shadow:0 23px 50px rgba(0,9,20,.42)!important}
+.pro-b2b .pro-section__text{border-radius:24px;padding:36px 34px!important;background:linear-gradient(140deg,rgba(4,17,32,.42),rgba(6,24,43,.10));border:1px solid rgba(158,217,243,.10)}
+.pro-b2b .pro-steps span{transition:padding .25s,border-color .25s,color .25s}
+.pro-b2b .pro-steps span:hover{padding-left:12px;border-color:#d7fc79!important;color:#fff!important}
+.pro-benefit__ring:before{border-color:#d7fc79!important}
+.pro-benefit:nth-child(2) .pro-benefit__ring:before{animation-duration:13s!important}
+.pro-benefit:nth-child(3) .pro-benefit__ring:before{animation-duration:22s!important}
+.pro-benefit:nth-child(4) .pro-benefit__ring:before{animation-duration:15s!important}
+.pro-offer-card,.pro-benefit,.pro-why__grid article,.pro-catalog .category-card,.pro-catalog .service-tile{--pro-x:50%;--pro-y:50%}
+.pro-offer-card:after,.pro-benefit:after,.pro-why__grid article:after{content:"";position:absolute;pointer-events:none;inset:0;border-radius:inherit;opacity:0;background:radial-gradient(circle at var(--pro-x) var(--pro-y),rgba(215,252,121,.12),transparent 40%);transition:opacity .35s}
+.pro-offer-card:hover:after,.pro-benefit:hover:after,.pro-why__grid article:hover:after{opacity:1}
+.pro-why__grid article{position:relative}
+.pro-scroll-meter,.cat-progress{height:4px!important;background:linear-gradient(90deg,#49baff,#d7fc79)!important}
+:focus-visible{outline:3px solid #d7fc79!important;outline-offset:3px!important}
+@keyframes elproOrbit{to{transform:rotate(22deg) scale(1.05)}}
+@media(max-width:740px){
+ .pro-catalog #kategorie .section-head,.pro-catalog #produkty .section-head,.pro-catalog #uslugi .section-head{padding:21px 18px!important;border-radius:13px!important}
+ .pro-catalog #kategorie .category-visual{height:115px!important}
+ .pro-catalog #kategorie .category-caption{min-height:125px!important;padding:13px 9px!important}
+ .pro-catalog #kategorie .category-caption b{font-size:12px!important}
+ .pro-b2b .pro-section__text{padding:24px 18px!important}
+}
+@media(prefers-reduced-motion:reduce){html:focus-within{scroll-behavior:auto}.pro-catalog #kategorie .section-head:after,.pro-catalog #produkty .section-head:after,.pro-catalog #uslugi .section-head:after{animation:none!important}.pro-benefit__ring:before{animation:none!important}.pro-offer-card,.pro-benefit,.pro-why__grid article,.pro-catalog .category-card,.pro-catalog .service-tile{transition:none!important}}

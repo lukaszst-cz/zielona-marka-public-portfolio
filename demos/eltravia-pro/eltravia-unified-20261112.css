@@ -1,0 +1,24 @@
+/* ELTRAVIA unified identity, November 2026 */
+.eltravia-brand-link{display:inline-flex!important;align-items:center!important;gap:0!important;flex-shrink:0;max-width:100%;min-width:0;line-height:1!important;text-decoration:none!important}
+.eltravia-brand-image{display:block!important;flex:none!important;width:224px!important;height:auto!important;max-width:100%!important;aspect-ratio:556/126!important;object-fit:contain!important;object-position:center!important;border:0!important;border-radius:0!important;box-shadow:none!important;filter:none!important;transform:none!important;animation:none!important}
+.pro-header .pro-brand.eltravia-brand-link{gap:0!important;max-width:250px!important}
+.pro-header .pro-brand.eltravia-brand-link img.eltravia-brand-image{width:225px!important;height:auto!important;max-height:none!important;filter:none!important}
+.pro-footer .pro-brand.eltravia-brand-link{max-width:300px!important}
+.pro-footer .pro-brand.eltravia-brand-link img.eltravia-brand-image{width:255px!important;height:auto!important;filter:none!important}
+.pro-identity__mark{min-width:min(340px,100%);padding:22px 24px!important}
+.pro-identity__mark img.eltravia-brand-image{width:295px!important;height:auto!important;animation:none!important;filter:none!important}
+.site-header .logo.eltravia-brand-link,
+.site-header .brand.eltravia-brand-link{min-width:0;white-space:nowrap}
+.site-header .logo.eltravia-brand-link img.eltravia-brand-image,
+.site-header .brand.eltravia-brand-link img.eltravia-brand-image{width:209px!important;height:auto!important;max-height:62px!important;filter:none!important}
+.site-footer .logo.eltravia-brand-link{max-width:300px!important;white-space:normal!important}
+.site-footer .logo.eltravia-brand-link img.eltravia-brand-image{width:244px!important;height:auto!important;max-height:none!important;filter:none!important}
+.wide-banner-visual .eltravia-badge{display:flex!important;align-items:center!important;padding:12px 18px!important;max-width:min(295px,84%)!important}
+.wide-banner-visual .eltravia-badge img.eltravia-brand-image{position:static!important;width:218px!important;height:auto!important;max-width:100%!important;max-height:none!important;border:0!important;filter:none!important}
+.el-cover-lockup{display:inline-flex!important;align-items:center!important;max-width:100%!important}
+.el-cover-lockup img.eltravia-brand-image{width:220px!important;height:auto!important;max-width:100%!important;max-height:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;filter:none!important}
+.pro-gear__photo{padding:0!important;overflow:hidden!important;display:block!important;aspect-ratio:610 / 352!important;height:auto!important;background:#0b273b!important;border-radius:18px 18px 0 0}
+.pro-gear__photo img{display:block!important;position:static!important;width:100%!important;height:100%!important;max-width:100%!important;object-fit:cover!important;object-position:center!important;transform:none!important;filter:none!important;animation:none!important}
+@media(max-width:1100px){.pro-header .pro-brand.eltravia-brand-link img.eltravia-brand-image{width:194px!important}.site-header .logo.eltravia-brand-link img.eltravia-brand-image,.site-header .brand.eltravia-brand-link img.eltravia-brand-image{width:182px!important}}
+@media(max-width:760px){.pro-header .pro-brand.eltravia-brand-link img.eltravia-brand-image{width:170px!important}.pro-identity__mark img.eltravia-brand-image{width:245px!important}.site-header .logo.eltravia-brand-link img.eltravia-brand-image,.site-header .brand.eltravia-brand-link img.eltravia-brand-image{width:162px!important}.site-footer .logo.eltravia-brand-link img.eltravia-brand-image{width:220px!important}.el-cover-lockup img.eltravia-brand-image{width:160px!important}}
+@media(max-width:390px){.pro-header .pro-brand.eltravia-brand-link img.eltravia-brand-image{width:142px!important}.site-header .logo.eltravia-brand-link img.eltravia-brand-image,.site-header .brand.eltravia-brand-link img.eltravia-brand-image{width:148px!important}}

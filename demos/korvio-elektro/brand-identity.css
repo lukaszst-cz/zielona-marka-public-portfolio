@@ -1,0 +1,68 @@
+/* KORVIO ELEKTRO | oryginalny pasek Zielona Marka bez zmian */
+.logo,.brand{align-items:center!important;gap:10px!important;text-decoration:none!important}
+.logo .el-brandmark,.brand .el-brandmark{display:block;flex:0 0 auto;width:49px;height:49px;object-fit:contain;transition:transform .28s ease}
+.logo:hover .el-brandmark,.brand:hover .el-brandmark{transform:translateY(-2px) rotate(-4deg)}
+.el-wordmark{display:inline-flex;flex-direction:column;justify-content:center;align-items:flex-start;line-height:1;white-space:nowrap}
+.el-wordmark__name{font:900 clamp(19px,2vw,28px)/1 Arial,sans-serif;letter-spacing:-1.4px;color:#071b32;transform:skew(-6deg)}
+.el-wordmark__name span{color:#078eb8}.el-wordmark small{font:850 9px/1.6 Arial,sans-serif;letter-spacing:5.5px;color:#5b6470;margin-top:4px}
+.magazine-page .el-wordmark__name{font-size:25px;color:#fff}.magazine-page .el-wordmark__name span{color:#ffcf33}.magazine-page .el-wordmark small{color:#abdae9;font-size:9px;letter-spacing:5px}
+.hero-main:before{content:"";position:absolute;z-index:2;left:0;top:0;width:5px;height:100%;background:linear-gradient(#0dc9ed 0 32%,#ffd23e 32% 68%,transparent 68%)}
+.wide-banner{border:1px solid #19bbe43a;box-shadow:0 14px 43px #071c361b}
+.wide-banner-visual .korvio-badge{position:absolute;z-index:3;left:12%;top:15%;display:flex;align-items:center;gap:9px;background:#071b31;border:1px solid #0ec8e982;color:white;border-radius:12px;box-shadow:0 12px 28px #0008;padding:10px 17px;transform:rotate(-6deg);transition:transform .28s}
+.wide-banner:hover .korvio-badge{transform:rotate(-3deg) translateY(-6px)}
+.wide-banner-visual .korvio-badge img{position:static!important;width:38px!important;height:38px!important;left:auto!important;top:auto!important;object-fit:contain!important;transform:none!important;border:0!important;border-radius:8px!important;box-shadow:none!important}
+.korvio-badge>span{font:900 19px/1 Arial,sans-serif;letter-spacing:-.5px}.korvio-badge strong{color:#ffcf33}.korvio-badge small{display:block;font:700 8px/1.8 Arial,sans-serif;letter-spacing:4px;color:#aed8e4;margin-top:3px}
+.el-cover-lockup{display:inline-flex;align-items:center;gap:9px}.el-cover-lockup img{width:36px;height:36px;border:1px solid #16bfe84f;border-radius:8px}
+.el-cover-name{font:900 22px/1 Arial,sans-serif;letter-spacing:-1px;white-space:nowrap}.el-cover-name span{color:#ffd33e}.el-cover-name small{display:block;margin-top:5px;font-size:9px;letter-spacing:5.6px;font-weight:700;color:#d9eaf5}
+@media(max-width:990px){.logo .el-brandmark{width:42px;height:42px}.logo .el-wordmark__name{font-size:22px}.brand .el-brandmark{width:40px;height:40px}.brand .el-wordmark__name{font-size:20px}.brand .el-wordmark small{font-size:8px;letter-spacing:4px}}
+@media(max-width:600px){.logo .el-brandmark{width:38px;height:38px}.logo .el-wordmark__name{font-size:19px}.logo .el-wordmark small{font-size:7px;letter-spacing:3.5px}.magazine-page .el-wordmark__name{font-size:18px}.magazine-page .el-wordmark small{font-size:7px;letter-spacing:3px}.el-cover-lockup img{width:28px;height:28px}.el-cover-name{font-size:16px}.el-cover-name small{font-size:7px;letter-spacing:3px}.wide-banner-visual .korvio-badge{left:6%;top:12%;padding:6px 8px;gap:5px}.korvio-badge>span{font-size:12px}.korvio-badge small{font-size:6px;letter-spacing:2px}.wide-banner-visual .korvio-badge img{width:28px!important;height:28px!important}}
+@media(prefers-reduced-motion:reduce){.logo .el-brandmark,.brand .el-brandmark{transition:none}}
+
+/* KORVIO ELEKTRO: nowa marka, wyróżniony znak i wyraźna stopka */
+:root{--korvio-cyan:#45e7d5;--korvio-amber:#ffc775}
+.site-header .logo .el-wordmark__name{color:#071b32!important}
+.site-header .logo .el-wordmark__name span{color:#087b8e!important}
+.site-header .logo .el-brandmark,
+.magazine-page .brand .el-brandmark{border:1px solid rgba(47,213,193,.42)!important;border-radius:13px;box-shadow:0 4px 16px rgba(4,35,52,.12)!important}
+.site-footer .logo.logo--footer{
+  display:inline-flex!important;align-items:center!important;gap:13px!important;
+  width:max-content;max-width:100%;padding:11px 18px 11px 11px!important;
+  background:#14354b!important;border:1px solid rgba(126,237,227,.48)!important;
+  border-radius:17px!important;text-decoration:none!important;
+  box-shadow:0 8px 24px rgba(0,0,0,.24)!important;
+}
+.site-footer .logo.logo--footer .el-brandmark{
+ width:55px!important;height:55px!important;flex:0 0 55px!important;
+ border-radius:13px!important;filter:drop-shadow(0 3px 5px rgba(0,0,0,.25))!important;
+}
+.site-footer .logo.logo--footer .el-wordmark{display:inline-flex!important;flex-direction:column!important;align-items:flex-start!important}
+.site-footer .logo.logo--footer .el-wordmark__name{
+  color:#ffffff!important;font-weight:900!important;font-size:clamp(21px,2.2vw,28px)!important;
+  opacity:1!important;text-shadow:0 2px 8px rgba(0,0,0,.27)!important
+}
+.site-footer .logo.logo--footer .el-wordmark__name span{color:#89fff0!important}
+.site-footer .logo.logo--footer .el-wordmark small{
+  color:#f2faff!important;font-size:9px!important;font-weight:800!important;
+  letter-spacing:.36em!important;opacity:1!important;
+}
+.site-footer .logo.logo--footer:hover,
+.site-footer .logo.logo--footer:focus-visible{
+  border-color:#ffc775!important;background:#1a455c!important
+}
+.magazine-page .site-footer .footer-brand{
+  display:inline-flex!important;align-items:center!important;gap:12px!important;
+  color:#fff!important;font-weight:900!important;
+  padding:9px 16px 9px 9px;border-radius:15px;border:1px solid rgba(126,237,227,.45);
+  background:#15354b;box-shadow:0 7px 22px rgba(0,0,0,.24);
+}
+.magazine-page .site-footer .footer-brand img{
+  width:45px;height:45px;object-fit:contain;display:block;border-radius:10px;flex:none;
+}
+.magazine-page .site-footer .footer-brand b{color:#89fff0!important}
+@media(max-width:600px){
+  .site-footer .logo.logo--footer{padding:9px 12px 9px 9px!important;gap:10px!important}
+  .site-footer .logo.logo--footer .el-brandmark{width:44px!important;height:44px!important;flex-basis:44px!important}
+  .site-footer .logo.logo--footer .el-wordmark__name{font-size:20px!important}
+  .site-footer .logo.logo--footer .el-wordmark small{font-size:8px!important}
+  .magazine-page .site-footer .footer-brand img{width:38px;height:38px}
+}

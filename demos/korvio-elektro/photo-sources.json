@@ -1,0 +1,65 @@
+{
+  "hero": {
+    "local": "assets/hero.webp",
+    "pexels": "https://images.pexels.com/photos/33706880/pexels-photo-33706880.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "page": "https://www.pexels.com/photo/33706880/",
+    "id": "33706880",
+    "credit": "Shameer Vayalakkad Hydrose",
+    "desc": "Industrial Electrical Control Room Interior",
+    "local_type": "Obraz zastępczy, wygenerowana wizualizacja"
+  },
+  "kable": {
+    "local": "assets/kable.webp",
+    "pexels": "https://images.pexels.com/photos/29596327/pexels-photo-29596327.jpeg?auto=compress&cs=tinysrgb&w=1000",
+    "page": "https://www.pexels.com/photo/29596327/",
+    "id": "29596327",
+    "credit": "Andrew Durkin",
+    "desc": "Spools of Industrial Cable Outside Building",
+    "local_type": "Obraz zastępczy, wygenerowana wizualizacja"
+  },
+  "aparatura": {
+    "local": "assets/aparatura.webp",
+    "pexels": "https://images.pexels.com/photos/38171184/pexels-photo-38171184.jpeg?auto=compress&cs=tinysrgb&w=1000",
+    "page": "https://www.pexels.com/photo/38171184/",
+    "id": "38171184",
+    "credit": "Elite Power Group",
+    "desc": "Close-up of Electrical Circuit Breakers Panel",
+    "local_type": "Obraz zastępczy, wygenerowana wizualizacja"
+  },
+  "rozdzielnice": {
+    "local": "assets/rozdzielnice.webp",
+    "pexels": "https://images.pexels.com/photos/33706868/pexels-photo-33706868.jpeg?auto=compress&cs=tinysrgb&w=1000",
+    "page": "https://www.pexels.com/photo/33706868/",
+    "id": "33706868",
+    "credit": "Shameer Vayalakkad Hydrose",
+    "desc": "Modern Control Room with Electrical Panels",
+    "local_type": "Obraz zastępczy, wygenerowana wizualizacja"
+  },
+  "teletechnika": {
+    "local": "assets/teletechnika.webp",
+    "pexels": "https://images.pexels.com/photos/2425567/pexels-photo-2425567.jpeg?auto=compress&cs=tinysrgb&w=1000",
+    "page": "https://www.pexels.com/photo/2425567/",
+    "id": "2425567",
+    "credit": "Brett Sayles",
+    "desc": "Cable Plugged on a Patch Panel",
+    "local_type": "Obraz zastępczy, wygenerowana wizualizacja"
+  },
+  "osprzet": {
+    "local": "assets/osprzet.webp",
+    "pexels": "https://images.pexels.com/photos/36738243/pexels-photo-36738243.jpeg?auto=compress&cs=tinysrgb&w=1000",
+    "page": "https://www.pexels.com/photo/36738243/",
+    "id": "36738243",
+    "credit": "Jan van der Wolf",
+    "desc": "Electric Outlet and Switch on Green Wall",
+    "local_type": "Obraz zastępczy, wygenerowana wizualizacja"
+  },
+  "pomiary": {
+    "local": "assets/pomiary.webp",
+    "pexels": "https://images.pexels.com/photos/4398314/pexels-photo-4398314.jpeg?auto=compress&cs=tinysrgb&w=1000",
+    "page": "https://www.pexels.com/photo/4398314/",
+    "id": "4398314",
+    "credit": "Willquezada",
+    "desc": "Electric instrument for electrical measurements in workshop",
+    "local_type": "Obraz zastępczy, wygenerowana wizualizacja"
+  }
+}

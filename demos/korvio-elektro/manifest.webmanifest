@@ -1,0 +1,20 @@
+{
+  "id": "/",
+  "name": "KORVIO ELEKTRO | Katalog produktów",
+  "short_name": "KORVIO",
+  "description": "Katalog materiałów elektrotechnicznych KORVIO ELEKTRO. Projekt demonstracyjny.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#061629",
+  "theme_color": "#061629",
+  "icons": [
+    {
+      "src": "/assets/brand/korvio-mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

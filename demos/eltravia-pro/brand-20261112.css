@@ -1,0 +1,40 @@
+/* ELTRAVIA / final brand mark + hero revision, 2026-11-12 */
+.pro-header .pro-brand img,.pro-footer .pro-brand img{width:55px;height:55px;filter:drop-shadow(0 0 12px #d7fc7933)}
+.pro-hero__grid{grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);gap:clamp(22px,3vw,50px);min-height:700px}
+.pro-hero__copy{padding:86px 0 75px}
+.pro-hero h1{font-size:clamp(47px,5.2vw,79px)!important;max-width:670px}
+.pro-hero__images{align-self:center;width:100%;height:640px;overflow:hidden;border:1px solid #91d7ff75;border-radius:27px;background:#0e2b40;box-shadow:0 24px 85px #010912a8,0 0 50px #53baff20}
+.pro-hero__images .pro-hero__main{inset:0!important;left:0!important;right:0!important;top:0!important;bottom:0!important;width:100%!important;height:100%!important;border:0!important;border-radius:0!important;max-width:none!important;object-fit:cover;object-position:center 37%;transform:none!important;animation:none!important;filter:brightness(.9) contrast(1.07) saturate(.96)}
+.pro-hero__images .pro-hero__top,.pro-hero__images .pro-hero__bottom,.pro-hero__circle{display:none!important}
+.pro-hero__images:after{content:"";position:absolute;z-index:1;inset:0;pointer-events:none;box-shadow:inset 0 0 85px #06152265;background:linear-gradient(180deg,transparent 63%,#07152248)}
+.pro-identity__mark img{width:106px;height:106px;object-fit:contain}
+.pro-gear__card{border-color:#b6d7f063}
+.pro-gear__drawing{max-height:360px}
+@media(max-width:1000px){.pro-hero__grid{grid-template-columns:1fr!important;min-height:0}.pro-hero__copy{padding:85px 0 28px}.pro-hero__images{width:100%;height:560px;align-self:initial;margin-bottom:40px}.pro-hero__images .pro-hero__main{object-position:center 36%}}
+@media(max-width:640px){.pro-header .pro-brand img{width:43px;height:43px}.pro-hero h1{font-size:clamp(40px,10.7vw,64px)!important}.pro-hero__copy{padding:60px 0 15px}.pro-hero__images{height:470px;max-height:118vw;border-radius:20px;margin-bottom:27px}.pro-hero__images .pro-hero__main{object-position:52% center}.pro-identity__mark img{width:76px;height:76px}}
+@media(prefers-reduced-motion:reduce){.pro-hero__images .pro-hero__main{animation:none!important;transition:none!important}}
+/* ELTRAVIA, workwear photorealistic concept, approved mockups */
+.pro-gear__photo{display:block;height:clamp(250px,27vw,365px);margin:0 0 24px;width:100%;background-image:url("assets/brand/eltravia-workwear-concept.webp");background-repeat:no-repeat;background-size:200% 100%;border-radius:19px 19px 8px 8px;box-shadow:inset 0 -22px 45px #06152144}
+.pro-gear__photo--helmet{background-position:0 50%}
+.pro-gear__photo--jacket{background-position:100% 50%}
+.pro-gear__card{background:#0b283f}
+.pro-gear__card>div:not(.pro-gear__photo){padding:0 27px 27px}
+@media(max-width:760px){.pro-gear__photo{height:340px}}
+
+
+/* Korekta proporcji mockupów, bez rozciągania grafiki, 2026-11-12 */
+.pro-gear__photo{display:block;position:relative;width:100%;height:auto!important;aspect-ratio:380/309;overflow:hidden;isolation:isolate;min-height:0;margin:0 0 18px;border-radius:19px 19px 8px 8px;background:#0d2a43;background-image:none!important;box-shadow:inset 0 -12px 28px #0615211a}
+.pro-gear__photo img{display:block;position:absolute;top:0;left:0;width:200%!important;height:100%!important;max-width:none!important;object-fit:fill;object-position:initial!important;transform:none!important;filter:none!important;animation:none!important}
+.pro-gear__photo--jacket img{left:-100%}
+.pro-gear__card>div:not(.pro-gear__photo){padding:0 27px 28px}
+@media(max-width:760px){.pro-gear__photo{height:auto!important;aspect-ratio:380/309;margin-bottom:12px}}
+
+/* Brand consistency, natural aspect mockups (individual raster assets) */
+.pro-gear__photo{background:none!important;display:block;position:relative;overflow:hidden;width:100%;height:auto!important;min-height:0;aspect-ratio:380/309;margin:0 0 15px;border-radius:19px 19px 9px 9px}
+.pro-gear__photo img{display:block;position:static!important;inset:auto!important;width:100%!important;height:100%!important;max-width:100%!important;object-fit:contain!important;object-position:center center!important;transform:none!important;filter:none!important;animation:none!important}
+.pro-gear__photo--jacket img{left:auto!important}
+@media(max-width:760px){.pro-gear__photo{aspect-ratio:380/309;height:auto!important}}
+
+/* Remove inherited caption padding from photographic panels */
+.pro-gear__card>.pro-gear__photo{padding:0!important;box-sizing:border-box}
+.pro-gear__card>.pro-gear__photo img{box-sizing:border-box;width:100%!important;height:100%!important;object-fit:contain!important}
