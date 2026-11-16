@@ -1,0 +1,369 @@
+{
+  "generated": "2026-11-16",
+  "source": "Vercel production source SHA1; checksums are exact for fetched public files",
+  "projects": [
+    {
+      "slug": "eltravia-pro",
+      "site": "https://eltravia-pro.vercel.app",
+      "deployment": "dpl_65r8JzfnP16zDMU81mZeADiWricf",
+      "files": [
+        {
+          "path": "assets/brand/eltravia-helmet-clean-v2.webp",
+          "sha1": "b230bbba2e9bbda46b5712e411439072ea3c5b09"
+        },
+        {
+          "path": "assets/brand/eltravia-helmet-pro.webp",
+          "sha1": "beb2b42106b122335c63e8303dcb3324342b36f2"
+        },
+        {
+          "path": "assets/brand/eltravia-jacket-clean-v2.webp",
+          "sha1": "78ceecc6a0838ef45a0d3b665580fe2d6bf8de1d"
+        },
+        {
+          "path": "assets/brand/eltravia-jacket-pro.webp",
+          "sha1": "fcb6140e612693b53a07f48f519a37c499c90687"
+        },
+        {
+          "path": "assets/brand/eltravia-mark.svg",
+          "sha1": "11709d2f447a767630108791151d42b6868ef1df"
+        },
+        {
+          "path": "assets/brand/eltravia-pro-emblem.svg",
+          "sha1": "11709d2f447a767630108791151d42b6868ef1df"
+        },
+        {
+          "path": "assets/brand/eltravia-pro-emblem-mono.svg",
+          "sha1": "79d6a24324f832f51e9f993e61a1d5b1324881c9"
+        },
+        {
+          "path": "assets/brand/eltravia-pro-emblem-white.svg",
+          "sha1": "d4bf21d2afe8ced8857206d6978bb1f5608270ad"
+        },
+        {
+          "path": "assets/brand/eltravia-wordmark-dark.svg",
+          "sha1": "88ee28cdc92261e27006307cadeaaba0ce399347"
+        },
+        {
+          "path": "assets/brand/eltravia-wordmark-light.svg",
+          "sha1": "c4008c89a93a37e584ba4a1566f76dc9a9c8eccb"
+        },
+        {
+          "path": "assets/brand/eltravia-workwear-concept.webp",
+          "sha1": "90171e45a61f975103d57901d7e61854d2f424f4"
+        },
+        {
+          "path": "brand-20261112.css",
+          "sha1": "c286756599cfeef8220fc55bf8bcf6f53ae7cda7"
+        },
+        {
+          "path": "catalog-pro.css",
+          "sha1": "d84083585b5225356bafd8ebdbbf520ecda36d6a"
+        },
+        {
+          "path": "catalog-pro.js",
+          "sha1": "748afa24fd95f8d9858048b51892f101cc226ba1"
+        },
+        {
+          "path": "eltravia-continuity.js",
+          "sha1": "5ba21e1145cbaef8c1047022b2348d1e4bc4490d"
+        },
+        {
+          "path": "eltravia-readability.css",
+          "sha1": "e734972baaf0461e3af7643eabd8bbca8c8be7b8"
+        },
+        {
+          "path": "eltravia-unified-20261112.css",
+          "sha1": "5714ab20756434405835004537426aa9c83abc39"
+        },
+        {
+          "path": "gazetka.html",
+          "sha1": "67db2a07d09201e7a9116cc54a8a1309b0ced8c3"
+        },
+        {
+          "path": "index.html",
+          "sha1": "00aa55282dc659c19d6877451506a11010ca5960"
+        },
+        {
+          "path": "katalog.html",
+          "sha1": "9c0cb39e7aef1157411087253c1d1d2798406984"
+        },
+        {
+          "path": "landing.css",
+          "sha1": "a8eba01ce7d0973b1ce2cf2cbab97a77f6286983"
+        },
+        {
+          "path": "landing.js",
+          "sha1": "4e836e9d84d925d492e9cced45ee1143a3348acf"
+        },
+        {
+          "path": "manifest.webmanifest",
+          "sha1": "1db6b4608fc6690476b64bb9e501d0f508dffff4"
+        },
+        {
+          "path": "premium.js",
+          "sha1": "64d194601ad7421b5b1f9ae8c1765d95f3506e27"
+        },
+        {
+          "path": "pro-brand-and-tools.css",
+          "sha1": "421225f8a210c40d5022ab5fcaa4624e6300adf8"
+        },
+        {
+          "path": "pro-cable-calculator.js",
+          "sha1": "0d364f77a9bdca8d13a3f2b50ea1266a897fb34e"
+        },
+        {
+          "path": "service-worker.js",
+          "sha1": "00b25ef75dd148be345dc607e7fd29d0c59c81c3"
+        }
+      ],
+      "unavailable_source_files": [
+        {
+          "path": "vercel.json",
+          "sha1": "2adfc13f04d4f4c87708ee4da07156b4c14d97ab"
+        }
+      ]
+    },
+    {
+      "slug": "korvio-elektro",
+      "site": "https://korvio-elektro.vercel.app",
+      "deployment": "dpl_63g4scXENjxnLqTuRxr6DvAHpqbb",
+      "files": [
+        {
+          "path": "app.js",
+          "sha1": "7360fe44e884f83048b0f7d733b4b38631b7a33a"
+        },
+        {
+          "path": "assets/aparatura.webp",
+          "sha1": "42077eea3326def70db8844acc85a6818265ba2d"
+        },
+        {
+          "path": "assets/rozdzielnice.webp",
+          "sha1": "42077eea3326def70db8844acc85a6818265ba2d"
+        },
+        {
+          "path": "assets/brand/korvio-mark.svg",
+          "sha1": "0495dc626e1c9398b63d41fc2c45427a47029f74"
+        },
+        {
+          "path": "assets/gazetka/cover.webp",
+          "sha1": "f92d75b731fe806acd02b04665dc2365d284f9db"
+        },
+        {
+          "path": "assets/gazetka/electrician.webp",
+          "sha1": "9a51332908f145fdc0acad0492ab4bec3a31447c"
+        },
+        {
+          "path": "assets/gazetka/lamp.webp",
+          "sha1": "14ab0c6e893118ecc42bb3fa560791e53f3e8f5b"
+        },
+        {
+          "path": "assets/gazetka/meter.webp",
+          "sha1": "b8b93c922de3f69ac6772186719b7d1690f3ce9e"
+        },
+        {
+          "path": "assets/gazetka/network.webp",
+          "sha1": "0d73a690eb4ea8ce6a5871d61bdf50353a21ab67"
+        },
+        {
+          "path": "assets/gazetka/p1-01.webp",
+          "sha1": "7572026c4c6fccd468f052170de7b501b50ae0b3"
+        },
+        {
+          "path": "assets/gazetka/p1-02.webp",
+          "sha1": "f5070c87d67ba81e58d61624bc3cd93fe2a75d73"
+        },
+        {
+          "path": "assets/gazetka/p1-03.webp",
+          "sha1": "59fda9a9a8982e48b2f1ce379e3a69941442296c"
+        },
+        {
+          "path": "assets/gazetka/p1-04.webp",
+          "sha1": "caf920a6d44a425ba8c83352d94dac1847b0be85"
+        },
+        {
+          "path": "assets/gazetka/p1-05.webp",
+          "sha1": "458a8f8e45f7639ec02a59607fa18ff987d3a2eb"
+        },
+        {
+          "path": "assets/gazetka/p1-06.webp",
+          "sha1": "3f3c59c067f38c7a7befc8f9a061416d696ed587"
+        },
+        {
+          "path": "assets/gazetka/p1-07.webp",
+          "sha1": "b6e7ac7694264ac8fac966d1aa76cb8635130a12"
+        },
+        {
+          "path": "assets/gazetka/p1-08.webp",
+          "sha1": "dd2fbbc671e1487def9041aa0f243c35f6e6d150"
+        },
+        {
+          "path": "assets/gazetka/p1-09.webp",
+          "sha1": "5840ddfee22a33bcad335def6693e94cc0f4bcc3"
+        },
+        {
+          "path": "assets/gazetka/p1-10.webp",
+          "sha1": "7fa2fea804f81e8bb4c53a5be7d83eead50d51e3"
+        },
+        {
+          "path": "assets/gazetka/p1-11.webp",
+          "sha1": "475744e63cee477016f8728cebda384a07957e0a"
+        },
+        {
+          "path": "assets/gazetka/p1-12.webp",
+          "sha1": "c32836d173daaadabceedbbc780c51c4721fed0c"
+        },
+        {
+          "path": "assets/gazetka/p2-01.webp",
+          "sha1": "d462a1d384168db8857feb36a761ebe42fa55817"
+        },
+        {
+          "path": "assets/gazetka/p2-02.webp",
+          "sha1": "0150173f9190e0735888120ff950643bea9752bc"
+        },
+        {
+          "path": "assets/gazetka/p2-03.webp",
+          "sha1": "5b50e053dc94de782856c4e402360710f615d1ff"
+        },
+        {
+          "path": "assets/gazetka/p2-04.webp",
+          "sha1": "801ff0f217f2b318f18cbea7befdf273a08a4c90"
+        },
+        {
+          "path": "assets/gazetka/p2-05.webp",
+          "sha1": "db2836fd336dc0dc9d1564b3cfe255b3d25c7698"
+        },
+        {
+          "path": "assets/gazetka/p2-06.webp",
+          "sha1": "ad8210aae3f4f2beff7bbf594afc7731858b2373"
+        },
+        {
+          "path": "assets/gazetka/p2-07.webp",
+          "sha1": "b629666b2a7265f3d672f98c020ee2b5813cec5c"
+        },
+        {
+          "path": "assets/gazetka/p2-08.webp",
+          "sha1": "1375fa2ad09ee9fd7b5776b2ab11c5217a3c5202"
+        },
+        {
+          "path": "assets/gazetka/p2-09.webp",
+          "sha1": "91ac21197747cf05c6a09693d667008b3aa2727d"
+        },
+        {
+          "path": "assets/gazetka/p2-10.webp",
+          "sha1": "d7eaaf1103135e56207a50beb65093da8bf54f1d"
+        },
+        {
+          "path": "assets/gazetka/p2-11.webp",
+          "sha1": "b5f3a7c09b4c3a3c44ca9d2c29f8c83647eab666"
+        },
+        {
+          "path": "assets/gazetka/p2-12.webp",
+          "sha1": "491dd79393888eaca7021fdac7c696e0a1c69886"
+        },
+        {
+          "path": "assets/gazetka/socket.webp",
+          "sha1": "3227154efe8105bc26cff9619bf094767d117c00"
+        },
+        {
+          "path": "assets/hero.webp",
+          "sha1": "d16284d94c639dbb0f26d41547a1be9564e08cd8"
+        },
+        {
+          "path": "assets/kable.webp",
+          "sha1": "d16284d94c639dbb0f26d41547a1be9564e08cd8"
+        },
+        {
+          "path": "assets/osprzet.webp",
+          "sha1": "d16284d94c639dbb0f26d41547a1be9564e08cd8"
+        },
+        {
+          "path": "assets/teletechnika.webp",
+          "sha1": "d16284d94c639dbb0f26d41547a1be9564e08cd8"
+        },
+        {
+          "path": "assets/pomiary.webp",
+          "sha1": "b711fa9e4e385e13139d3bf39f67553f58808368"
+        },
+        {
+          "path": "assets/zm-foto/elektryka.webp",
+          "sha1": "e94f6393ff5f2414ee0710c050b6fa886506add2"
+        },
+        {
+          "path": "assets/zm-foto/oswietlenie.webp",
+          "sha1": "f1770cc5a9bfe7bc78e82837353e4a1bf70221e1"
+        },
+        {
+          "path": "brand-identity.css",
+          "sha1": "7ef3601c4b1e4f85c9acc0d8c7733c4b65cb6385"
+        },
+        {
+          "path": "gazetka.html",
+          "sha1": "d9eb207502972814148b91c2311077452ad17c7c"
+        },
+        {
+          "path": "index.html",
+          "sha1": "1e198d4a64df205289725a4c934f5070e878a055"
+        },
+        {
+          "path": "magazine-base.css",
+          "sha1": "257a2bf64c0ba34633cc36c2e9b7781ba861e7fb"
+        },
+        {
+          "path": "magazine.css",
+          "sha1": "737f7c5e16618c70867ea05f3310325178f1a7d3"
+        },
+        {
+          "path": "magazine.js",
+          "sha1": "3d27297eed3b4ebb1f381858f986501403d800c6"
+        },
+        {
+          "path": "manifest.webmanifest",
+          "sha1": "6d2e322cf4eaa445515b72fb1289af63f66276c1"
+        },
+        {
+          "path": "marketplace.css",
+          "sha1": "6c4b99d6b642147859018babd83b954c4ae9119f"
+        },
+        {
+          "path": "marketplace.js",
+          "sha1": "6d738b42ad6d9adeb6de40687dbf92b08e9d9062"
+        },
+        {
+          "path": "nexio-czytelna-typografia.css",
+          "sha1": "eb3c78b0aeaebbfe138fc76983aef06de8b33cc6"
+        },
+        {
+          "path": "nexio-refinement.css",
+          "sha1": "83d75bbc606cf4660b309a510a0f247af57123c1"
+        },
+        {
+          "path": "photo-sources.json",
+          "sha1": "3c66a14222e1aff3c0f1b9c0d3fdc8792f00def9"
+        },
+        {
+          "path": "products.js",
+          "sha1": "a541ae230c480fc50e507e9bdd6eefbbcc26c687"
+        },
+        {
+          "path": "service-worker.js",
+          "sha1": "a65a6b98a69897532eb6bb14509034c9f5e44941"
+        },
+        {
+          "path": "zielona-marka.js",
+          "sha1": "e65b2e00ee42793b9bf80364e922f2fd80cb864f"
+        }
+      ],
+      "unavailable_source_files": [
+        {
+          "path": "vercel.json",
+          "sha1": "44fce8480180fafecf0cf371872ed2b793b84070"
+        }
+      ]
+    }
+  ],
+  "beata": {
+    "slug": "beata-beauty-atelier",
+    "archive_url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3JF0bAXNGCfkXeILZKHayHagGgi/59849de5-c441-49de-a8e2-e1fe6efd8691.zip",
+    "sha256": "16760ed44f555afb96c70b3b8af5736d498b4383d6abdd45cf5b7fbf3582b67a"
+  }
+}
