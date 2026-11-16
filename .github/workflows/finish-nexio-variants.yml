@@ -19,6 +19,7 @@ jobs:
           import base64
           import concurrent.futures
           import hashlib
+          import os
           import json
           import pathlib
           import urllib.request
@@ -57,7 +58,7 @@ jobs:
                   skipped.append("README.md, oryginalny plik dokumentacyjny niedostepny publicznie")
               if name=="nexio2":
                   del files["index.html"]
-                  embedded["index.html"]=NEXIO2_SOURCE
+                  embedded["index.html"]=os.environ["NEXIO2_SOURCE"]
                   exact=base64.b64decode(embedded["index.html"])
                   if hashlib.sha1(exact).hexdigest()!="e8e1241e9147c6849f89434df4324b023163cf3a":
                       raise ValueError("NEXIO2 raw source SHA1 mismatch")
