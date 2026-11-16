@@ -2,7 +2,7 @@
 
 Demonstracja Zielonej Marki, wersja zaakceptowana przez użytkownika 12.11.2026. Nie jest to projekt komercyjny zaakceptowany przez zewnętrzną firmę.
 
-- Strona: https://eltravia-premium.vercel.app/ (dotychczasowy adres techniczny)
+- Strona: https://eltravia-rozbudowana.vercel.app/ (aktualny adres)
 - Niezmienny adres wydania: https://eltravia-pla4if0fz-lukaszstaniewicz-6630.vercel.app/
 - Data produkcyjnego wdrożenia: 2026-11-12
 - Vercel projekt: `prj_suvkoKgEm3DaZ8i8OoBZf4oCOAqX`
