@@ -1,0 +1,338 @@
+{
+  "version": 1,
+  "date": "2026-11-16",
+  "description": "Static archived sources from deployment-file listings. SHA1 checks must pass before a project is marked complete.",
+  "projects": [
+    {
+      "name": "budrivo",
+      "deployment": "dpl_BEdM4GTC7Haq1GPMAkdvzxhHsxwT",
+      "destination": "projekty/budrivo/site",
+      "domains": [
+        "budrivo.vercel.app",
+        "budrivo-8dyftb5lx-lukaszstaniewicz-6630.vercel.app"
+      ],
+      "files": {
+        "assets/budrivo-00.svg": "8147837926cdf61cc30cfd7209223e98b1c34ac7",
+        "assets/budrivo-01.png": "4ecb5893ab9f270458068c094eaebd573042d531",
+        "assets/budrivo-02.svg": "ba5c5ab0935e0baa6c1a9672f53ceefae7aedc6f",
+        "assets/budrivo-03.webp": "d37b9ee9f5c277ccc2224adb05a3aa2ac3d764a8",
+        "assets/budrivo-04.webp": "0ad43991357047b578e86afec0fff2be45346e98",
+        "assets/budrivo-05.webp": "a23ce9ba09946d72d0eeb679a15abe7ec286b3ab",
+        "assets/budrivo-06.webp": "b05a0638f965b0f084e24f318f2aad6e243be09e",
+        "assets/budrivo-07.webp": "2b7ebdc8f10d9e17c823e1aaf3f02a82d47067a1",
+        "assets/budrivo-08.webp": "d9eebd4d13354e67f3fe51207c61653fc75fbe5e",
+        "assets/budrivo-09.webp": "ee35c81fe7923128d591dff2e992a8dd73623391",
+        "assets/budrivo-10.webp": "e6b2beea08bca4e7d36de467b091d584474ae986",
+        "assets/budrivo-11.webp": "bb7744c99a98c0364d51065231112be5b7c49b83",
+        "assets/budrivo-12.webp": "a81d175362a67aa445552de72e5765c5f40f471e",
+        "assets/budrivo-13.webp": "3798141402f24b4a88206ab7d6aceb889566f63f",
+        "assets/budrivo-14.webp": "97521e407995c2cedf8b644e681d1600301b73ac",
+        "assets/budrivo-15.webp": "0017436e1f4502ccb61af5dd2ea500a7982bae95",
+        "assets/budrivo-16.webp": "a224b0fe6ab3fb992228f652f5227bb80135b264",
+        "assets/budrivo-17.webp": "66e40fa38d5b22f3422fa5f9c290132e2586698a",
+        "assets/budrivo-18.webp": "44efcff915fca5647570e4ccf6f7b1246edce601",
+        "assets/budrivo-19.webp": "d3143542e87b2f92fb895b565ff9c2c92a82377e",
+        "assets/budrivo-20.webp": "c8db57149271ed23b401ff40b48f95a93ddd409d",
+        "assets/budrivo-21.webp": "946014024686034da52552f68e5abe9ed842ae9e",
+        "assets/budrivo-22.webp": "f7fc1ce7c7e483106cd6d46a45f7266f8e1d5c1e",
+        "assets/budrivo-23.webp": "2a2e81f39d3273d14b730c5b4129979c6c5df592",
+        "assets/budrivo-24.webp": "5a9fe0498e26688bb09e66ada57646cfa6f1050e",
+        "assets/budrivo-25.webp": "f71be25c450d0339a31893b73fe1db69807dc2ea",
+        "assets/budrivo-26.webp": "76726a3f4a0dd10ecde9535330e9559ec9396c1c",
+        "assets/budrivo-27.webp": "b79c28f7ab524fbbb927c94b8073b7fa22fcfbc4",
+        "assets/budrivo-28.webp": "2964a6b5db883cecc797febc3bd6f9ee3d2e596e",
+        "index.html": "e66f71718c9c3fa995b41aeec611dc718fbf1598",
+        "robots.txt": "63657cbb7d7086c56b0cd4e5c6999bb683664868"
+      },
+      "embedded": {},
+      "expectedCount": 31
+    },
+    {
+      "name": "phu-marecki",
+      "deployment": "dpl_4U2T26ML7fKpDNrrBrk5niUzrpy1",
+      "destination": "projekty/phu-marecki/site",
+      "domains": [
+        "phu-marecki.vercel.app",
+        "phu-marecki-lb8ldyl57-lukaszstaniewicz-6630.vercel.app"
+      ],
+      "files": {
+        "404.html": "12425d16982e332f08235c518dd12769814088f1",
+        "app.html": "8a62b73f7585ecbb3ad17521dcd7a1fac0958cda",
+        "assets/brand-equipment.jpg": "a942e52ac934fc9778e0a5b8ff39b59afa61b975",
+        "assets/brand-workwear.jpg": "4acf9fbbb252a9314fbd3a7c0a2a3b78fae4c040",
+        "assets/embedded/1ba393d2cba63b68ffff.png": "7278f3c7cb60afb2c8cc3b923136fdc34e140410",
+        "assets/embedded/38bc5b60021ee21a6927.webp": "7c8259069d416f69359b4862328a583705f73ccf",
+        "assets/embedded/5e37abfe0347e6aba20e.svg": "c3102c7c0530d8aebaf880f8fbe51fe59246be53",
+        "assets/embedded/6a9914154c75b6dfec42.webp": "d87aec3716b271b1188c0b25f8e0e756e1eaed90",
+        "assets/embedded/e5f70f9cce1e9cd63c94.webp": "057c3054c9bc1cabe1fe7046e18768e15cb95cc3",
+        "assets/embedded/f4293b24a293101f7aa2.webp": "df9943460b8685035217c7e029b76232cbe5ea8b",
+        "assets/hero.jpg": "c608cdc3714799d9b07c9045766491b54ad579ba",
+        "assets/interior.webp": "ed7b505fa59cffb3c9a520fbb1c326bcec6fbe9b",
+        "assets/logo-header.png": "ac36a11b1fa3139356f24f87c112a76b9f96b543",
+        "assets/logo.png": "fcbed03554c90c37c871aa6a4b1414905dfff3b0",
+        "assets/products/beton.webp": "50f817305a8d9e1c1ef707049e6df4a7007b2afa",
+        "assets/products/cement.webp": "4acd4840e82bcc0d4d30d2a71ddbd295d1d04515",
+        "assets/products/zaprawa.webp": "4acd4840e82bcc0d4d30d2a71ddbd295d1d04515",
+        "assets/products/czujnik.webp": "6f9dc420ccb12f21a19018562467ff98a105bdaa",
+        "assets/products/eska.webp": "11608c1ea13007866a62a5a075e4d4564d3590bc",
+        "assets/products/farba.webp": "ab93e52ac500295aa9f5a3a4753577e14ba12dc5",
+        "assets/products/gniazdo.webp": "32ccd9ae5e023f0d603c1a28e3a1b66e13ba2eca",
+        "assets/products/grunt.webp": "5918ce0b7d2a836ed73deee9d90899025a8cfb76",
+        "assets/products/kantowka.webp": "ba6e374b78a562f3c9d1be3572f33a662f4042aa",
+        "assets/products/lacznik.webp": "572bd9172dedb6fef95f29d1046f4cf265169dba",
+        "assets/products/membrana.webp": "ba32c31638265696e0194ace567e3f09588d2371",
+        "assets/products/panelled.webp": "34dce9b00038dc7990b918bd30baae3aba1b9918",
+        "assets/products/peszel.webp": "5760c9d0b36a07bfd5618b020fc97b4db7e5d93d",
+        "assets/products/przewod.webp": "8bd2a01dd34dd64f8c3e192de6a5ec10b72a8e17",
+        "assets/products/pustak.webp": "44d51e12dabcd7edd4eafb3b2a0055906a222fd0",
+        "assets/products/puszka.webp": "f13e796b57a06d826d5d5a5037c5e9a4bf2002e0",
+        "assets/products/rcd.webp": "5b2e9bb63d9934ec26fc2e80270b425f15703c9a",
+        "assets/products/rozdzielnica.webp": "5ac69a7d744dad9a28bb8cb757ce52a9af7ea908",
+        "assets/products/skretka.webp": "9677674198aa2b3c5e57fec941024037160d4925",
+        "assets/products/styropian.webp": "15bd17147be65366a1d538e3b424e23ed0d41524",
+        "assets/products/tarcica.webp": "5387877e499a43ab8f30f2ac122f3b14db94c1af",
+        "assets/products/wkretarka.webp": "ab3e824d89a42d83a710b6bd6ab2c6ea543989ea",
+        "assets/products/wkrety.webp": "f5cd98f555357b9a0071400b3d4eb4b6da95aea3",
+        "assets/products/zarowka.webp": "a8f57945c97f4bff356f95e522e97fb6acc82a61",
+        "assets/products/zlaczka.webp": "040c7ffbbf9b40597ef1281f929f0d711f2c2f41",
+        "assets/sawmill.webp": "3638d5b1ffcb6d0c322ea15f9aa5aba6518d2cf6",
+        "assets/timber.webp": "3638d5b1ffcb6d0c322ea15f9aa5aba6518d2cf6",
+        "assets/truck-red.png": "8ccb73ce3b89e64e79246ca727402dd5aace7ce5",
+        "assets/truck-white.png": "bc8c9c9acaac962445a8e60f9a0783a50e2d846a",
+        "assets/truck.webp": "c7453bdc3735d7bbadbb64072b601ca5dbf2392c",
+        "assets/truck2.webp": "bae7b434fb1ca3efd69edd425a8ced0f986b0856",
+        "assets/yard.webp": "cc19dd93b0b880c4355ba5dc703fbb741ce4f710",
+        "assets/zm-foto/cement.webp": "8724b9bfb3d33a74d76fe865b928ee5a02d7e71f",
+        "assets/zm-foto/dach.webp": "444fdb09d83d7799da064e7098916f823f4262cd",
+        "assets/zm-foto/elektryka.webp": "e94f6393ff5f2414ee0710c050b6fa886506add2",
+        "assets/zm-foto/izolacje.webp": "e5fc2f113f324fa9ca5a8a7cf6c70a57721d4fde",
+        "assets/zm-foto/narzedzia.webp": "54f50c39df35adf4889970358c16e21cf1cc0b5b",
+        "assets/zm-foto/oswietlenie.webp": "f1770cc5a9bfe7bc78e82837353e4a1bf70221e1",
+        "dynamics-app.css": "b9566737f7681425c6167d2a376fe6bd99b586b8",
+        "dynamics-app.js": "eab3c5d844e4240fe490d939568b4b89a463a827",
+        "icons/icon-192.png": "76d83b345999fdec7b92a0dfeec37814d69bc235",
+        "icons/icon-512.png": "36b84b214ed4553d580b0d7d5a70a614430563d5",
+        "index.html": "0d892305cebb57658b691df06f3f4fcc1b62a182",
+        "manifest.webmanifest": "01238cd8445e2c0ded46693192bad53e9e3bc851",
+        "merged-dynamics.css": "0e01e0ee188014f2649df817b1a9830c74451d77",
+        "merged-dynamics.js": "fce666c3d05983eb6b03d5e6990df8277a53bace",
+        "robots.txt": "63657cbb7d7086c56b0cd4e5c6999bb683664868",
+        "service-worker.js": "0cdc4194fc2844de8ace5acf48dce0d0c718bdae"
+      },
+      "embedded": {
+        "vercel.json": "ewogICJ2ZXJzaW9uIjogMiwKICAicmV3cml0ZXMiOiBbCiAgICB7CiAgICAgICJzb3VyY2UiOiAiL2FwcCIsCiAgICAgICJkZXN0aW5hdGlvbiI6ICIvYXBwLmh0bWwiCiAgICB9CiAgXSwKICAiaGVhZGVycyI6IFsKICAgIHsKICAgICAgInNvdXJjZSI6ICIvc2VydmljZS13b3JrZXIuanMiLAogICAgICAiaGVhZGVycyI6IFsKICAgICAgICB7CiAgICAgICAgICAia2V5IjogIkNhY2hlLUNvbnRyb2wiLAogICAgICAgICAgInZhbHVlIjogIm5vLWNhY2hlLCBuby1zdG9yZSwgbXVzdC1yZXZhbGlkYXRlIgogICAgICAgIH0sCiAgICAgICAgewogICAgICAgICAgImtleSI6ICJDb250ZW50LVR5cGUiLAogICAgICAgICAgInZhbHVlIjogInRleHQvamF2YXNjcmlwdDsgY2hhcnNldD11dGYtOCIKICAgICAgICB9CiAgICAgIF0KICAgIH0sCiAgICB7CiAgICAgICJzb3VyY2UiOiAiL21hbmlmZXN0LndlYm1hbmlmZXN0IiwKICAgICAgImhlYWRlcnMiOiBbCiAgICAgICAgewogICAgICAgICAgImtleSI6ICJDb250ZW50LVR5cGUiLAogICAgICAgICAgInZhbHVlIjogImFwcGxpY2F0aW9uL21hbmlmZXN0K2pzb247IGNoYXJzZXQ9dXRmLTgiCiAgICAgICAgfSwKICAgICAgICB7CiAgICAgICAgICAia2V5IjogIkNhY2hlLUNvbnRyb2wiLAogICAgICAgICAgInZhbHVlIjogIm5vLWNhY2hlIgogICAgICAgIH0KICAgICAgXQogICAgfSwKICAgIHsKICAgICAgInNvdXJjZSI6ICIvKC4qKSIsCiAgICAgICJoZWFkZXJzIjogWwogICAgICAgIHsKICAgICAgICAgICJrZXkiOiAiWC1Sb2JvdHMtVGFnIiwKICAgICAgICAgICJ2YWx1ZSI6ICJub2luZGV4LCBub2ZvbGxvdyIKICAgICAgICB9CiAgICAgIF0KICAgIH0KICBdCn0="
+      },
+      "expectedCount": 63
+    },
+    {
+      "name": "nexio-elektro",
+      "deployment": "dpl_8FWmBVYdRHwG1VsVxqRfmLTcwX5A",
+      "destination": "demos/nexio-elektro/site",
+      "domains": [
+        "nexio-elektro.vercel.app",
+        "nexio-elektro-popm64nhb-lukaszstaniewicz-6630.vercel.app"
+      ],
+      "files": {
+        "app.js": "dff08be1b4d3aca1b6a2fa52782ef946dc255ae3",
+        "assets/aparatura.webp": "42077eea3326def70db8844acc85a6818265ba2d",
+        "assets/rozdzielnice.webp": "42077eea3326def70db8844acc85a6818265ba2d",
+        "assets/gazetka/cover.webp": "f92d75b731fe806acd02b04665dc2365d284f9db",
+        "assets/gazetka/electrician.webp": "9a51332908f145fdc0acad0492ab4bec3a31447c",
+        "assets/gazetka/lamp.webp": "14ab0c6e893118ecc42bb3fa560791e53f3e8f5b",
+        "assets/gazetka/meter.webp": "b8b93c922de3f69ac6772186719b7d1690f3ce9e",
+        "assets/gazetka/network.webp": "0d73a690eb4ea8ce6a5871d61bdf50353a21ab67",
+        "assets/gazetka/p1-01.webp": "7572026c4c6fccd468f052170de7b501b50ae0b3",
+        "assets/gazetka/p1-02.webp": "f5070c87d67ba81e58d61624bc3cd93fe2a75d73",
+        "assets/gazetka/p1-03.webp": "59fda9a9a8982e48b2f1ce379e3a69941442296c",
+        "assets/gazetka/p1-04.webp": "caf920a6d44a425ba8c83352d94dac1847b0be85",
+        "assets/gazetka/p1-05.webp": "458a8f8e45f7639ec02a59607fa18ff987d3a2eb",
+        "assets/gazetka/p1-06.webp": "3f3c59c067f38c7a7befc8f9a061416d696ed587",
+        "assets/gazetka/p1-07.webp": "b6e7ac7694264ac8fac966d1aa76cb8635130a12",
+        "assets/gazetka/p1-08.webp": "dd2fbbc671e1487def9041aa0f243c35f6e6d150",
+        "assets/gazetka/p1-09.webp": "5840ddfee22a33bcad335def6693e94cc0f4bcc3",
+        "assets/gazetka/p1-10.webp": "7fa2fea804f81e8bb4c53a5be7d83eead50d51e3",
+        "assets/gazetka/p1-11.webp": "475744e63cee477016f8728cebda384a07957e0a",
+        "assets/gazetka/p1-12.webp": "c32836d173daaadabceedbbc780c51c4721fed0c",
+        "assets/gazetka/p2-01.webp": "d462a1d384168db8857feb36a761ebe42fa55817",
+        "assets/gazetka/p2-02.webp": "0150173f9190e0735888120ff950643bea9752bc",
+        "assets/gazetka/p2-03.webp": "5b50e053dc94de782856c4e402360710f615d1ff",
+        "assets/gazetka/p2-04.webp": "801ff0f217f2b318f18cbea7befdf273a08a4c90",
+        "assets/gazetka/p2-05.webp": "db2836fd336dc0dc9d1564b3cfe255b3d25c7698",
+        "assets/gazetka/p2-06.webp": "ad8210aae3f4f2beff7bbf594afc7731858b2373",
+        "assets/gazetka/p2-07.webp": "b629666b2a7265f3d672f98c020ee2b5813cec5c",
+        "assets/gazetka/p2-08.webp": "1375fa2ad09ee9fd7b5776b2ab11c5217a3c5202",
+        "assets/gazetka/p2-09.webp": "91ac21197747cf05c6a09693d667008b3aa2727d",
+        "assets/gazetka/p2-10.webp": "d7eaaf1103135e56207a50beb65093da8bf54f1d",
+        "assets/gazetka/p2-11.webp": "b5f3a7c09b4c3a3c44ca9d2c29f8c83647eab666",
+        "assets/gazetka/p2-12.webp": "491dd79393888eaca7021fdac7c696e0a1c69886",
+        "assets/gazetka/socket.webp": "3227154efe8105bc26cff9619bf094767d117c00",
+        "assets/hero.webp": "d16284d94c639dbb0f26d41547a1be9564e08cd8",
+        "assets/kable.webp": "d16284d94c639dbb0f26d41547a1be9564e08cd8",
+        "assets/osprzet.webp": "d16284d94c639dbb0f26d41547a1be9564e08cd8",
+        "assets/teletechnika.webp": "d16284d94c639dbb0f26d41547a1be9564e08cd8",
+        "assets/pomiary.webp": "b711fa9e4e385e13139d3bf39f67553f58808368",
+        "assets/zm-foto/elektryka.webp": "e94f6393ff5f2414ee0710c050b6fa886506add2",
+        "assets/zm-foto/oswietlenie.webp": "f1770cc5a9bfe7bc78e82837353e4a1bf70221e1",
+        "gazetka.html": "e5331c78544091e5ff848be4c2bd0496e614c709",
+        "icons/icon-192.png": "7e578809d589836e12b356d864b73f6616bc648e",
+        "icons/icon-512.png": "81d61b5c895d68594ee170a6f04f6adba21ed7ed",
+        "index.html": "23b231c9928e32927bfd3ff9e182ebb88c67cb4a",
+        "magazine-base.css": "257a2bf64c0ba34633cc36c2e9b7781ba861e7fb",
+        "magazine.css": "c158a7f81497b4a480314ce92537200863cee8ec",
+        "magazine.js": "3d27297eed3b4ebb1f381858f986501403d800c6",
+        "manifest.webmanifest": "941c136e9dbc7973170d36f5b63c2eea3ae46289",
+        "marketplace.css": "6c4b99d6b642147859018babd83b954c4ae9119f",
+        "marketplace.js": "de9840c3c114a31ddbfacad7f0c528d1c0cb73bf",
+        "nexio-czytelna-typografia.css": "eb3c78b0aeaebbfe138fc76983aef06de8b33cc6",
+        "nexio-refinement.css": "83d75bbc606cf4660b309a510a0f247af57123c1",
+        "photo-sources.json": "3c66a14222e1aff3c0f1b9c0d3fdc8792f00def9",
+        "products.js": "a541ae230c480fc50e507e9bdd6eefbbcc26c687",
+        "service-worker.js": "2a22ee884f3ecc63801ac1f5c58716c1e37c9aeb",
+        "zielona-marka.js": "e65b2e00ee42793b9bf80364e922f2fd80cb864f"
+      },
+      "embedded": {
+        "vercel.json": "ewogICJmcmFtZXdvcmsiOiBudWxsLAogICJoZWFkZXJzIjogWwogICAgeyJzb3VyY2UiOiAiLyguKikiLCAiaGVhZGVycyI6IFt7ImtleSI6ICJYLVJvYm90cy1UYWciLCAidmFsdWUiOiAibm9pbmRleCwgbm9mb2xsb3csIG5vYXJjaGl2ZSJ9XX0sCiAgICB7InNvdXJjZSI6ICIvbWFuaWZlc3Qud2VibWFuaWZlc3QiLCAiaGVhZGVycyI6IFt7ImtleSI6ICJDb250ZW50LVR5cGUiLCAidmFsdWUiOiAiYXBwbGljYXRpb24vbWFuaWZlc3QranNvbiJ9LCB7ImtleSI6IkNhY2hlLUNvbnRyb2wiLCJ2YWx1ZSI6InB1YmxpYywgbWF4LWFnZT0zMDAifV19LAogICAgeyJzb3VyY2UiOiAiL3NlcnZpY2Utd29ya2VyLmpzIiwgImhlYWRlcnMiOiBbeyJrZXkiOiAiQ29udGVudC1UeXBlIiwgInZhbHVlIjogImFwcGxpY2F0aW9uL2phdmFzY3JpcHQifSwgeyJrZXkiOiAiQ2FjaGUtQ29udHJvbCIsICJ2YWx1ZSI6ICJuby1jYWNoZSJ9XX0KICBdCn0K"
+      },
+      "expectedCount": 57
+    },
+    {
+      "name": "nexio-archiwum",
+      "deployment": "dpl_8kKjuZ1Zs3fWD4EBvaTLVaVoapyb",
+      "destination": "demos/nexio-elektro/variants/archiwum",
+      "domains": [
+        "nexio-archiwum.vercel.app",
+        "nexio-archiwum-dm9ud9zby-lukaszstaniewicz-6630.vercel.app"
+      ],
+      "files": {
+        "00_ZIELONA_MARKA_INFO.txt": "d8acd534c10af8c7403f575fff1d0a654b6bcee6",
+        "README.md": "7382d2bf371cc882383e3ace72b14fe1d348327c",
+        "README_PL.txt": "117cc1b56238931c5fc38a7acd9517db98f34cb0",
+        "assets/aparatura.webp": "42077eea3326def70db8844acc85a6818265ba2d",
+        "assets/rozdzielnice.webp": "42077eea3326def70db8844acc85a6818265ba2d",
+        "assets/hero.webp": "d16284d94c639dbb0f26d41547a1be9564e08cd8",
+        "assets/kable.webp": "d16284d94c639dbb0f26d41547a1be9564e08cd8",
+        "assets/osprzet.webp": "d16284d94c639dbb0f26d41547a1be9564e08cd8",
+        "assets/teletechnika.webp": "d16284d94c639dbb0f26d41547a1be9564e08cd8",
+        "assets/pomiary.webp": "b711fa9e4e385e13139d3bf39f67553f58808368",
+        "assets/zm-foto/elektryka.webp": "e94f6393ff5f2414ee0710c050b6fa886506add2",
+        "assets/zm-foto/oswietlenie.webp": "f1770cc5a9bfe7bc78e82837353e4a1bf70221e1",
+        "icons/icon-192.png": "7e578809d589836e12b356d864b73f6616bc648e",
+        "icons/icon-512.png": "81d61b5c895d68594ee170a6f04f6adba21ed7ed",
+        "index.html": "2f318c1571ad82d6d1e42ce5107f1348cc283e49",
+        "manifest.webmanifest": "4a6e9f0d4074a238c032c0aa158846d747683780",
+        "nexio-dynamics.css": "89650c464e93d19a5e3d62670807fac74ecd7207",
+        "nexio-dynamics.js": "3c9c39dcf25a519e706a0067bc052b0781c31dbd",
+        "photo-sources.json": "3c66a14222e1aff3c0f1b9c0d3fdc8792f00def9",
+        "robots.txt": "63657cbb7d7086c56b0cd4e5c6999bb683664868",
+        "service-worker.js": "61133c804c0927d2aa0d72c1b082cba4822f291e"
+      },
+      "embedded": {
+        "vercel.json": "ewogICJmcmFtZXdvcmsiOiBudWxsLAogICJoZWFkZXJzIjogWwogICAgewogICAgICAic291cmNlIjogIi9tYW5pZmVzdC53ZWJtYW5pZmVzdCIsCiAgICAgICJoZWFkZXJzIjogWwogICAgICAgIHsKICAgICAgICAgICJrZXkiOiAiQ29udGVudC1UeXBlIiwKICAgICAgICAgICJ2YWx1ZSI6ICJhcHBsaWNhdGlvbi9tYW5pZmVzdCtqc29uOyBjaGFyc2V0PXV0Zi04IgogICAgICAgIH0KICAgICAgXQogICAgfSwKICAgIHsKICAgICAgInNvdXJjZSI6ICIvc2VydmljZS13b3JrZXIuanMiLAogICAgICAiaGVhZGVycyI6IFsKICAgICAgICB7CiAgICAgICAgICAia2V5IjogIkNvbnRlbnQtVHlwZSIsCiAgICAgICAgICAidmFsdWUiOiAiYXBwbGljYXRpb24vamF2YXNjcmlwdDsgY2hhcnNldD11dGYtOCIKICAgICAgICB9LAogICAgICAgIHsKICAgICAgICAgICJrZXkiOiAiQ2FjaGUtQ29udHJvbCIsCiAgICAgICAgICAidmFsdWUiOiAibm8tY2FjaGUiCiAgICAgICAgfSwKICAgICAgICB7CiAgICAgICAgICAia2V5IjogIlNlcnZpY2UtV29ya2VyLUFsbG93ZWQiLAogICAgICAgICAgInZhbHVlIjogIi8iCiAgICAgICAgfQogICAgICBdCiAgICB9LAogICAgewogICAgICAic291cmNlIjogIi8oLiopIiwKICAgICAgImhlYWRlcnMiOiBbCiAgICAgICAgewogICAgICAgICAgImtleSI6ICJYLUNvbnRlbnQtVHlwZS1PcHRpb25zIiwKICAgICAgICAgICJ2YWx1ZSI6ICJub3NuaWZmIgogICAgICAgIH0sCiAgICAgICAgewogICAgICAgICAgImtleSI6ICJSZWZlcnJlci1Qb2xpY3kiLAogICAgICAgICAgInZhbHVlIjogInN0cmljdC1vcmlnaW4td2hlbi1jcm9zcy1vcmlnaW4iCiAgICAgICAgfSwKICAgICAgICB7CiAgICAgICAgICAia2V5IjogIlgtRnJhbWUtT3B0aW9ucyIsCiAgICAgICAgICAidmFsdWUiOiAiU0FNRU9SSUdJTiIKICAgICAgICB9CiAgICAgIF0KICAgIH0KICBdCn0K"
+      },
+      "expectedCount": 22
+    },
+    {
+      "name": "nexio2",
+      "deployment": "dpl_U28zUrvSZCXR7cy1MLvKhzYit8Sw",
+      "destination": "demos/nexio-elektro/variants/nexio2",
+      "domains": [
+        "nexio2.vercel.app",
+        "nexio2-e1x3o6o38-lukaszstaniewicz-6630.vercel.app"
+      ],
+      "files": {
+        "assets/gazetka/cover.webp": "f92d75b731fe806acd02b04665dc2365d284f9db",
+        "index.html": "e8e1241e9147c6849f89434df4324b023163cf3a"
+      },
+      "embedded": {},
+      "expectedCount": 2
+    },
+    {
+      "name": "nexioelectro-koncepcja",
+      "deployment": "dpl_3jQvjzTJWtxFku7EEw5g4N9J1AA4",
+      "destination": "demos/nexio-elektro/variants/koncepcja",
+      "domains": [
+        "nexioelectro-koncepcja.vercel.app",
+        "nexioelectro-koncepcja-q0w3tbf0c-lukaszstaniewicz-6630.vercel.app"
+      ],
+      "files": {
+        "index.html": "b985994336c43628836b1da4d9d6a4b7d5764ad3",
+        "robots.txt": "63657cbb7d7086c56b0cd4e5c6999bb683664868"
+      },
+      "embedded": {
+        "vercel.json": "eyJjbGVhblVybHMiOnRydWUsImhlYWRlcnMiOlt7InNvdXJjZSI6Ii8oLiopIiwiaGVhZGVycyI6W3sia2V5IjoiWC1Db250ZW50LVR5cGUtT3B0aW9ucyIsInZhbHVlIjoibm9zbmlmZiJ9LHsia2V5IjoiUmVmZXJyZXItUG9saWN5IiwidmFsdWUiOiJzdHJpY3Qtb3JpZ2luLXdoZW4tY3Jvc3Mtb3JpZ2luIn1dfV19"
+      },
+      "expectedCount": 3
+    },
+    {
+      "name": "phu-marecki-podglad",
+      "deployment": "dpl_CeTeoKsM4toWULNFRyAM6ApfeEHA",
+      "destination": "projekty/phu-marecki/variants/podglad",
+      "domains": [
+        "phu-marecki-podglad-zielona-marka.vercel.app",
+        "phu-marecki-podglad-zielona-marka-apb9fu9hf.vercel.app"
+      ],
+      "files": {
+        "index.html": "81717aa555bdd6f7fa53bb4d12f48e98d29eaec6"
+      },
+      "embedded": {},
+      "expectedCount": 1
+    },
+    {
+      "name": "portfolio-v9-podglad",
+      "deployment": "dpl_6GT4Bj3hJPVQX8rXjs4HE2EZw5tY",
+      "destination": "projekty/portfolio-v9-1/variants/vercel-v9-podglad",
+      "domains": [
+        "zielona-marka-portfolio-v9-podglad.vercel.app",
+        "zielona-marka-portfolio-v9-podglad-71uitwdoz.vercel.app"
+      ],
+      "files": {
+        "index.html": "c7cd9c23833a6ff334d59e420011a6373e05eba9"
+      },
+      "embedded": {},
+      "expectedCount": 1
+    },
+    {
+      "name": "solident",
+      "deployment": "dpl_BBKgug5YvtLUxHLM7t3TvYJMrsP3",
+      "destination": "projekty/solident/zaakceptowana-2026-11-13/site",
+      "domains": [
+        "solident-mu.vercel.app",
+        "solident-57ge4akm9-lukaszstaniewicz-6630.vercel.app"
+      ],
+      "files": {
+        "index.html": "dea42b1469e2283a05c26988af841e93952d3875",
+        "robots.txt": "63657cbb7d7086c56b0cd4e5c6999bb683664868"
+      },
+      "embedded": {},
+      "expectedCount": 2
+    },
+    {
+      "name": "kordon-barber-studio",
+      "deployment": "dpl_6V4eArkPk7e7dzFSCjsrg7PXytEX",
+      "destination": "demos/kordon-barber-studio/site",
+      "domains": [
+        "kordon-barber-studio-zielona-marka.vercel.app",
+        "kordon-barber-studio-zielona-marka-j1r4qd5jn.vercel.app"
+      ],
+      "files": {
+        "index.html": "a56b700ada732e812f74b9b4b4929b5a8242d064"
+      },
+      "embedded": {},
+      "expectedCount": 1
+    },
+    {
+      "name": "aurea-smile",
+      "deployment": "dpl_62beLK2bQxJgd5QJnN4L21dcdG15",
+      "destination": "demos/aurea-smile/site",
+      "domains": [
+        "aurea-smile.vercel.app",
+        "aurea-smile-1c1gt63r2-lukaszstaniewicz-6630.vercel.app"
+      ],
+      "files": {
+        "index.html": "3a27059524ca560c477f832997a1acda99c6b616"
+      },
+      "embedded": {},
+      "expectedCount": 1
+    }
+  ]
+}
