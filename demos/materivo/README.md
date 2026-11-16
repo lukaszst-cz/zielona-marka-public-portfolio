@@ -1,12 +1,19 @@
-# MATERIVO Eko / Pro
+# MATERIVO | jedna strona, dwa warianty
 
-Dwa warianty strony koncepcyjnej centrum budowlanego. Jeden przełącznik umożliwia wybór Ekonomiczna / Pro bez przeładowania całej witryny.
+MATERIVO to jedna koncepcyjna realizacja Zielonej Marki z przełącznikiem **Ekonomiczna / Pro**.
 
-- `index.html`: przełącznik
-- `eko.html`: wersja Ekonomiczna z gazetką
-- `pro.html`: wersja Pro z katalogiem i listą do wyceny
-- `assets/`: komplet grafik i logo
+- `index.html` jest wspólnym punktem startowym, przełączanie wariantów odbywa się w jednym interfejsie.
+- `eko.html` zawiera wersję Ekonomiczną z interaktywną gazetką.
+- `pro.html` zawiera wariant Pro z katalogiem i listą zapytań.
+- `assets/` przechowuje wspólne grafiki i znak projektu.
 
-Witryny: https://materivo-eko.vercel.app oraz https://materivo-pro.vercel.app
+Technicznie na Vercel istnieją dwa adresy do wyboru domyślnego widoku:
+- https://materivo-eko.vercel.app
+- https://materivo-pro.vercel.app
 
-Aktualizacja 16.11.2026: wyrównano czerwień Pro do Eko (#E5091B), poprawiono logo w nagłówku i stopkach, usunięto powtarzające się komunikaty o marce fikcyjnej i zachowano krótką informację o koncepcyjnym charakterze projektu. Brak długich myślników w plikach HTML. Wersje nie mają integracji magazynowej. Formularze przygotowują zapytania bez automatycznej wysyłki.
+**To jeden projekt pokazowy, a nie dwie odrębne strony klienta.** MATERIVO nie jest rzeczywistą hurtownią; oferta i ceny są demonstracyjne. Warianty nie mają integracji magazynowej ani samodzielnej wysyłki formularzy.
+
+Źródło bieżącego archiwum: zatwierdzone wdrożenia Vercel z 16 listopada 2026.
+Wdrożenie Pro: `dpl_6NeaNTDCxwoZtwPGjH3LQWp23HAX`.
+Wdrożenie Eko: `dpl_DwsCaVyf897Ura4UAhwevSmhN6oA`.
+Pobrane pliki sprawdzono po SHA1 źródeł Vercel. Archiwum nie aktualizuje samych wdrożeń.
