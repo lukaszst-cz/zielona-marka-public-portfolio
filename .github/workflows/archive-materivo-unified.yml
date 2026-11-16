@@ -1,0 +1,86 @@
+name: Archive MATERIVO unified Eko and Pro
+on:
+  push:
+    paths:
+      - .github/workflows/archive-materivo-unified.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Download and verify latest production files
+        env:
+          FILES_JSON: '{"assets/bloczek.jpg":"abaf31253cfddc505475d7b406bccead88819c68","assets/cement.jpg":"808d2edcf3db2dacfc32a497bf3810dd868a2fa7","assets/ceramika.jpg":"c384666f8526f1e02b4ffb11ec7556e3cccd0c72","assets/dach.jpg":"af01800745e3b0f3a20d5bc43f6c9965674185f1","assets/instalacje.jpg":"66ff06674fc8245a19c721c14d0e865ea47aa4e5","assets/klej.jpg":"4da6bc59d62b35b68d29f357be83322a0a505da5","assets/materivo-hero-hurtownia.webp":"94fd73571342bf0f75bd25518aa704557d620116","assets/materivo-logo.svg":"c11ccbeab9699e138981f157abe9f1e57c31c9b9","assets/mocowania.jpg":"5dad070e38316beb6578ab22e613027d7d1bcb1f","assets/narzedzia.jpg":"5dad070e38316beb6578ab22e613027d7d1bcb1f","assets/ogrzewanie.jpg":"660cde8edce0b37093c811c2257dc990395f605f","assets/plyta-gk.jpg":"65e13caa47a9df22a11c7a6147f2e397feb171e0","assets/welna.jpg":"9349eef8d9bff9473eb78d51a6002db432d6d564","assets/wkretarka.jpg":"148bd00a70eb4856547e04c1b521b742f482abd4","assets/zm-foto/cement.webp":"8724b9bfb3d33a74d76fe865b928ee5a02d7e71f","assets/zm-foto/dach.webp":"444fdb09d83d7799da064e7098916f823f4262cd","assets/zm-foto/elektryka.webp":"e94f6393ff5f2414ee0710c050b6fa886506add2","assets/zm-foto/farby.webp":"7dc56fa1cf8e0546ca92fa9252de15a542c66ff2","assets/zm-foto/izolacje.webp":"e5fc2f113f324fa9ca5a8a7cf6c70a57721d4fde","assets/zm-foto/narzedzia.webp":"54f50c39df35adf4889970358c16e21cf1cc0b5b","eko.html":"9967497eca66afed63020472dd6b432a983fe02d","index.html":"e6e48bb683c7c9777274fc49f74827ff2bee3254","pro.html":"f076970e2aa76f7ebe591986c9d0455c80bb071f","robots.txt":"63657cbb7d7086c56b0cd4e5c6999bb683664868"}'
+        run: |
+          python3 - <<'PY'
+          import os, json, hashlib, pathlib, urllib.request, zipfile, time
+          root = pathlib.Path('demos/materivo')
+          urls = ['https://materivo-pro.vercel.app/', 'https://materivo-eko.vercel.app/']
+          files = json.loads(os.environ['FILES_JSON'])
+          payloads = {}
+          for path,sha in files.items():
+              errs=[]
+              for base in urls:
+                  try:
+                      req=urllib.request.Request(base+path,headers={'User-Agent':'ZielonaMarka-VerifiedArchive/2026','Accept':'*/*'})
+                      with urllib.request.urlopen(req,timeout=35) as r:
+                          if r.status!=200: raise RuntimeError('HTTP '+str(r.status))
+                          blob=r.read()
+                      got=hashlib.sha1(blob).hexdigest()
+                      if got!=sha: raise RuntimeError('SHA1 mismatch: '+got+' expected '+sha)
+                      payloads[path]=blob
+                      break
+                  except Exception as e:
+                      errs.append(str(e)[:250])
+              if path not in payloads:
+                  raise RuntimeError('MATERIVO unable to verify '+path+' | '+str(errs))
+          assert len(payloads)==len(files)
+          for path,blob in payloads.items():
+              to=root/path
+              to.parent.mkdir(parents=True,exist_ok=True)
+              to.write_bytes(blob)
+          readme='''# MATERIVO | jedna strona, dwa warianty
+
+          MATERIVO to jedna koncepcyjna realizacja Zielonej Marki z przełącznikiem **Ekonomiczna / Pro**.
+
+          - `index.html` jest wspólnym punktem startowym, przełączanie wariantów odbywa się w jednym interfejsie.
+          - `eko.html` zawiera wersję Ekonomiczną z interaktywną gazetką.
+          - `pro.html` zawiera wariant Pro z katalogiem i listą zapytań.
+          - `assets/` przechowuje wspólne grafiki i znak projektu.
+
+          Technicznie na Vercel istnieją dwa adresy do wyboru domyślnego widoku:
+          - https://materivo-eko.vercel.app
+          - https://materivo-pro.vercel.app
+
+          **To jeden projekt pokazowy, a nie dwie odrębne strony klienta.** MATERIVO nie jest rzeczywistą hurtownią; oferta i ceny są demonstracyjne. Warianty nie mają integracji magazynowej ani samodzielnej wysyłki formularzy.
+
+          Źródło bieżącego archiwum: zatwierdzone wdrożenia Vercel z 16 listopada 2026.
+          Wdrożenie Pro: `dpl_6NeaNTDCxwoZtwPGjH3LQWp23HAX`.
+          Wdrożenie Eko: `dpl_DwsCaVyf897Ura4UAhwevSmhN6oA`.
+          Pobrane pliki sprawdzono po SHA1 źródeł Vercel. Archiwum nie aktualizuje samych wdrożeń.
+          '''
+          (root/'README.md').write_text('\n'.join(line.strip() for line in readme.splitlines())+'\n',encoding='utf-8')
+          archive = pathlib.Path('MATERIVO_JEDEN_PROJEKT_EKO_PRO_2026-11-16.zip')
+          with zipfile.ZipFile(archive,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=7) as z:
+              for p in sorted(root.rglob('*')):
+                  if p.is_file(): z.write(p,p.relative_to(root))
+          print('MATERIVO files=',len(files)+1,'ZIP=',archive.stat().st_size,'bytes')
+          PY
+      - name: Upload verified archive ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: MATERIVO_JEDEN_PROJEKT_EKO_PRO_2026-11-16
+          path: MATERIVO_JEDEN_PROJEKT_EKO_PRO_2026-11-16.zip
+          if-no-files-found: error
+      - name: Commit unified MATERIVO source
+        run: |
+          git config user.name 'Zielona Marka Archive'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add demos/materivo
+          if git diff --cached --quiet; then echo 'MATERIVO source already synchronized'; else git commit -m 'Synchronize one MATERIVO project with Eko and Pro switch'; git push; fi
