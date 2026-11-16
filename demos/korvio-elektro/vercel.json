@@ -1,0 +1,8 @@
+{
+  "framework": null,
+  "headers": [
+    {"source": "/(.*)", "headers": [{"key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive"}]},
+    {"source": "/manifest.webmanifest", "headers": [{"key": "Content-Type", "value": "application/manifest+json"}, {"key":"Cache-Control","value":"public, max-age=300"}]},
+    {"source": "/service-worker.js", "headers": [{"key": "Content-Type", "value": "application/javascript"}, {"key": "Cache-Control", "value": "no-cache"}]}
+  ]
+}
