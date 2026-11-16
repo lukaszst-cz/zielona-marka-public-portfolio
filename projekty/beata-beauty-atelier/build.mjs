@@ -1,0 +1,13 @@
+import {writeFileSync, mkdirSync} from "node:fs";
+import {createHash} from "node:crypto";
+import {execFileSync} from "node:child_process";
+const url="https://d2ol7oe51mr4n9.cloudfront.net/user_3JF0bAXNGCfkXeILZKHayHagGgi/59849de5-c441-49de-a8e2-e1fe6efd8691.zip";
+const expected="16760ed44f555afb96c70b3b8af5736d498b4383d6abdd45cf5b7fbf3582b67a";
+const resp=await fetch(url);
+if(!resp.ok) throw new Error("Nie można pobrać paczki strony: "+resp.status);
+const buf=Buffer.from(await resp.arrayBuffer());
+if(createHash("sha256").update(buf).digest("hex")!==expected) throw new Error("Nieprawidłowa suma kontrolna archiwum");
+writeFileSync("beata-dist.zip",buf);
+mkdirSync("dist",{recursive:true});
+execFileSync("unzip",["-q","-o","beata-dist.zip"],{stdio:"inherit"});
+console.log("BEATA: static assets restored (source verified), size "+buf.length);
