@@ -8,6 +8,6 @@ Deployment: dpl_65r8JzfnP16zDMU81mZeADiWricf
 
 Pliki strony wraz z grafikami sprawdzono SHA1 względem Vercel. Manifest: ../../tools/backup-vercel-demos-manifest.json.
 
-UWAGA: oryginalny plik vercel.json nie jest publiczny. Wymaga osobnego odzyskania.
+UWAGA: zastępcza konfiguracja vercel.json pozwala na samodzielny hosting; oryginalny plik z przekierowaniami Vercel pozostaje nieodzyskany.
 
 Funkcje sprzedażowe, formularze lub katalog mogą być demonstracyjne.
