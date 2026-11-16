@@ -1,0 +1,83 @@
+name: Archive remaining demo assets
+on:
+  push:
+    paths:
+      - .github/workflows/archive-remaining-sites.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Download and verify demo assets
+        run: |
+          python3 - <<'PY'
+          import hashlib, io, pathlib, urllib.request, zipfile, time, shutil
+          ROOT = pathlib.Path('projekty')
+          def request(url):
+              req = urllib.request.Request(url, headers={'User-Agent':'ZielonaMarkaPortfolioBackup/1.0', 'Accept':'*/*'})
+              with urllib.request.urlopen(req, timeout=35) as r:
+                  if r.status != 200: raise RuntimeError(f'{url}: HTTP {r.status}')
+                  return r.read()
+          # BEATA: exact ZIP source and checksum from Vercel build script
+          url = 'https://d2ol7oe51mr4n9.cloudfront.net/user_3JF0bAXNGCfkXeILZKHayHagGgi/59849de5-c441-49de-a8e2-e1fe6efd8691.zip'
+          expected = '16760ed44f555afb96c70b3b8af5736d498b4383d6abdd45cf5b7fbf3582b67a'
+          payload = request(url)
+          assert hashlib.sha256(payload).hexdigest() == expected, 'BEATA ZIP: SHA256 mismatch'
+          root = ROOT/'beata-beauty-atelier'/'site'
+          if root.exists(): shutil.rmtree(root)
+          root.mkdir(parents=True)
+          with zipfile.ZipFile(io.BytesIO(payload)) as z:
+              entries=[i for i in z.infolist() if not i.is_dir()]
+              for i in entries:
+                  p=pathlib.PurePosixPath(i.filename.replace('\\','/'))
+                  if p.is_absolute() or '..' in p.parts: raise ValueError('ZIP unsafe path: '+i.filename)
+                  dest=root.joinpath(*p.parts)
+                  dest.parent.mkdir(parents=True,exist_ok=True)
+                  dest.write_bytes(z.read(i))
+              print('BEATA files:',len(entries),'ZIP bytes:',len(payload))
+          assert list(root.rglob('index.html')), 'BEATA: no index.html in ZIP'
+          # SOLIDOM: publicly deployed static distribution, with exact file inventory
+          origins=[
+            'https://solidom-a06lvoppv-lukaszstaniewicz-6630.vercel.app/',
+            'https://solidom-6j901xwj4-lukaszstaniewicz-6630.vercel.app/',
+          ]
+          images=['contact','facade','hero','house-build','installations','interior-design','interior-finish','project-bath','project-build','project-house','project-living','project-management','renovation','team-lead','team']
+          files=['index.html','styles.css','script.js','manifest.webmanifest','robots.txt','service-worker.js','dziekujemy.html'] + ['assets/'+name+'.webp' for name in images] + ['assets/favicon.svg','assets/og-preview.jpg','icons/icon-192.png','icons/icon-512.png']
+          out=ROOT/'solidom'/'site'
+          if out.exists(): shutil.rmtree(out)
+          out.mkdir(parents=True)
+          for f in files:
+              data=None
+              errors=[]
+              for o in origins:
+                  try:
+                      data=request(o+f)
+                      break
+                  except Exception as e: errors.append(str(e)[:180])
+              if data is None: raise RuntimeError(f'SOLIDOM missing {f}: {errors}')
+              if (f.endswith('.webp') or f.endswith('.png') or f.endswith('.jpg')) and data[:1]==b'<':
+                  raise RuntimeError('SOLIDOM unexpected HTML for '+f)
+              p=out/f
+              p.parent.mkdir(parents=True,exist_ok=True)
+              p.write_bytes(data)
+          print('SOLIDOM files:',len(files))
+          (ROOT/'beata-beauty-atelier'/'README.md').write_text('# BEATA BEAUTY ATELIER\n\nKomplet plikow strony zapisany w katalogu `site/`, odtworzony z paczki ZIP uzytej przez Vercel. SHA256 paczki zweryfikowane: `'+expected+'`.\n\nPliki `build.mjs` i `package.json` sa zachowana konfiguracja budowania. Strona stanowi wersje demonstracyjna Zielonej Marki, bez potwierdzenia relacji z rzeczywista firma.\n',encoding='utf-8')
+          (ROOT/'solidom'/'README.md').write_text('# SOLIDOM\n\nKomplet publicznych plikow strony zapisany w `site/` na podstawie dzialajacego wdrozenia Vercel (HTML, CSS, JavaScript, obrazy, ikony, manifest i service worker). Liczba pobranych plikow: '+str(len(files))+'.\n\nSOLIDOM jest fikcyjna marka demonstracyjna. Formularz wyceny nie wysyla danych do serwera.\n\nZachowano takze konfiguracje wdrozenia w katalogu nadrzednym.\n',encoding='utf-8')
+          PY
+      - name: Commit complete archives
+        run: |
+          git config user.name "Zielona Marka Archive"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add projekty/beata-beauty-atelier projekty/solidom
+          if git diff --cached --quiet; then
+            echo "No changes to archive"
+          else
+            git commit -m "Archive complete BEATA and SOLIDOM website files"
+            git push
+          fi
