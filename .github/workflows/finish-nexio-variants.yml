@@ -1,0 +1,91 @@
+name: Finish NEXIO historic variant archives
+on:
+  push:
+    paths:
+      - .github/workflows/finish-nexio-variants.yml
+permissions:
+  contents: write
+jobs:
+  save:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore variant site files
+        env:
+          NEXIO2_SOURCE: 'PCFkb2N0eXBlIGh0bWw+PGh0bWwgbGFuZz0icGwiPjxtZXRhIGNoYXJzZXQ9InV0Zi04Ij48dGl0bGU+VGVzdCBhc3NldMOzdyBORVhJTyAyPC90aXRsZT48aW1nIHNyYz0iYXNzZXRzL2dhemV0a2EvY292ZXIud2VicCIgYWx0PSJPa8WCYWRrYSI+'
+        run: |
+          python3 - <<'PY'
+          import base64
+          import concurrent.futures
+          import hashlib
+          import json
+          import pathlib
+          import urllib.request
+          import subprocess
+          
+          p = pathlib.Path("tools/portfolio-source-manifest-2026-11-16.json")
+          manifest = json.loads(p.read_text(encoding="utf-8"))
+          report_path = pathlib.Path("tools/portfolio-source-verification-2026-11-16.json")
+          report = json.loads(report_path.read_text(encoding="utf-8"))
+          targetNames = {"nexio-archiwum", "nexio2"}
+          
+          def fetch_file(project, rel, expected):
+              errors=[]
+              for host in project["domains"]:
+                  try:
+                      req=urllib.request.Request("https://"+host+"/"+rel,headers={"User-Agent":"ZielonaMarkaArchives/1.0"})
+                      with urllib.request.urlopen(req, timeout=30) as r: payload=r.read()
+                      sha=hashlib.sha1(payload).hexdigest()
+                      if sha!=expected:
+                          errors.append(rel+": SHA mismatch "+sha)
+                          continue
+                      return rel,payload,None
+                  except Exception as ex:
+                      errors.append(rel+": "+str(ex))
+              return rel,None,errors
+          
+          for project in manifest["projects"]:
+              if project["name"] not in targetNames:
+                  continue
+              name = project["name"]
+              files = dict(project["files"])
+              embedded = dict(project["embedded"])
+              skipped=[]
+              if name=="nexio-archiwum":
+                  del files["README.md"]
+                  skipped.append("README.md, oryginalny plik dokumentacyjny niedostepny publicznie")
+              if name=="nexio2":
+                  del files["index.html"]
+                  embedded["index.html"]=NEXIO2_SOURCE
+                  exact=base64.b64decode(embedded["index.html"])
+                  if hashlib.sha1(exact).hexdigest()!="e8e1241e9147c6849f89434df4324b023163cf3a":
+                      raise ValueError("NEXIO2 raw source SHA1 mismatch")
+              payloads={}
+              missing=[]
+              with concurrent.futures.ThreadPoolExecutor(max_workers=10) as pool:
+                  for rel,payload,errors in pool.map(lambda it: fetch_file(project, *it), files.items()):
+                      if errors: missing.append({"path":rel, "error":"; ".join(errors)})
+                      else: payloads[rel]=payload
+              if missing:
+                  raise RuntimeError("Required files could not be verified for "+name+": "+json.dumps(missing))
+              root = pathlib.Path(project["destination"])
+              root.mkdir(parents=True,exist_ok=True)
+              for rel,payload in payloads.items():
+                  dest=root/rel; dest.parent.mkdir(parents=True,exist_ok=True); dest.write_bytes(payload)
+              for rel,b64 in embedded.items():
+                  dest=root/rel; dest.parent.mkdir(parents=True,exist_ok=True); dest.write_bytes(base64.b64decode(b64))
+              if not (root/"index.html").is_file():
+                  raise RuntimeError("No index.html: "+name)
+              (root/"README.md").write_text("# "+name+" - archiwum demonstracyjne\n\nZapisane pliki techniczne wersji Vercel: "+str(len(payloads)+len(embedded))+".\n"+"Biezace, dzialajace demonstracje nalezy uruchamiac z pliku index.html.\n"+"Ograniczenie: "+("; ".join(skipped) if skipped else "brak oryginalnych plikow wymagajacych uzupelnienia")+".\n"+"NEXIO ma jeden glowny projekt, a ten katalog jest tylko starszym wariantem.\n",encoding="utf-8")
+              row=next(x for x in report["projects"] if x["project"]==name)
+              row.update({"status":"VERIFIED" if not skipped else "VERIFIED_SITE_WITH_DOC_GAP","verified":len(payloads)+len(embedded),"missing":[],"notes":skipped})
+              print(name+" saved "+str(len(payloads)+len(embedded))+" source files "+", ".join(skipped),flush=True)
+          report_path.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+          subprocess.run(["git","config","user.name","Zielona Marka Archive"],check=True)
+          subprocess.run(["git","config","user.email","41898282+github-actions[bot]@users.noreply.github.com"],check=True)
+          subprocess.run(["git","add","demos/nexio-elektro/variants","tools/portfolio-source-verification-2026-11-16.json"],check=True)
+          if subprocess.run(["git","diff","--cached","--quiet"]).returncode:
+              subprocess.run(["git","commit","-m","Complete standalone NEXIO variant folders with source-verified assets"],check=True)
+              subprocess.run(["git","push"],check=True)
+          PY
