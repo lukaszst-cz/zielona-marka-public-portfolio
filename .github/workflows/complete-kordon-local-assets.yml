@@ -1,0 +1,32 @@
+name: Complete KORDON standalone site assets
+on:
+  push:
+    paths:
+      - .github/workflows/complete-kordon-local-assets.yml
+permissions:
+  contents: write
+jobs:
+  complete:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Copy original images to standalone site directory and verify
+        run: |
+          cp -R demos/kordon-barber-studio/assets demos/kordon-barber-studio/site/assets
+          python3 - <<'PY'
+          import pathlib, re
+          root=pathlib.Path("demos/kordon-barber-studio/site")
+          html=(root/"index.html").read_text(encoding="utf-8")
+          refs=re.findall(r'<img[^>]+src=["\']([^"\']+)',html,re.I)
+          required=[u for u in refs if u.startswith("assets/")]
+          missing=[u for u in required if not (root/u).exists()]
+          if missing: raise SystemExit("Missing KORDON images: "+repr(missing))
+          print("Verified KORDON local images:",len(required),"assets:",len(list((root/"assets").iterdir())))
+          PY
+          git config user.name "Zielona Marka Archive"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add demos/kordon-barber-studio/site/assets
+          if ! git diff --cached --quiet; then
+            git commit -m "Complete independent KORDON site folder with all original images"
+            git push
+          fi
