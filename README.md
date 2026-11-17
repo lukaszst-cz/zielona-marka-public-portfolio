@@ -29,6 +29,8 @@ Główny katalog jest na [zielona-marka.pl/portfolio](https://zielona-marka.pl/p
 | AUREA SMILE | [Koncepcja strony stomatologicznej](https://aurea-smile.vercel.app) |
 | SOLIDENT | [Koncepcja gabinetu stomatologicznego](https://solident-mu.vercel.app) |
 | BLACK HARBOR | [Koncepcja studia detailingu](https://blackharbor.vercel.app) |
+| BEATA Beauty Atelier | [Koncepcja atelier beauty](https://beata-beauty-atelier.vercel.app/) |
+| KORDON Barber Studio | [Koncepcja salonu barberskiego](https://kordon-barber-studio-zielona-marka.vercel.app/) |
 | Centrum Budowlane PWA | [Interaktywna demonstracja systemu](https://centrum-budowlane-pwa.vercel.app/app/) |
 
 
