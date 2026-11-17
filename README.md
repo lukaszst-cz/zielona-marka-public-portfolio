@@ -1,6 +1,6 @@
 # Zielona Marka: publiczne portfolio i archiwum demonstracji
 
-To **publiczny zbiór projektów i kopii prezentacyjnych Zielonej Marki**, a nie pełne zaplecze produkcyjnej strony. Obejmuje strony usługowe, koncepcje modernizacji, interaktywne gazetki, katalogi i demonstracje ścieżek zapytania.
+To **publiczny zbiór projektów i kopii prezentacyjnych marki Zielona Marka**, a nie pełne zaplecze produkcyjnej strony. Obejmuje strony usługowe, koncepcje modernizacji, interaktywne gazetki, katalogi i demonstracje ścieżek zapytania.
 
 **Aktualna strona i katalog projektów:** [zielona-marka.pl/portfolio](https://zielona-marka.pl/portfolio)  
 **Główne repozytorium strony:** [zielona-marka-pl](https://github.com/lukaszst-cz/zielona-marka-pl)
@@ -36,7 +36,7 @@ Główny katalog jest na [zielona-marka.pl/portfolio](https://zielona-marka.pl/p
 
 ## Status projektów
 
-Wskazane strony i nazwy projektów są **koncepcjami, demonstracjami lub archiwalnymi kopiami projektowymi**. Nie należy ich traktować jako wykazu opublikowanych witryn klientów Zielonej Marki. Akceptacja wariantu przez autora projektu ani poprawny status wdrożenia na Vercel nie potwierdzają akceptacji przez klienta.
+Wskazane strony i nazwy projektów są **koncepcjami, demonstracjami lub archiwalnymi kopiami projektowymi**. Nie należy ich traktować jako wykazu opublikowanych witryn klientów marki Zielona Marka. Akceptacja wariantu przez autora projektu ani poprawny status wdrożenia na Vercel nie potwierdzają akceptacji przez klienta.
 
 Nie każda kopia zawiera działający backend. Formularz, rezerwacja, filtrowanie, koszyk zapytań lub moduł PWA mogą mieć zakres demonstracyjny. Zakres sprawdzaj w README konkretnego projektu i na aktualnej stronie.
 
