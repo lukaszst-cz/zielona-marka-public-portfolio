@@ -35,8 +35,8 @@ export const metadata: Metadata = {
     "SEO lokalne Marki",
     "Zielona Marka",
   ],
-  authors: [{ name: "Zielona Marka" }],
-  creator: "Zielona Marka",
+  authors: [{ name: "Łukasz Staniewicz", url: "https://zielona-marka.pl/jak-pracuje" }],
+  creator: "Łukasz Staniewicz",
   openGraph: {
     type: "website",
     locale: "pl_PL",
