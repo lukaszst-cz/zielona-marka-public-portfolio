@@ -1,43 +1,53 @@
-# Zielona Marka, public portfolio
+# Zielona Marka: publiczne portfolio i archiwum demonstracji
 
-**Problem:** firma usługowa potrzebuje strony, która nie jest jedynie wizytówką, ale prowadzi klienta do kontaktu, wyceny lub kolejnego kroku.
+To **publiczny zbiór projektów i kopii prezentacyjnych Zielonej Marki**, a nie pełne zaplecze produkcyjnej strony. Obejmuje strony usługowe, koncepcje modernizacji, interaktywne gazetki, katalogi i demonstracje ścieżek zapytania.
 
-**Rozwiązanie:** publiczna wersja portfolio Zielonej Marki, strony usługowe, podstrony branżowe i demonstracje ścieżek zapytania dla małych firm.
+**Aktualna strona i katalog projektów:** [zielona-marka.pl/portfolio](https://zielona-marka.pl/portfolio)  
+**Główne repozytorium strony:** [zielona-marka-pl](https://github.com/lukaszst-cz/zielona-marka-pl)
 
-[Otwórz stronę Zielona Marka](https://zielona-marka.pl/)
+## Co znajduje się w repozytorium
 
-## Co pokazuje
+- **Kopia publicznej części strony** z podstronami branżowymi i interfejsami demonstracyjnymi.
+- **Archiwa projektów WWW** w katalogach `demos/` i `projekty/`, między innymi MATERIVO, PHU MARECKI, BUDRIVO, NEXIO ELEKTRO, NAVORO HURT, SOLIDOM, SOLIDENT, AUREA SMILE i KORDON BARBER STUDIO.
+- **Warianty historyczne**, zapisane osobno w celu zachowania wcześniejszych wersji.
+- **Raporty archiwizacji i weryfikacji plików** z 16 listopada 2026.
 
-- strony dla usług lokalnych, beauty, warsztatów i transportu;
-- formularze kontaktowe oraz ścieżki wyceny;
-- demonstracje małego CRM, automatyzacji i chatbotów;
-- responsywny interfejs i podstawy SEO.
+[Katalog lokalizacji plików i statusów archiwizacji](MAPA_ARCHIWOW_I_PROJEKTOW.md)
 
-## Wartość biznesowa
+## Status projektów
 
-- czytelniejsza oferta i prostszy kontakt dla klienta;
-- lepsze wykorzystanie wejść z Google i social mediów;
-- baza do późniejszego CRM, przypomnień i automatyzacji;
-- strona gotowa do rozwoju wraz z firmą.
+Wskazane strony i nazwy projektów są **koncepcjami, demonstracjami lub archiwalnymi kopiami projektowymi**. Nie należy ich traktować jako wykazu opublikowanych witryn klientów Zielonej Marki. Akceptacja wariantu przez autora projektu ani poprawny status wdrożenia na Vercel nie potwierdzają akceptacji przez klienta.
 
-## Zakres publicznej wersji
+Nie każda kopia zawiera działający backend. Formularz, rezerwacja, filtrowanie, koszyk zapytań lub moduł PWA mogą mieć zakres demonstracyjny. Zakres sprawdzaj w README konkretnego projektu i na aktualnej stronie.
 
-To świadomie odseparowany snapshot portfolio. Nie zawiera bazy danych, panelu klienta, umów, danych klientów, danych dostępowych, konfiguracji produkcyjnej ani historii wdrożeniowej.
+## Struktura i przydatne pliki
 
-## Uruchomienie lokalne
+| Ścieżka | Zawartość |
+| --- | --- |
+| `app/` | Publiczne strony i komponenty wersji portfolio |
+| `demos/` | Kopie demonstracji oraz ich lokalne zasoby |
+| `projekty/` | Projekty stron, warianty i odrębne pakiety archiwalne |
+| `MAPA_ARCHIWOW_I_PROJEKTOW.md` | Rejestr lokalizacji, statusów i ograniczeń archiwizacji |
+| `tools/portfolio-source-verification-2026-11-16.json` | Wyniki kontroli kompletności wybranych kopii |
 
-Wymagany jest Node.js 22 lub nowszy.
+## Uruchomienie kopii strony
+
+Wymagany jest Node.js 22.13 lub nowszy:
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Weryfikacja
+Kontrola:
 
 ```bash
 npm run build
-npm run test
+npm test
 ```
 
-Kod udostępniono jako materiał portfolio. Wykorzystanie elementów marki, tekstów i projektów wizualnych wymaga zgody właściciela.
+Poszczególne strony statyczne można oglądać według instrukcji w ich podkatalogach. Obecność plików nie dowodzi działania wszystkich formularzy i integracji po odtworzeniu archiwum.
+
+## Prywatność i prawa do materiałów
+
+Repozytorium nie jest miejscem na umowy, dane klientów, hasła, klucze API ani konfigurację produkcyjną. Kod jest publicznie dostępny do zapoznania się z portfolio. Wykorzystanie nazw, materiałów graficznych, tekstów i rozwiązań projektowych wymaga uwzględnienia obowiązujących praw i licencji.
