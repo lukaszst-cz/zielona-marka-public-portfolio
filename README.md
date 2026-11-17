@@ -14,6 +14,24 @@ To **publiczny zbiór projektów i kopii prezentacyjnych Zielonej Marki**, a nie
 
 [Katalog lokalizacji plików i statusów archiwizacji](MAPA_ARCHIWOW_I_PROJEKTOW.md)
 
+## Podglądy wybranych koncepcji
+
+Główny katalog jest na [zielona-marka.pl/portfolio](https://zielona-marka.pl/portfolio). Poniższe adresy prowadzą bezpośrednio do stron demonstracyjnych i nie stanowią potwierdzenia wdrożeń dla klientów.
+
+| Projekt | Podgląd |
+| --- | --- |
+| PHU MARECKI | [Strona hurtowni](https://phu-marecki.vercel.app) · [Aplikacja PWA](https://phu-marecki.vercel.app/app.html) |
+| BUDRIVO | [Katalog i kalkulator materiałów](https://budrivo.vercel.app) |
+| MATERIVO | [Wariant premium](https://materivo-pro.vercel.app) · [Wariant ekonomiczny](https://materivo-eko.vercel.app) |
+| NAVORO HURT | [Katalog i gazetka](https://navoro-hurt-koncepcja.vercel.app) |
+| NEXIO ELEKTRO | [Strona](https://nexio-elektro.vercel.app) · [Gazetka](https://nexio-elektro.vercel.app/gazetka.html) |
+| SOLIDOM | [Koncepcja strony usług budowlanych](https://solidom.vercel.app) |
+| AUREA SMILE | [Koncepcja strony stomatologicznej](https://aurea-smile.vercel.app) |
+| SOLIDENT | [Koncepcja gabinetu stomatologicznego](https://solident-mu.vercel.app) |
+| BLACK HARBOR | [Koncepcja studia detailingu](https://blackharbor.vercel.app) |
+| Centrum Budowlane PWA | [Interaktywna demonstracja systemu](https://centrum-budowlane-pwa.vercel.app/app/) |
+
+
 ## Status projektów
 
 Wskazane strony i nazwy projektów są **koncepcjami, demonstracjami lub archiwalnymi kopiami projektowymi**. Nie należy ich traktować jako wykazu opublikowanych witryn klientów Zielonej Marki. Akceptacja wariantu przez autora projektu ani poprawny status wdrożenia na Vercel nie potwierdzają akceptacji przez klienta.
