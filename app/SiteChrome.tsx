@@ -47,7 +47,7 @@ export function SiteFooter() {
         <a href={socialLinks.github} target="_blank" rel="noreferrer">GitHub ↗</a>
         <Link href="/polityka-prywatnosci">Prywatność</Link>
       </div>
-      <small>© {new Date().getFullYear()} Zielona Marka</small>
+      <small>© {new Date().getFullYear()} Zielona Marka · Łukasz Staniewicz</small>
     </div>
     <div className="shell footer-billing-details" id="fakturowanie" aria-label="Informacje o rozliczeniach i dane do faktury">
       <section><h2>Obecne rozliczenia i dane do faktury: Bizky Freelance</h2><p><strong>Bizky sp. z o.o.</strong><br />Al. Księcia Józefa Poniatowskiego 1, klatka K4, poziom 1<br />03-901 Warszawa, Polska<br />NIP: 7010150265 · KRS: 0000312229<br /><a href="https://bizky.ai/" target="_blank" rel="noopener noreferrer">bizky.ai</a></p></section>
@@ -60,7 +60,7 @@ export function SiteFooter() {
         <p>Zobacz kod, wersje demonstracyjne i rozwój projektów na GitHubie.</p>
       </div>
       <nav className="creator-project-links" aria-label="Aplikacje na GitHubie">
-        <a href="https://github.com/lukaszst-cz/aktywnik-plus" target="_blank" rel="noopener noreferrer"><strong>Aktywnik+ ↗</strong><small>Prosty dziennik ruchu dziecka z akceptacją rodzica i raportami.</small></a>
+        <a href="https://github.com/lukaszst-cz/aktywnik-plus" target="_blank" rel="noopener noreferrer"><strong>Aktywnik+ ↗</strong><small>Dziennik aktywności dla siebie i rodziny, z raportami i trybem pilotażowym.</small></a>
         <a href="https://github.com/lukaszst-cz/docpilot" target="_blank" rel="noopener noreferrer"><strong>DocPilot ↗</strong><small>Porządkuje dokumenty, wyciąga terminy i ułatwia szybkie odnalezienie ważnych plików.</small></a>
         <a href="https://github.com/lukaszst-cz/document-checker" target="_blank" rel="noopener noreferrer"><strong>Document Checker ↗</strong><small>Wyłapuje braki i rozbieżności w dokumentach przed ich wysłaniem.</small></a>
         <a href="https://github.com/lukaszst-cz/lead-offer-copilot" target="_blank" rel="noopener noreferrer"><strong>Lead &amp; Offer Copilot ↗</strong><small>Porządkuje zapytanie klienta i pomaga szybciej przygotować odpowiedź oraz następny krok.</small></a>
