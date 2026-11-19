@@ -33,3 +33,6 @@ npm run check
 ```
 
 Frontend nie wymaga zewnętrznych bibliotek. Przeglądarka musi obsługiwać moduły JavaScript.
+
+## PWA (19.11.2026)
+Instalowalny manifest, ikony 192/512/maskable oraz service worker buforujący wyłącznie statyczny interfejs. Nie obsługuje synchronizacji, serwerowych kont ani rzeczywistych płatności. Danych osobowych nie należy wprowadzać do wersji demonstracyjnej.

@@ -1,0 +1,36 @@
+{
+  "id": "/",
+  "name": "BLACK HARBOR 360 | CRM i Studio Operations",
+  "short_name": "BH 360",
+  "description": "Panel studia auto detailingu: klienci, pojazdy, zapytania i program lojalnościowy. Demonstracja Zielonej Marki.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0d151a",
+  "theme_color": "#0d151a",
+  "lang": "pl",
+  "categories": [
+    "business",
+    "productivity"
+  ],
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
