@@ -1,0 +1,12 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {blankStore,validateLead,validateClient,validateVehicle,duplicateLead,convertLead,totals,exportLeadsCSV,assertStore,demoData} from '../core.mjs';
+const v={name:'Klient testowy',email:'test@example.invalid',service:'Detailing wnętrza',source:'Google'};
+test('odrzuca brak kanału kontaktu',()=>assert.throws(()=>validateLead({...v,email:''}),/telefon lub e-mail/));
+test('odrzuca błędny e-mail',()=>assert.throws(()=>validateLead({...v,email:'a@'}),/e-mail/));
+test('zapisuje poprawne zapytanie',()=>assert.equal(validateLead(v).name,'Klient testowy'));
+test('wykrywa duplikat po e-mailu',()=>{const d=blankStore();d.leads.push({id:'l',email:'TEST@example.invalid',phone:''});assert.equal(duplicateLead(d,validateLead(v)).id,'l')});
+test('konwersja nie duplikuje klienta',()=>{const d=blankStore();d.leads.push({...validateLead(v),id:'l',status:'Nowy'});convertLead(d,'l','c',new Date().toISOString());const b=convertLead(d,'l','d',new Date().toISOString());assert.equal(d.clients.length,1);assert.equal(b.clientId,'c')});
+test('pojazd wymaga istniejącego klienta',()=>assert.throws(()=>validateVehicle({clientId:'missing',makeModel:'VW Golf'},[]),/klienta/));
+test('liczy terminy kontaktu',()=>{const d=demoData();assert.equal(totals(d).active,3);assert.equal(totals(d).won,1)});
+test('eksport CSV zabezpiecza formuły',()=>{const c=exportLeadsCSV([{id:'x',name:'=1+1'}]);assert.match(c,/"'=1\+1"/)});
+test('waliduje backup',()=>{assert.equal(assertStore(blankStore()).version,1);assert.throws(()=>assertStore({version:1,leads:{}}))});
+test('waliduje klienta',()=>assert.equal(validateClient({name:'Firma testowa',phone:'+48 501 234 567'}).name,'Firma testowa'));
