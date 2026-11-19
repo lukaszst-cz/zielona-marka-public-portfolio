@@ -1,42 +1,35 @@
-# BLACK HARBOR 360 | CRM, wersja 0.1
+# BLACK HARBOR 360 | CRM i program lojalnościowy, wersja 0.3
 
-Osobna aplikacja demonstracyjna Zielonej Marki. Nie jest związana z realną firmą ani wdrożeniem produkcyjnym. Publiczna koncepcja BLACK HARBOR v7 w folderze `projekty/black-harbor` pozostaje nienaruszona.
+Oddzielny, testowy moduł koncepcji BLACK HARBOR, przygotowany w ramach Zielonej Marki. Nie jest to produkt zaakceptowany przez rzeczywiste studio ani działający system firmy. Publiczna strona BLACK HARBOR v7 pozostaje nienaruszona.
 
-## Co działa
+## Działające funkcje w przeglądarce
 
-- CRM z nowymi zapytaniami, statusami, osobą do kontaktu i notatkami.
-- Wyszukiwanie, filtrowanie, karty kontaktów, historia zmian.
-- Konwersja leada na klienta z kontrolą duplikatów.
-- Kartoteka klientów i przypisane pojazdy.
-- Terminy follow-up i pulpit z licznikami.
-- Eksport CSV zapytań, eksport i import kopii JSON z walidacją.
-- Opcjonalny zestaw jawnie fikcyjnych danych testowych.
-- Responsywny panel desktop/mobile, testy logiki.
+- Pulpit CRM, źródła i statusy zapytań, przypomnienia o kontakcie, historia działań.
+- Klienci, pojazdy, konwersja zapytania w klienta, sprawdzanie podobnych kontaktów.
+- BLACK HARBOR CLUB: ręczne rejestrowanie opłaconych usług, punkty, historia wizyt, saldo, poziomy członkostwa, rejestrowanie wykorzystanego rabatu z kontrolą dostępności punktów.
+- Daty pielęgnacji po wizycie, przegląd powrotów i szacowana rezerwa na rabaty.
+- Mapa wszystkich siedmiu etapów obsługi z oznaczeniem etapów działających i zaplanowanych.
+- Interaktywna macierz docelowych ról. Nie jest to uwierzytelnianie ani autoryzacja.
+- Eksport CSV zapytań, eksport i import kopii JSON wraz z punktami i historią klubu; migracja kopii wersji 1 do wersji 2.
+- Przykładowe, jawnie fikcyjne dane testowe i responsywny interfejs.
 
-## Ograniczenia i bezpieczeństwo
+## Zasady BLACK HARBOR CLUB, wariant testowy
 
-- **Dane zapisują się tylko w `localStorage` w tej przeglądarce. Nie ma synchronizacji między urządzeniami ani kont użytkowników.**
-- **Nie wprowadzać rzeczywistych danych osobowych ani firmowych.** W tej fazie to demonstracja interakcji.
-- Brak wysyłki e-mail/SMS, backendu, bazy, rezerwacji zasobów, magazynu i wystawiania faktur.
-- Projekt jest domyślnie `noindex`, bez żadnych sekretów. Publiczny URL nadal może być otwarty przez osoby posiadające link.
+1 punkt za każde pełne 20 zł netto opłaconej usługi. Za 100 punktów można zarejestrować ręcznie zastosowany rabat 40 zł netto. Poziomy wynikają z punktów zdobytych w całej historii: CLUB 0-99, SELECT 100-299, SIGNATURE co najmniej 300. Rezerwa szacunkowa to saldo punktów pomnożone przez 0,40 zł netto. Przy dokładnym naliczaniu bez dodatkowych akcji promocyjnych nominalny koszt punktów to maksymalnie około 2% przychodu netto kwalifikowanego do programu. Przed wdrożeniem trzeba zatwierdzić regulamin, limity, księgowanie rabatów i wpływ na marżę.
 
-## Uruchomienie
+## Role i bezpieczeństwo
+
+Przygotowany, **niewdrożony** schemat PostgreSQL zawiera cztery role `owner`, `manager`, `operator`, `read_only`, tabelę członkostwa i wstępne polityki RLS dla podstawowego CRM. Interfejs umożliwia jedynie podgląd planu dostępu. W prawdziwym systemie należy uruchomić uwierzytelnianie, rozbudować polityki po stronie serwera i rozdzielić rolę operatora na recepcję, detailera oraz księgowość.
+
+**Wszystkie dane aplikacji są zapisywane wyłącznie w `localStorage` bieżącej przeglądarki.** Nie ma kont użytkowników, współdzielonej bazy ani synchronizacji. Nie należy wprowadzać rzeczywistych danych osobowych, pojazdów ani transakcji. Płatności, rabaty i wizyty są rejestrowane wyłącznie ręcznie. Nie ma automatycznej faktury, płatności, rezerwacji stanowisk, magazynu ani wysyłania wiadomości. `database/schema.sql` jest niewdrożonym szkicem podstawowego CRM i nie obejmuje jeszcze tabel programu lojalnościowego.
+
+## Uruchomienie i kontrola
 
 ```bash
 python3 -m http.server 8080
 # http://localhost:8080
-node --test tests/*.test.mjs
-node --check app.js
+npm test
+npm run check
 ```
 
-## Następny etap: zabezpieczona baza
-
-Utworzyć osobny projekt Supabase po potwierdzeniu właściwej organizacji i ewentualnych kosztów, a następnie zaimplementować logowanie, tenant, RLS, API, audyt zdarzeń i politykę retencji. Nie wykorzystywać produkcyjnej bazy aplikacji Aktywnik Plus. Dopiero wtedy dopuszczać rzeczywiste dane klientów.
-
-## Konwencje
-
-Kod bez niepotrzebnych danych osobowych, prezentacyjnych firm i sygnatur asystenta. Wszystkie formularze walidowane w kliencie. W przyszłej wersji konieczna także walidacja serwerowa.
-
-## Przygotowany schemat bazy
-
-`database/schema.sql` opisuje odizolowany model danych z rolami i RLS: przestrzenie robocze, członkostwa, klienci, pojazdy, leady i nieusuwalny z poziomu aplikacji dziennik zdarzeń. Wymaga dedykowanego projektu Supabase, ręcznego nadania pierwszego członkostwa administracyjnego i testów polityk na środowisku staging. **Plik nie został wykonany na żadnej bazie**. To projekt do przeglądu przed migracją.
+Frontend nie wymaga zewnętrznych bibliotek. Przeglądarka musi obsługiwać moduły JavaScript.

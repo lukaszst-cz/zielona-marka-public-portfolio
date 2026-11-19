@@ -1,8 +1,9 @@
+import {validateClubEvents} from './club.mjs';
 export const STORAGE_KEY = 'black-harbor-360-demo-v1';
 export const STATUS = ['Nowy', 'Kontakt', 'Wycena', 'Wygrany', 'Utracony'];
 export const SOURCES = ['Google', 'Instagram', 'Facebook', 'Polecenie', 'Telefon', 'Strona WWW', 'Inne'];
 export const SERVICES = ['Mycie detailingowe', 'Detailing wnętrza', 'Korekta lakieru', 'Powłoka ceramiczna', 'Pakiet indywidualny'];
-export function blankStore(){return {version:1,leads:[],clients:[],vehicles:[],activities:[]};}
+export function blankStore(){return {version:2,leads:[],clients:[],vehicles:[],activities:[],clubEvents:[]};}
 export function normalize(v){return String(v ?? '').trim().toLocaleLowerCase('pl-PL');}
 export function validateLead(input){
  const v={name:String(input.name??'').trim(),phone:String(input.phone??'').trim(),email:String(input.email??'').trim().toLowerCase(),service:String(input.service??'').trim(),source:String(input.source??'Inne'),vehicle:String(input.vehicle??'').trim(),nextContact:String(input.nextContact??'').trim(),notes:String(input.notes??'').trim()};
@@ -50,8 +51,9 @@ export function convertLead(data,leadId,newId,now){
 export function csvCell(s){let v=String(s??'');if(/^[\s]*[=+\-@]/.test(v))v="'"+v;return '"'+v.replaceAll('"','""')+'"';}
 export function exportLeadsCSV(leads){const headers=['ID','Nazwa','Telefon','E-mail','Usługa','Pojazd','Źródło','Status','Następny kontakt','Notatka','Utworzono'];const rows=leads.map(l=>[l.id,l.name,l.phone,l.email,l.service,l.vehicle,l.source,l.status,l.nextContact,l.notes,l.createdAt]);return '\uFEFF'+[headers,...rows].map(r=>r.map(csvCell).join(';')).join('\r\n');}
 export function assertStore(o){
- if(!o||o.version!==1||!['leads','clients','vehicles','activities'].every(k=>Array.isArray(o[k])))throw new Error('Nieprawidłowy format kopii danych.');
- if([o.leads,o.clients,o.vehicles,o.activities].some(a=>a.length>5000))throw new Error('Plik przekracza limit 5000 wpisów w jednej kategorii.');
+ if(o?.version===1){o={...o,version:2,clubEvents:[]};}
+ if(!o||o.version!==2||!['leads','clients','vehicles','activities','clubEvents'].every(k=>Array.isArray(o[k])))throw new Error('Nieprawidłowy format kopii danych.');
+ if([o.leads,o.clients,o.vehicles,o.activities,o.clubEvents].some(a=>a.length>5000))throw new Error('Plik przekracza limit 5000 wpisów w jednej kategorii.');
  const validId=x=>typeof x==='string'&&x.length>0&&x.length<=100;
  const validString=x=>typeof x==='string'&&x.length<=3000;
  const uniqueIds=a=>new Set(a.map(x=>x.id)).size===a.length;
@@ -61,6 +63,7 @@ export function assertStore(o){
  if(o.vehicles.some(v=>!v||!validId(v.id)||!cIds.has(v.clientId)||!validString(v.makeModel)||!v.makeModel||!validString(v.createdAt)))throw new Error('Nieprawidłowa karta pojazdu.');
  if(o.leads.some(l=>!l||!validId(l.id)||!validString(l.name)||!l.name||!STATUS.includes(l.status)||!validString(l.service)||!validString(l.source)||!validString(l.createdAt)||!validString(l.updatedAt)||l.clientId&&!cIds.has(l.clientId)))throw new Error('Nieprawidłowy rekord zapytania.');
  if(o.activities.some(a=>!a||!validId(a.id)||!validString(a.action)||!validString(a.detail)||!validString(a.createdAt)))throw new Error('Nieprawidłowy dziennik zdarzeń.');
+ validateClubEvents(o);
  return o;
 }
 export function demoData(){
@@ -68,5 +71,9 @@ export function demoData(){
  for(const [id,name,model] of clients){d.clients.push({id,name,phone:'',email:`${id.toLowerCase()}@example.invalid`,notes:'Rekord testowy, nie jest rzeczywistym klientem.',createdAt:t});d.vehicles.push({id:id.replace('C','V'),clientId:id,makeModel:model,year:'2020',registration:'',notes:'Pojazd testowy',createdAt:t});}
  const entries=[['L-001','Kontakt testowy 001','Nowy','Powłoka ceramiczna','Google',0],['L-002','Kontakt testowy 002','Kontakt','Detailing wnętrza','Polecenie',1],['L-003','Kontakt testowy 003','Wycena','Korekta lakieru','Instagram',2],['L-004','Kontakt testowy 004','Wygrany','Mycie detailingowe','Telefon',-1],['L-005','Kontakt testowy 005','Utracony','Pakiet indywidualny','Strona WWW',-1]];
  for(const [id,name,status,service,source,offset] of entries){let date='';if(offset>=0){const x=new Date();x.setDate(x.getDate()+offset);date=x.toISOString().slice(0,10)}d.leads.push({id,name,status,service,source,vehicle:'',phone:'',email:id.toLowerCase()+'@example.invalid',nextContact:date,notes:'Przykładowe zgłoszenie do testowania workflow.',createdAt:t,updatedAt:t,clientId:status==='Wygrany'?'C-001':null});}
+ d.clubEvents=[
+   {id:'E-001',clientId:'C-001',kind:'earn',service:'Powłoka ceramiczna',amountNet:2600,points:130,createdAt:t,nextCare:''},
+   {id:'E-002',clientId:'C-002',kind:'earn',service:'Detailing wnętrza',amountNet:520,points:26,createdAt:t,nextCare:''}
+ ];
  d.activities=[{id:'A-001',entity:'system',entityId:'',action:'Dane testowe',detail:'Wczytano fikcyjne rekordy demonstracyjne.',createdAt:t}];return d;
 }

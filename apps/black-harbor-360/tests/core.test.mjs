@@ -8,7 +8,20 @@ test('konwersja nie duplikuje klienta',()=>{const d=blankStore();d.leads.push({.
 test('pojazd wymaga istniejącego klienta',()=>assert.throws(()=>validateVehicle({clientId:'missing',makeModel:'VW Golf'},[]),/klienta/));
 test('liczy terminy kontaktu',()=>{const d=demoData();assert.equal(totals(d).active,3);assert.equal(totals(d).won,1)});
 test('eksport CSV zabezpiecza formuły',()=>{const c=exportLeadsCSV([{id:'x',name:'=1+1'}]);assert.match(c,/"'=1\+1"/)});
-test('waliduje backup',()=>{assert.equal(assertStore(blankStore()).version,1);assert.throws(()=>assertStore({version:1,leads:{}}))});
+test('waliduje backup',()=>{assert.equal(assertStore(blankStore()).version,2);assert.throws(()=>assertStore({version:1,leads:{}}))});
 test('waliduje klienta',()=>assert.equal(validateClient({name:'Firma testowa',phone:'+48 501 234 567'}).name,'Firma testowa'));
 test('import odrzuca osierocony pojazd',()=>{const d=blankStore();d.vehicles.push({id:'v',clientId:'obcy',makeModel:'Audi A6',createdAt:new Date().toISOString()});assert.throws(()=>assertStore(d),/pojazdu/)});
 test('import odrzuca lead z obcym statusem',()=>{const d=demoData();d.leads[0].status='Usunięte';assert.throws(()=>assertStore(d),/zapytania/)});
+
+import {CLUB,clubPoints,clubBalance,clubSummary,clubTotals,recordPaidService,redeemReward} from '../club.mjs';
+import {ROLE_PLAN,roleHasCapability,WORKFLOW} from '../access.mjs';
+test('program liczy punkty od wartości netto',()=>{assert.equal(clubPoints(199.99),9);assert.equal(clubPoints(2600),130);assert.equal(clubPoints(89.99),4);assert.throws(()=>clubPoints(19.99),/od 20/)});
+test('program wymaga karty klienta',()=>assert.throws(()=>recordPaidService(blankStore(),{id:'x',clientId:'nie-ma',service:'Mycie',amountNet:200,createdAt:new Date().toISOString()}),/klienta/));
+test('rejestruje płatną wizytę i nalicza punkty',()=>{const d=blankStore();d.clients.push({id:'c',name:'Klient demo',createdAt:new Date().toISOString()});recordPaidService(d,{id:'e',clientId:'c',service:'Korekta lakieru',amountNet:2400,createdAt:new Date().toISOString(),nextCare:'2027-03-10'});assert.equal(clubBalance(d,'c'),120);assert.equal(clubSummary(d,'c').tier,'SELECT');assert.equal(clubTotals(d).liabilityNet,48);assertStore(d)});
+test('rabat wymaga dostępnego salda',()=>{const d=blankStore();d.clients.push({id:'c',name:'Klient demo',createdAt:new Date().toISOString()});assert.throws(()=>redeemReward(d,{id:'r',clientId:'c',createdAt:new Date().toISOString()}),/punktów/);assert.equal(d.clubEvents.length,0)});
+test('rabat odejmuje punkty i nie tworzy salda ujemnego',()=>{const d=blankStore();d.clients.push({id:'c',name:'Klient demo',createdAt:new Date().toISOString()});recordPaidService(d,{id:'e',clientId:'c',service:'Powłoka',amountNet:2500,createdAt:'2026-11-01T10:00:00.000Z'});redeemReward(d,{id:'r',clientId:'c',createdAt:'2026-11-02T10:00:00.000Z'});assert.equal(clubBalance(d,'c'),25);assert.equal(clubSummary(d,'c').earned,125);assertStore(d)});
+test('backup v1 migruje bez utraty danych',()=>{const legacy={version:1,leads:[],clients:[{id:'c',name:'Klient demo',createdAt:new Date().toISOString()}],vehicles:[],activities:[]};const newer=assertStore(legacy);assert.equal(newer.version,2);assert.deepEqual(newer.clubEvents,[]);assert.equal(newer.clients.length,1)});
+test('import odrzuca nieprawidłowy koszt punktów',()=>{const d=demoData();d.clubEvents[0].points=10000;assert.throws(()=>assertStore(d),/Niezgodne/)});
+test('import odrzuca ujemne saldo klubu',()=>{const d=demoData();d.clubEvents.unshift({id:'E-003',clientId:'C-001',kind:'redeem',service:'Rabat',amountNet:0,points:-CLUB.rewardPoints,createdAt:'2026-01-01T10:00:00.000Z',nextCare:''});assert.throws(()=>assertStore(d),/ujemne/)});
+test('model ról nie daje operatorowi dostępu do finansów',()=>{assert.equal(roleHasCapability('owner','reports'),true);assert.equal(roleHasCapability('operator','reports'),false);assert.equal(roleHasCapability('read_only','settings'),false);assert.equal(ROLE_PLAN.length,4)});
+test('proces odróżnia obsługiwane moduły od planowanych',()=>{assert.equal(WORKFLOW.filter(x=>x.status==='planned').length,5);assert.equal(WORKFLOW.find(x=>x.module==='club')?.status,'local')});

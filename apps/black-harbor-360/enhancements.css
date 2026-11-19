@@ -1,0 +1,57 @@
+/* BLACK HARBOR 360: retencja, proces i role */
+.workflow-intro{margin-top:22px;background:linear-gradient(115deg,#1b211e,#111a20);border:1px solid #6d583c;border-radius:8px;padding:18px 20px 20px}
+.workflow-topline{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:17px}
+.workflow-steps{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:5px}
+.workflow-step{position:relative;border-top:2px solid #3a474a;padding:13px 4px 2px;display:flex;flex-direction:column;gap:5px;min-width:0}
+.workflow-step::before{content:"";position:absolute;top:-5px;left:0;background:#3a474a;border-radius:50%;width:8px;height:8px}
+.workflow-step.active{border-color:var(--gold)}.workflow-step.active::before{background:var(--gold)}
+.workflow-step.local{border-color:#83ad9b}.workflow-step.local::before{background:#83ad9b}
+.workflow-step b{font-size:11px;color:#b6ab98}.workflow-step span{font-size:11px;font-weight:700;color:#e2e9e5}
+.workflow-step small{font-size:10px;color:#879b9e}
+.club-hero{display:grid;grid-template-columns:1fr auto;align-items:center;gap:28px;background:radial-gradient(ellipse at 90% 10%,#63503928,transparent 42%),linear-gradient(135deg,#1c2426,#0d161a);border:1px solid #6d5b45;border-radius:8px;padding:32px 36px;min-height:198px}
+.club-hero .eyebrow{margin-bottom:14px}.club-hero h2{font-size:clamp(23px,2.6vw,34px);letter-spacing:-.055em;font-weight:580;margin-bottom:12px}
+.club-hero p{max-width:710px;font-size:13px;line-height:1.8;color:#b4c1c0}
+.club-emblem{display:flex;align-items:center;justify-content:center;flex-direction:column;width:134px;height:134px;border:1px solid #987c52;border-radius:50%;font-family:Georgia,serif;font-size:42px;letter-spacing:-.08em;color:var(--gold);position:relative}
+.club-emblem::after{content:"";position:absolute;inset:7px;border:1px solid #66543b;border-radius:50%}
+.club-emblem span{font-family:Arial,sans-serif;font-size:10px;font-weight:750;letter-spacing:.3em;margin:0 0 0 4px}
+.club-levels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.club-level{background:#121d22;border:1px solid #334147;border-radius:7px;padding:18px 20px}
+.club-level:nth-child(2){border-color:#776343}.club-level:nth-child(3){border-color:#a4875a;background:linear-gradient(145deg,#25251e,#12191c)}
+.club-level h3{margin:12px 0 8px;font-size:15px}.club-level p{font-size:12px;color:#99a9a9}
+.club-search{display:flex;max-width:460px;margin-bottom:17px}
+.club-people{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.club-person{background:#152126;border:1px solid #33444a;border-radius:7px;padding:17px}
+.club-person-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.club-person h3{font-size:16px;margin:8px 0 6px}.club-person p{line-height:1.5}
+.club-tier{display:inline-flex;color:#e4c995;font-size:9px;letter-spacing:.15em;font-weight:800;border:1px solid #675435;padding:4px 7px;border-radius:3px}
+.club-points{display:flex;flex-direction:column;text-align:right;min-width:65px}
+.club-points strong{font-size:30px;font-weight:560;letter-spacing:-.05em;color:var(--gold)}.club-points small{color:#96a7aa}
+.club-progress{height:4px;margin:19px 0 14px;background:#344349;border-radius:10px;overflow:hidden}.club-progress span{display:block;height:100%;background:var(--gold)}
+.club-person-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.club-person-bottom>small{color:#9bafb1}.club-delta{white-space:nowrap;font-size:13px}.club-delta.positive{color:#a6d5bb}.club-delta.negative{color:#ebb29a}
+.status-key{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}.state-label{border-radius:3px;display:inline-flex;align-items:center;padding:5px 9px;font-size:10px;font-weight:700;white-space:nowrap}
+.state-label.active{background:#274334;color:#a9dec0}.state-label.local{background:#2e3b36;color:#bdd7c8}.state-label.planned{background:#273238;color:#a1b4b9}
+.flow-list{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.flow-stage{display:grid;grid-template-columns:64px minmax(0,1fr) auto;align-items:center;gap:22px;background:#121c21;border:1px solid #304047;border-radius:7px;padding:19px 22px}
+.stage-number{font-size:27px;font-weight:500;font-family:Georgia,serif;color:#c3a170}
+.flow-head{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+.flow-stage h2{font-size:16px}.flow-stage p{font-size:12px;color:#9faeb0;line-height:1.7}
+.roles-disclaimer{padding:18px 22px;margin:0 0 20px;border:1px solid #765f3b;background:#28251d;border-radius:7px;color:#d9cab0;line-height:1.7;font-size:12px}
+.roles-disclaimer b{display:block;margin-bottom:3px;color:#ead1a4}
+.role-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.role-tab{padding:12px 17px;color:#a7b5b9;background:#152128;border:1px solid #36474d;border-radius:6px;font-weight:650}
+.role-tab.active{background:#3a3023;color:#ebc692;border-color:#997447}
+.role-spotlight{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:25px 29px;margin-bottom:18px;background:#152125;border:1px solid #546052;border-radius:7px}
+.role-spotlight h2{font-size:24px;margin:9px 0}.role-spotlight p{color:#9fadad;font-size:12px;line-height:1.6}
+.role-count{text-align:center;min-width:120px}.role-count strong{display:block;color:var(--gold);font-size:37px;font-weight:500}.role-count small{font-size:10px;color:#9faeb0}
+.roles-table{min-width:660px}.roles-table th:not(:first-child),.roles-table td:not(:first-child){text-align:center}
+.roles-table th.selected,.roles-table td.selected{background:#302b23}
+.permission-yes{display:inline-flex;justify-content:center;align-items:center;background:#294637;color:#b4e2bc;width:25px;height:25px;border-radius:50%;font-size:13px}
+.permission-no{color:#50656a;font-size:24px;line-height:1}
+.roles-footnote{margin-top:18px;padding:21px 23px;background:#142025;border:1px solid #334249;border-radius:7px}
+.roles-footnote h3{margin-bottom:10px}.roles-footnote p{color:#9eafb0;line-height:1.8;font-size:12px}.roles-footnote code{color:#d5ba91}
+@media(max-width:1200px){.workflow-steps{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:14px}.club-people{grid-template-columns:1fr}}
+@media(max-width:760px){.workflow-intro{padding:16px}.workflow-topline{flex-wrap:wrap}.workflow-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.club-hero{padding:24px 20px;grid-template-columns:1fr}.club-emblem{width:82px;height:82px;font-size:27px;grid-row:1}.club-emblem span{font-size:8px}.club-levels{grid-template-columns:1fr}.club-person{padding:15px}.club-person-bottom .splitlinks{width:100%}.club-person-bottom .btn{flex:1}.flow-stage{grid-template-columns:44px 1fr;gap:10px;padding:17px}.flow-stage>.btn,.flow-stage>.muted{grid-column:2;justify-self:start}.stage-number{font-size:24px}.role-spotlight{padding:20px}.role-count{min-width:70px}.role-tabs{display:grid;grid-template-columns:1fr 1fr}.role-tab{font-size:12px;padding:11px}.roles-table{min-width:590px}}
+
+.permission-read{font-size:9px;font-weight:730;letter-spacing:.08em;color:#b8ccc5;border:1px solid #50665e;border-radius:3px;padding:5px 6px;display:inline-flex}
+@media(max-width:760px){.nav-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));overflow:visible;gap:4px}.nav-item{min-width:0;width:100%;font-size:11px;padding:9px 6px;justify-content:flex-start;white-space:nowrap}.nav-item svg{width:13px;height:13px;flex-shrink:0}}
