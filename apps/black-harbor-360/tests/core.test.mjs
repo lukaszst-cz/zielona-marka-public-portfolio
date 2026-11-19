@@ -10,3 +10,5 @@ test('liczy terminy kontaktu',()=>{const d=demoData();assert.equal(totals(d).act
 test('eksport CSV zabezpiecza formuły',()=>{const c=exportLeadsCSV([{id:'x',name:'=1+1'}]);assert.match(c,/"'=1\+1"/)});
 test('waliduje backup',()=>{assert.equal(assertStore(blankStore()).version,1);assert.throws(()=>assertStore({version:1,leads:{}}))});
 test('waliduje klienta',()=>assert.equal(validateClient({name:'Firma testowa',phone:'+48 501 234 567'}).name,'Firma testowa'));
+test('import odrzuca osierocony pojazd',()=>{const d=blankStore();d.vehicles.push({id:'v',clientId:'obcy',makeModel:'Audi A6',createdAt:new Date().toISOString()});assert.throws(()=>assertStore(d),/pojazdu/)});
+test('import odrzuca lead z obcym statusem',()=>{const d=demoData();d.leads[0].status='Usunięte';assert.throws(()=>assertStore(d),/zapytania/)});

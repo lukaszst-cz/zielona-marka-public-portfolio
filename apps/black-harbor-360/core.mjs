@@ -49,7 +49,20 @@ export function convertLead(data,leadId,newId,now){
 }
 export function csvCell(s){let v=String(s??'');if(/^[\s]*[=+\-@]/.test(v))v="'"+v;return '"'+v.replaceAll('"','""')+'"';}
 export function exportLeadsCSV(leads){const headers=['ID','Nazwa','Telefon','E-mail','Usługa','Pojazd','Źródło','Status','Następny kontakt','Notatka','Utworzono'];const rows=leads.map(l=>[l.id,l.name,l.phone,l.email,l.service,l.vehicle,l.source,l.status,l.nextContact,l.notes,l.createdAt]);return '\uFEFF'+[headers,...rows].map(r=>r.map(csvCell).join(';')).join('\r\n');}
-export function assertStore(o){if(!o||o.version!==1||!Array.isArray(o.leads)||!Array.isArray(o.clients)||!Array.isArray(o.vehicles)||!Array.isArray(o.activities))throw new Error('Nieprawidłowy format kopii danych.');if([o.leads,o.clients,o.vehicles,o.activities].some(a=>a.length>5000))throw new Error('Plik przekracza limit 5000 wpisów w jednej kategorii.');for(const entity of ['leads','clients','vehicles'])for(const v of o[entity])if(!v || typeof v.id!=='string' || typeof v.name!=='string' && entity!=='vehicles')throw new Error('Nieprawidłowe rekordy w pliku.');return o;}
+export function assertStore(o){
+ if(!o||o.version!==1||!['leads','clients','vehicles','activities'].every(k=>Array.isArray(o[k])))throw new Error('Nieprawidłowy format kopii danych.');
+ if([o.leads,o.clients,o.vehicles,o.activities].some(a=>a.length>5000))throw new Error('Plik przekracza limit 5000 wpisów w jednej kategorii.');
+ const validId=x=>typeof x==='string'&&x.length>0&&x.length<=100;
+ const validString=x=>typeof x==='string'&&x.length<=3000;
+ const uniqueIds=a=>new Set(a.map(x=>x.id)).size===a.length;
+ if(![o.leads,o.clients,o.vehicles,o.activities].every(uniqueIds))throw new Error('Kopia zawiera powtarzające się identyfikatory.');
+ if(o.clients.some(c=>!c||!validId(c.id)||!validString(c.name)||c.name.length<2||!validString(c.createdAt)))throw new Error('Nieprawidłowa karta klienta.');
+ const cIds=new Set(o.clients.map(c=>c.id));
+ if(o.vehicles.some(v=>!v||!validId(v.id)||!cIds.has(v.clientId)||!validString(v.makeModel)||!v.makeModel||!validString(v.createdAt)))throw new Error('Nieprawidłowa karta pojazdu.');
+ if(o.leads.some(l=>!l||!validId(l.id)||!validString(l.name)||!l.name||!STATUS.includes(l.status)||!validString(l.service)||!validString(l.source)||!validString(l.createdAt)||!validString(l.updatedAt)||l.clientId&&!cIds.has(l.clientId)))throw new Error('Nieprawidłowy rekord zapytania.');
+ if(o.activities.some(a=>!a||!validId(a.id)||!validString(a.action)||!validString(a.detail)||!validString(a.createdAt)))throw new Error('Nieprawidłowy dziennik zdarzeń.');
+ return o;
+}
 export function demoData(){
  const d=blankStore();const t=new Date().toISOString();const clients=[['C-001','Klient testowy 001','Audi A6'],['C-002','Klient testowy 002','BMW Seria 3']];
  for(const [id,name,model] of clients){d.clients.push({id,name,phone:'',email:`${id.toLowerCase()}@example.invalid`,notes:'Rekord testowy, nie jest rzeczywistym klientem.',createdAt:t});d.vehicles.push({id:id.replace('C','V'),clientId:id,makeModel:model,year:'2020',registration:'',notes:'Pojazd testowy',createdAt:t});}

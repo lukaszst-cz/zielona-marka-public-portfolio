@@ -36,3 +36,7 @@ Utworzyć osobny projekt Supabase po potwierdzeniu właściwej organizacji i ewe
 ## Konwencje
 
 Kod bez niepotrzebnych danych osobowych, prezentacyjnych firm i sygnatur asystenta. Wszystkie formularze walidowane w kliencie. W przyszłej wersji konieczna także walidacja serwerowa.
+
+## Przygotowany schemat bazy
+
+`database/schema.sql` opisuje odizolowany model danych z rolami i RLS: przestrzenie robocze, członkostwa, klienci, pojazdy, leady i nieusuwalny z poziomu aplikacji dziennik zdarzeń. Wymaga dedykowanego projektu Supabase, ręcznego nadania pierwszego członkostwa administracyjnego i testów polityk na środowisku staging. **Plik nie został wykonany na żadnej bazie**. To projekt do przeglądu przed migracją.
