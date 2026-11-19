@@ -1,0 +1,26 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {emptyStore,demoStore,CATALOG,addLead,setLeadStatus,addClient,convertLead,createQuote,setQuoteStatus,createOrder,orderMissing,receiveGoods,issueOrder,cancelOrder,markPaid,partnerTier,quoteTotals,dashboard,hasPermission,exportClientsCsv,validateBackup} from '../core.mjs';
+
+test('Katalog sześciu kategorii i unikalne SKU',()=>{assert.equal(new Set(CATALOG.map(p=>p.sku)).size,CATALOG.length);assert.equal(new Set(CATALOG.map(p=>p.category)).size,6)});
+test('Startowy magazyn spójny',()=>{assert.ok(validateBackup(emptyStore()))});
+test('Fixture tylko dane testowe',()=>{const s=demoStore();assert.equal(s.clients.length,3);assert.ok(s.clients.every(c=>c.name.includes('testowy')))});
+test('Dodawanie leada i status',()=>{const s=emptyStore();let l=addLead(s,{name:'Próba',contact:'email@example.invalid',interest:'Kable'});setLeadStatus(s,l.id,'Do wyceny');assert.equal(s.leads[0].status,'Do wyceny')});
+test('Lead bez kontaktu odrzucony',()=>{assert.throws(()=>addLead(emptyStore(),{name:'X',contact:''}))});
+test('Pozyskanie klienta',()=>{const s=emptyStore();let l=addLead(s,{name:'Testowy kontakt',contact:'x@example.invalid'});convertLead(s,l.id);assert.equal(s.clients.length,1);assert.equal(s.leads[0].status,'Wygrane')});
+test('Duplikat klienta zablokowany',()=>{const s=emptyStore();addClient(s,{name:'ABC'});assert.throws(()=>addClient(s,{name:'abc'}))});
+test('Marża i rabat liczone od ceny końcowej',()=>{const s=demoStore();const q=createQuote(s,{clientId:s.clients[0].id,items:[{sku:'EL-KAB-101',qty:100}],discount:2});const t=quoteTotals(q);assert.equal(t.value,437.08);assert.equal(t.cost,314);assert.ok(t.marginPct>0.17)});
+test('Rabat poniżej minimalnej marży zablokowany',()=>{const s=demoStore();assert.throws(()=>createQuote(s,{clientId:s.clients[0].id,items:[{sku:'EL-KAB-101',qty:10}],discount:22}))});
+test('Tylko zaakceptowana oferta tworzy zamówienie',()=>{const s=demoStore();assert.throws(()=>createOrder(s,s.quotes[0].id));setQuoteStatus(s,s.quotes[0].id,'Zaakceptowana');createOrder(s,s.quotes[0].id);assert.equal(s.orders.length,1)});
+test('Blokada podwójnego zamówienia z tej samej oferty',()=>{const s=demoStore();setQuoteStatus(s,s.quotes[0].id,'Zaakceptowana');createOrder(s,s.quotes[0].id);assert.throws(()=>createOrder(s,s.quotes[0].id))});
+test('Rezerwacja magazynu przy zamówieniu',()=>{const s=demoStore();setQuoteStatus(s,s.quotes[0].id,'Zaakceptowana');const o=createOrder(s,s.quotes[0].id);assert.equal(orderMissing(o).length,0);assert.equal(s.products.find(x=>x.sku==='EL-KAB-101').reserved,100)});
+test('Braki nie pozwalają wydać zlecenia',()=>{const s=demoStore();s.products.find(x=>x.sku==='EL-KAB-101').stock=1;setQuoteStatus(s,s.quotes[0].id,'Zaakceptowana');const o=createOrder(s,s.quotes[0].id);assert.ok(orderMissing(o).length);assert.throws(()=>issueOrder(s,o.id))});
+test('Dostawa PZ uzupełnia rezerwacje FIFO',()=>{const s=demoStore();s.products.find(x=>x.sku==='EL-KAB-101').stock=1;setQuoteStatus(s,s.quotes[0].id,'Zaakceptowana');const o=createOrder(s,s.quotes[0].id);receiveGoods(s,'EL-KAB-101',100);assert.equal(orderMissing(o).length,0)});
+test('Wydanie WZ odejmuje rzeczywisty zapas',()=>{const s=demoStore();setQuoteStatus(s,s.quotes[0].id,'Zaakceptowana');const o=createOrder(s,s.quotes[0].id);issueOrder(s,o.id);assert.equal(s.products.find(x=>x.sku==='EL-KAB-101').stock,620);assert.equal(s.products.find(x=>x.sku==='EL-KAB-101').reserved,0)});
+test('Anulowanie zwalnia rezerwacje',()=>{const s=demoStore();setQuoteStatus(s,s.quotes[0].id,'Zaakceptowana');const o=createOrder(s,s.quotes[0].id);cancelOrder(s,o.id);assert.equal(s.products.find(x=>x.sku==='EL-KAB-101').reserved,0)});
+test('Zadeklarowana płatność tylko po WZ i tylko raz',()=>{const s=demoStore();setQuoteStatus(s,s.quotes[0].id,'Zaakceptowana');const o=createOrder(s,s.quotes[0].id);assert.throws(()=>markPaid(s,o.id));issueOrder(s,o.id);markPaid(s,o.id);assert.throws(()=>markPaid(s,o.id));assert.equal(dashboard(s).paid,612.4)});
+test('Poziom START przy niskim wolumenie',()=>{const s=demoStore();assert.equal(partnerTier(s,s.clients[0].id).level,'START')});
+test('Zaległości blokują nowe korzyści partnera',()=>{const s=demoStore();assert.equal(partnerTier(s,s.clients[2].id).suspended,true)});
+test('Role operacyjne i tylko podgląd',()=>{assert.equal(hasPermission('warehouse','warehouse'),true);assert.equal(hasPermission('warehouse','finance'),false);assert.equal(hasPermission('viewer','crm'),false)});
+test('CSV chroni przed wstrzyknięciem formuły',()=>{const s=emptyStore();addClient(s,{name:'=1+1'});assert.ok(exportClientsCsv(s).includes("'=1+1"))});
+test('Import z uszkodzonym stanem odrzucony',()=>{const s=emptyStore();s.products[0].reserved=99999;assert.throws(()=>validateBackup(s))});
